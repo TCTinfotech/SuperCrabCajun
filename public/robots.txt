@@ -1,0 +1,5 @@
+# Robots.txt for SuperCrab TX
+User-agent: *
+Allow: /
+
+Sitemap: https://supercrabtx.com/sitemap.xml

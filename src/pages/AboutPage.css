@@ -1,0 +1,225 @@
+/* About Page Styles */
+
+.about-page {
+  background-color: var(--color-bg-primary);
+}
+
+.about-hero-banner {
+  background-size: cover;
+  background-position: center;
+  padding-block: clamp(5rem, 3rem + 8vh, 10rem);
+  text-align: center;
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* Origin Story Section */
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .story-grid {
+    grid-template-columns: 1.2fr 1fr;
+  }
+}
+
+.story-text-side {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.section-subtitle {
+  color: var(--color-primary);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 700;
+}
+
+.story-text-side h2 {
+  font-size: clamp(1.75rem, 1.2rem + 2vw, 2.75rem);
+  font-weight: 900;
+}
+
+.story-text-side p {
+  font-size: 1.05rem;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+/* Visual side */
+.story-visual-side {
+  position: relative;
+  width: 100%;
+}
+
+.story-image-card {
+  position: relative;
+  border-radius: var(--border-radius-xl);
+  aspect-ratio: 1 / 1.1;
+  overflow: visible;
+}
+
+.story-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--border-radius-xl);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+}
+
+.story-image-overlay {
+  position: absolute;
+  bottom: -1.5rem;
+  left: 1rem;
+  padding: 1.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  text-align: center;
+  z-index: var(--z-base);
+}
+
+@media (min-width: 640px) {
+  .story-image-overlay {
+    left: -1.5rem;
+  }
+}
+
+.years-number {
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  font-weight: 900;
+  color: var(--color-accent);
+  line-height: 1;
+}
+
+.years-text {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-primary);
+}
+
+/* Core Values Section */
+.about-values-section {
+  background-color: var(--color-bg-secondary);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 3.5rem;
+}
+
+@media (min-width: 768px) {
+  .values-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.value-card {
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  height: 100%;
+}
+
+.value-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: rgba(var(--color-primary-rgb), 0.08);
+  border: 1px solid rgba(var(--color-primary-rgb), 0.15);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  transition: transform var(--transition-normal), background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.value-card:hover .value-icon {
+  transform: rotate(360deg);
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+.value-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.value-desc {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+/* Gallery Grid Section */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 200px;
+  gap: 1rem;
+  margin-top: 3.5rem;
+}
+
+@media (min-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 220px;
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .gallery-grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 240px;
+  }
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--border-radius-lg);
+  border: 1px solid var(--color-border);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.06);
+}
+
+/* Row/Column spans for asymmetric grid layout */
+.item-wide {
+  grid-column: span 2;
+}
+
+@media (min-width: 768px) {
+  .item-tall {
+    grid-row: span 2;
+  }
+}

@@ -1,0 +1,134 @@
+/* Testimonials Section Styles */
+
+.testimonials {
+  background-color: var(--color-bg-primary);
+  position: relative;
+}
+
+.testimonials-header {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 4rem;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+/* Scroll Snap Carousel */
+.testimonials-carousel-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.scroll-snap-container {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 2rem;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Hide scrollbar for neatness, or style it */
+.scroll-snap-container::-webkit-scrollbar {
+  height: 6px;
+}
+
+.scroll-snap-container::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 3px;
+}
+
+.scroll-snap-container::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+}
+
+.scroll-snap-item {
+  scroll-snap-align: center;
+  flex: 0 0 100%;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .scroll-snap-item {
+    flex: 0 0 calc(50% - 1rem);
+    /* 2 cards visible on tablet */
+    scroll-snap-align: start;
+  }
+}
+
+@media (min-width: 1024px) {
+  .scroll-snap-item {
+    flex: 0 0 calc(33.333% - 1.333rem);
+    /* 3 cards visible on desktop */
+  }
+}
+
+/* Testimonial Card design */
+.testimonial-card {
+  padding: 3rem 2rem 2.5rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.quote-icon {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  color: rgba(223, 56, 43, 0.08);
+  /* very subtle red quotes */
+  pointer-events: none;
+}
+
+.star-rating {
+  display: flex;
+  gap: 0.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.testimonial-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  font-style: italic;
+  margin-bottom: 2rem;
+  flex-grow: 1;
+}
+
+/* Author Section */
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-top: 1px solid var(--color-border);
+  padding-top: 1.25rem;
+  margin-top: auto;
+}
+
+.author-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+  color: #ffffff;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+.author-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.author-location {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}

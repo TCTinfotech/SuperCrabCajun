@@ -1,0 +1,138 @@
+/* Contact Page Styles */
+
+.contact-page {
+  background-color: var(--color-bg-primary);
+}
+
+.contact-hero-banner {
+  background-size: cover;
+  background-position: center;
+  padding-block: clamp(5rem, 3rem + 8vh, 10rem);
+  text-align: center;
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* Main Layout Grid */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3.5rem;
+}
+
+@media (min-width: 1024px) {
+  .contact-grid {
+    grid-template-columns: 1fr 1.2fr;
+    align-items: flex-start;
+  }
+}
+
+/* Info Column styling */
+.contact-info-side {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-info-side h2 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.info-desc {
+  font-size: 1.05rem;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+.branches-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.branch-info-block {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.branch-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+.branch-info-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.info-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  line-height: 1.4;
+}
+
+.contact-icon {
+  color: var(--color-primary);
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+/* Form Column styling */
+.contact-form-card {
+  padding: 2.5rem 2rem;
+}
+
+@media (min-width: 640px) {
+  .contact-form-card {
+    padding: 3rem;
+  }
+}
+
+.contact-form-card h3 {
+  font-size: 1.35rem;
+  margin-bottom: 0.25rem;
+}
+
+.form-sub {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-bottom: 2rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Map Section styling */
+.contact-map-section {
+  width: 100%;
+  border-top: 1px solid var(--color-border);
+}
+
+.contact-map-wrapper {
+  height: 450px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.contact-map-iframe {
+  filter: none;
+  opacity: 0.75;
+  transition: opacity var(--transition-fast), filter var(--transition-fast);
+}
+
+.contact-map-wrapper:hover .contact-map-iframe {
+  opacity: 0.95;
+  filter: none;
+}

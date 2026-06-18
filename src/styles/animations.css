@@ -1,0 +1,131 @@
+@layer components {
+  /* Keyframes */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes zoomIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes pulseGlow {
+    0% {
+      box-shadow: 0 0 0 0 rgba(223, 56, 43, 0.45);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(223, 56, 43, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(223, 56, 43, 0);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+
+  /* Reveal Utilities (triggered by JS or CSS) */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity var(--transition-slow), transform var(--transition-slow);
+  }
+
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal-delay-1 { transition-delay: 0.15s; }
+  .reveal-delay-2 { transition-delay: 0.3s; }
+  .reveal-delay-3 { transition-delay: 0.45s; }
+
+  /* Animation Classes */
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.8s var(--transition-normal) forwards;
+  }
+
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+
+  .btn-glow {
+    animation: pulseGlow 2s infinite;
+  }
+
+  /* Parallax Timeline Settings - Native Scroll Driven */
+  @supports ((animation-timeline: view()) and (animation-range: entry)) {
+    @keyframes nativeParallax {
+      from {
+        transform: translateY(80px);
+      }
+      to {
+        transform: translateY(-80px);
+      }
+    }
+
+    .parallax-bg {
+      view-timeline: --heroView;
+    }
+
+    .parallax-layer {
+      animation: nativeParallax linear both;
+      animation-timeline: --heroView;
+      animation-range: exit 0% exit 100%;
+    }
+  }
+}

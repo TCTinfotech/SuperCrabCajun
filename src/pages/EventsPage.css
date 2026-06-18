@@ -1,0 +1,277 @@
+/* Events Page Styles */
+
+.events-page {
+  background-color: var(--color-bg-primary);
+}
+
+.events-hero-banner {
+  background-size: cover;
+  background-position: center;
+  padding-block: clamp(5rem, 3rem + 8vh, 10rem);
+  text-align: center;
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* Packages Grid */
+.events-packages-section {
+  background-color: var(--color-bg-primary);
+}
+
+.packages-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 3.5rem;
+}
+
+@media (min-width: 768px) {
+  .packages-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .packages-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Package Card */
+.package-card {
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-top: 3px solid var(--color-border); /* subtle default top border */
+}
+
+.package-card:hover {
+  border-top-color: var(--color-accent); /* gold highlighted border on hover */
+}
+
+.package-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.package-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--color-text-primary);
+}
+
+.package-peeps {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.package-price-row {
+  margin-bottom: 2rem;
+}
+
+.pkg-price {
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  font-weight: 900;
+  color: var(--color-accent);
+}
+
+.package-features {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: auto; /* Push features list to bottom */
+}
+
+.feature-item {
+  display: flex;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  align-items: flex-start;
+}
+
+.bullet {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+/* Inquiry Form Section Layout */
+.events-form-section {
+  background-color: var(--color-bg-secondary);
+  border-top: 1px solid var(--color-border);
+}
+
+.form-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .form-container {
+    grid-template-columns: 1fr 1.2fr;
+  }
+}
+
+.form-info-side {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-info-side h2 {
+  font-size: clamp(1.75rem, 1.2rem + 2vw, 2.75rem);
+  font-weight: 900;
+}
+
+.info-desc {
+  font-size: 1.05rem;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+.form-info-bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.info-bullet-item {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+
+.bullet-icon {
+  color: var(--color-accent);
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+.bullet-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 0.35rem;
+}
+
+.bullet-text {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+/* Inquiry Card Box styling */
+.inquiry-card {
+  padding: 2.5rem 2rem;
+}
+
+@media (min-width: 640px) {
+  .inquiry-card {
+    padding: 3.5rem 3rem;
+  }
+}
+
+.inquiry-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .form-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.form-row-nested {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  letter-spacing: 0.05em;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  color: var(--color-text-primary);
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--color-accent);
+  background-color: rgba(223, 56, 43, 0.05);
+}
+
+/* Specific styling for date picker in dark mode */
+.form-group input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: none;
+}
+
+.btn-submit {
+  width: 100%;
+  padding-block: 0.85rem;
+  font-size: 1rem;
+}
+
+/* Success State styling */
+.form-success-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+}
+
+.success-check-icon {
+  color: var(--color-accent);
+}
+
+.form-success-state h3 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.form-success-state p {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  max-width: 400px;
+}

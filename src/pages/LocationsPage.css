@@ -1,0 +1,195 @@
+/* Locations Page Styles */
+
+.locations-page {
+  background-color: var(--color-bg-primary);
+}
+
+.locations-hero-banner {
+  background-size: cover;
+  background-position: center;
+  padding-block: clamp(5rem, 3rem + 8vh, 10rem);
+  text-align: center;
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* Card list layouts */
+.locations-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.location-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  overflow: hidden;
+  border-radius: var(--border-radius-xl);
+  min-height: 450px;
+}
+
+@media (min-width: 1024px) {
+  .location-card {
+    grid-template-columns: 1.1fr 1fr;
+  }
+  
+  .location-card.reverse {
+    direction: rtl; /* swap columns on desktop */
+  }
+  
+  .location-card.reverse .location-card-info {
+    direction: ltr; /* restore text direction */
+  }
+  
+  .location-card.reverse .location-card-map {
+    direction: ltr;
+  }
+}
+
+/* Info Side */
+.location-card-info {
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .location-card-info {
+    padding: 3.5rem;
+  }
+}
+
+.location-card-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.status-open {
+  background-color: rgba(46, 204, 113, 0.1);
+  color: #2ecc71;
+  border: 1px solid rgba(46, 204, 113, 0.25);
+}
+
+.status-closed {
+  background-color: rgba(231, 76, 60, 0.1);
+  color: #e74c3c;
+  border: 1px solid rgba(231, 76, 60, 0.25);
+}
+
+.location-name {
+  font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem);
+  font-weight: 800;
+}
+
+/* Details Section */
+.location-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.detail-row {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.detail-icon {
+  color: var(--color-accent);
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+.detail-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.15rem;
+}
+
+.detail-value {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+.hours-schedule {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.schedule-line {
+  display: flex;
+  justify-content: space-between;
+  width: 250px;
+  gap: 1rem;
+}
+
+.schedule-days {
+  font-weight: 500;
+  color: var(--color-text-secondary);
+}
+
+.schedule-time {
+  color: var(--color-text-muted);
+}
+
+/* Actions Section */
+.location-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.location-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius-md);
+  transition: background-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
+}
+
+/* Map Side */
+.location-card-map {
+  width: 100%;
+  height: 300px;
+  border-left: 1px solid var(--color-border);
+}
+
+@media (min-width: 1024px) {
+  .location-card-map {
+    height: auto;
+  }
+}
+
+.google-map-iframe {
+  filter: none; /* normal light mode for map */
+  opacity: 0.9;
+  transition: opacity var(--transition-fast), filter var(--transition-fast);
+}
+
+.location-card:hover .google-map-iframe {
+  opacity: 0.95;
+  filter: none; /* keep normal colors on hover */
+}

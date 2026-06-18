@@ -1,0 +1,71 @@
+/* Design Tokens & CSS Custom Properties */
+
+@layer theme {
+  :root {
+    /* Color Palette - Red Crab Seafood Color System */
+    --color-bg-primary: #ffffff;
+    /* Main white background */
+    --color-bg-secondary: #e6f2f7;
+    /* Light cyan/blue background */
+    --color-bg-tertiary: #f0f7fa;
+    /* Extra light cyan */
+    --color-bg-navy: #121e3d;
+    /* Deep navy */
+    --color-bg-slate: #354685;
+    /* Slate/medium blue for story */
+
+    --color-primary: #df382b;
+    /* Red Crab Primary Red */
+    --color-primary-rgb: 223, 56, 43;
+    --color-primary-hover: #b8241b;
+    --color-primary-light: rgba(223, 56, 43, 0.1);
+
+    --color-accent: #f1c40f;
+    /* Gold highlight stars */
+    --color-accent-rgb: 241, 196, 15;
+    --color-accent-hover: #d4ac0d;
+
+    --color-text-primary: #121e3d;
+    /* Deep navy for readability on light sections */
+    --color-text-secondary: #4a5568;
+    /* Slate body text */
+    --color-text-muted: #718096;
+    /* Muted body text */
+    --color-text-light: #ffffff;
+    /* White text for dark backgrounds */
+
+    --color-border: rgba(18, 30, 61, 0.08);
+    --color-border-glow: rgba(223, 56, 43, 0.25);
+
+    /* Glassmorphism Styling */
+    --glass-bg: rgba(255, 255, 255, 0.9);
+    --glass-bg-hover: rgba(255, 255, 255, 0.95);
+    --glass-border: rgba(18, 30, 61, 0.06);
+    --glass-shadow: 0 8px 32px 0 rgba(18, 30, 61, 0.05);
+    --glass-blur: blur(12px);
+
+    /* Typography */
+    --font-heading: 'Barlow Condensed', 'Montserrat', sans-serif;
+    --font-body: 'Roboto', 'Inter', system-ui, -apple-system, sans-serif;
+
+    /* Layout & Sizing */
+    --header-height: 80px;
+    --max-width: 1280px;
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 16px;
+    --border-radius-xl: 24px;
+
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-slow: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+
+    /* Z-Indices */
+    --z-back: -1;
+    --z-base: 1;
+    --z-header: 100;
+    --z-overlay: 200;
+    --z-modal: 300;
+  }
+}

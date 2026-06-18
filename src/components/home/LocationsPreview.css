@@ -1,0 +1,133 @@
+/* Locations Preview Section Styles */
+
+.locations-preview {
+  background-color: var(--color-bg-primary);
+  border-top: 1px solid var(--color-border);
+}
+
+.locations-preview-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 3.5rem;
+}
+
+@media (min-width: 768px) {
+  .locations-preview-header {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+  
+  .header-text {
+    max-width: 600px;
+  }
+}
+
+.locations-header-btn {
+  padding: 0.65rem 1.25rem;
+  font-size: 0.9rem;
+  border-radius: var(--border-radius-md);
+  display: inline-flex;
+  gap: 0.5rem;
+}
+
+/* Grid layout */
+.locations-preview-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .locations-preview-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Location Card design */
+.location-preview-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100%;
+}
+
+.loc-card-image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1.6 / 1;
+  overflow: hidden;
+}
+
+.loc-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.location-preview-card:hover .loc-card-img {
+  transform: scale(1.08);
+}
+
+.loc-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(26, 26, 46, 0.85) 0%, rgba(26, 26, 46, 0.05) 80%);
+}
+
+.loc-card-title {
+  position: absolute;
+  bottom: 1rem;
+  left: 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Card Body */
+.loc-card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  flex-grow: 1;
+}
+
+.loc-info-row {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.loc-info-icon {
+  color: var(--color-accent);
+  margin-top: 0.15rem;
+  flex-shrink: 0;
+}
+
+.loc-info-text {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+.loc-card-actions {
+  margin-top: auto; /* Push buttons to bottom */
+  width: 100%;
+}
+
+.btn-sm {
+  padding: 0.6rem 1rem;
+  font-size: 0.85rem;
+}
+
+.w-full {
+  width: 100%;
+}
