@@ -1,6 +1,6 @@
 /* Site Constants & Sample Data */
 
-export const BRAND_NAME = 'SuperCrab TX';
+export const BRAND_NAME = 'Super Crab TX';
 export const BRAND_TAGLINE = 'Premium Cajun Seafood & Juicy Crab';
 
 export const SOCIAL_LINKS = {
@@ -43,76 +43,22 @@ export const POS_PLATFORMS = [
 
 export const LOCATIONS = [
   {
-    id: 'houston-heights',
-    name: 'Houston (The Heights)',
-    address: '1220 N Shepherd Dr, Houston, TX 77008',
-    phone: '(713) 555-0192',
-    email: 'heights@supercrabtx.com',
+    id: 'palmer-hwy',
+    name: 'Super Crab TX',
+    address: '3506 Palmer Hwy, Texas City, TX 77590, USA',
+    phone: '',
+    email: 'info@supercrabtx.com',
     hours: {
-      weekday: '12:00 PM - 10:00 PM',
-      weekend: '11:30 AM - 11:00 PM',
+      weekday: '11:00 AM - 9:45 PM',
+      weekend: '11:00 AM - 9:45 PM',
       raw: [
-        { days: 'Mon - Thu', time: '12:00 PM - 10:00 PM' },
-        { days: 'Fri - Sat', time: '11:30 AM - 11:00 PM' },
-        { days: 'Sun', time: '11:30 AM - 10:00 PM' }
+        { days: 'Mon - Sun', time: '11:00 AM - 9:45 PM' }
       ]
     },
-    googleMapsEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3462.6841793740875!2d-95.41162602377309!3d29.799580475046274!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640c74147ba01ef%3A0xe964f4340d2109e6!2s1220%20N%20Shepherd%20Dr%2C%20Houston%2C%20TX%2077008!5e0!3m2!1sen!2s!4v1718625500000!5m2!1sen!2s',
-    googleMapsLink: 'https://maps.app.goo.gl/houston-heights-demo',
-    posLinks: {
-      square: 'https://squareupsandbox.com/market/supercrabtx-heights',
-      order_online: 'https://order.online/store/supercrabtx-heights',
-      postmates: 'https://postmates.com/merchant/supercrabtx-heights'
-    },
-    image: '/images/location-houston.jpg'
-  },
-  {
-    id: 'austin-downtown',
-    name: 'Austin (Downtown)',
-    address: '601 Congress Ave., Austin, TX 78701',
-    phone: '(512) 555-0143',
-    email: 'austin@supercrabtx.com',
-    hours: {
-      weekday: '12:00 PM - 10:00 PM',
-      weekend: '11:30 AM - 11:00 PM',
-      raw: [
-        { days: 'Mon - Thu', time: '12:00 PM - 10:00 PM' },
-        { days: 'Fri - Sat', time: '11:30 AM - 11:00 PM' },
-        { days: 'Sun', time: '11:30 AM - 10:00 PM' }
-      ]
-    },
-    googleMapsEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3445.98637780076!2d-97.74567222375549!3d30.267383674812392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8644b508ad9e19d7%3A0xe72688b1ccf21345!2s601%20Congress%20Ave.%2C%20Austin%2C%20TX%2078701!5e0!3m2!1sen!2s!4v1718625600000!5m2!1sen!2s',
-    googleMapsLink: 'https://maps.app.goo.gl/austin-downtown-demo',
-    posLinks: {
-      square: 'https://squareupsandbox.com/market/supercrabtx-austin',
-      order_online: 'https://order.online/store/supercrabtx-austin',
-      postmates: 'https://postmates.com/merchant/supercrabtx-austin'
-    },
-    image: '/images/location-austin.jpg'
-  },
-  {
-    id: 'dallas-uptown',
-    name: 'Dallas (Uptown)',
-    address: '2600 McKinney Ave, Dallas, TX 75204',
-    phone: '(214) 555-0177',
-    email: 'dallas@supercrabtx.com',
-    hours: {
-      weekday: '12:00 PM - 10:00 PM',
-      weekend: '11:30 AM - 11:00 PM',
-      raw: [
-        { days: 'Mon - Thu', time: '12:00 PM - 10:00 PM' },
-        { days: 'Fri - Sat', time: '11:30 AM - 11:00 PM' },
-        { days: 'Sun', time: '11:30 AM - 10:00 PM' }
-      ]
-    },
-    googleMapsEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3350.2974492398453!2d-96.80424562365449!3d32.797746773663044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864e9921473fa73f%3A0xe54191fe78a9c362!2s2600%20McKinney%20Ave%2C%20Dallas%2C%20TX%2075204!5e0!3m2!1sen!2s!4v1718625700000!5m2!1sen!2s',
-    googleMapsLink: 'https://maps.app.goo.gl/dallas-uptown-demo',
-    posLinks: {
-      square: 'https://squareupsandbox.com/market/supercrabtx-dallas',
-      order_online: 'https://order.online/store/supercrabtx-dallas',
-      postmates: 'https://postmates.com/merchant/supercrabtx-dallas'
-    },
-    image: '/images/location-dallas.jpg'
+    googleMapsEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3472.932822452818!2d-94.9431872!3d29.3995831!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x863f9da372fffffb%3A0xc665b17b6dc0af4c!2s3506%20Palmer%20Hwy%2C%20Texas%20City%2C%20TX%2077590%2C%20USA!5e0!3m2!1sen!2s!4v1718625500000!5m2!1sen!2s',
+    googleMapsLink: 'https://maps.app.goo.gl/3506PalmerHwy',
+    posLinks: {},
+    image: '/images/restaurant.png'
   }
 ];
 
@@ -129,7 +75,7 @@ export const BOIL_STEPS = {
       { name: 'Cajun Signature', desc: 'Bold, herbal, and Louisiana-spiced' },
       { name: 'Garlic Butter', desc: 'Creamy butter with mountains of minced garlic' },
       { name: 'Lemon Pepper', desc: 'Zesty lemon zest with cracked black pepper' },
-      { name: 'SuperCrab Special', desc: 'The ultimate blend of all three sauces!' }
+      { name: 'Super Crab TX Special', desc: 'The ultimate blend of all three sauces!' }
     ]
   },
   step3: {
@@ -240,7 +186,7 @@ export const MENU_ITEMS = [
   {
     id: 'crab-rangoon',
     category: 'appetizers',
-    name: 'SuperCrab Rangoons (6pcs)',
+    name: 'Super Crab TX Rangoons (6pcs)',
     description: 'Crispy wontons stuffed with cream cheese, crab meat, and green onions.',
     price: '8.99',
     image: '/images/cooked_crab.jpg',
@@ -366,7 +312,7 @@ export const MENU_ITEMS = [
   {
     id: 'crawfish-bloody-mary',
     category: 'drinks',
-    name: 'SuperCrab Bloody Mary',
+    name: 'Super Crab TX Bloody Mary',
     description: 'House recipe spicy bloody mary mix, vodka, garnished with a boiled shrimp and lemon.',
     price: '12.00',
     image: '/images/seafood_spread.jpg',
@@ -391,7 +337,7 @@ export const TESTIMONIALS = [
     name: 'Sarah M.',
     location: 'Houston, TX',
     stars: 5,
-    comment: 'The SuperCrab Special sauce is absolutely life-changing! We got the King Crab and Shrimp boil medium spice. Best crawfish and crab in Texas, hands down.'
+    comment: 'The Super Crab TX Special sauce is absolutely life-changing! We got the King Crab and Shrimp boil medium spice. Best crawfish and crab in Texas, hands down.'
   },
   {
     id: 2,

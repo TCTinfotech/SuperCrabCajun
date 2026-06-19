@@ -13,7 +13,7 @@ import { BRAND_NAME } from '../../utils/constants';
 export default function SEOHead({ title, description, canonicalUrl, schema }) {
   const siteUrl = 'https://supercrabtx.com'; // Production site base URL
   const fullTitle = `${title} | ${BRAND_NAME} - Cajun Seafood Restaurant`;
-  const defaultDesc = 'SuperCrab TX serves the best cajun seafood boil, juicy crab legs, lobster tail, shrimp, and crawfish in Texas. Visit us or order online!';
+  const defaultDesc = 'Super Crab TX serves the best cajun seafood boil, juicy crab legs, lobster tail, shrimp, and crawfish in Texas. Visit us or order online!';
   const metaDescription = description || defaultDesc;
   const pageUrl = canonicalUrl ? `${siteUrl}${canonicalUrl}` : siteUrl;
   const ogImage = `${siteUrl}/logo.jpg`;

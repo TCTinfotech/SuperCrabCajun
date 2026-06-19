@@ -2,7 +2,7 @@
 
 @layer theme {
   :root {
-    /* Color Palette - Red Crab Seafood Color System */
+    /* Color Palette - Super Crab TX Color System */
     --color-bg-primary: #ffffff;
     /* Main white background */
     --color-bg-secondary: #e6f2f7;
@@ -15,7 +15,7 @@
     /* Slate/medium blue for story */
 
     --color-primary: #df382b;
-    /* Red Crab Primary Red */
+    /* Super Crab TX Primary Red */
     --color-primary-rgb: 223, 56, 43;
     --color-primary-hover: #b8241b;
     --color-primary-light: rgba(223, 56, 43, 0.1);

@@ -12,9 +12,9 @@ export default function Specials() {
             <div className="card-bg-overlay" style={{ backgroundImage: `linear-gradient(rgba(18, 30, 61, 0.4), rgba(18, 30, 61, 0.7)), url('/images/takeout_pickup.png')` }} />
             <div className="order-type-content">
               <div className="bag-icon-graphic">🛍️</div>
-              <Link to="/order?type=pickup" className="btn-type-select">
-                <span>Pick-up</span>
-              </Link>
+              <a href="https://order.online/store/super-crab-palmer-hwy-2519187?utm_id=97757_v0_s00_e0_tv0&fbclid=IwY2xjawSiMLRleHRuA2FlbQIxMABicmlkETF3ZHNwWEcwZmhXeUE0S21hc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHvh1dshdA9SIHiYPlSsqGydpM2CXrBo74wV2RZdQknVODcuVEeSSDevaBNUf_aem__1rPImzAoWoAvodEpsUFyA&pickup=true" target="_blank" rel="noopener noreferrer" className="btn-type-select">
+                <span>PICK-UP</span>
+              </a>
             </div>
           </div>
 
@@ -23,9 +23,9 @@ export default function Specials() {
             <div className="card-bg-overlay" style={{ backgroundImage: `linear-gradient(rgba(18, 30, 61, 0.4), rgba(18, 30, 61, 0.7)), url('/images/food_delivery.png')` }} />
             <div className="order-type-content">
               <div className="bag-icon-graphic">🚴</div>
-              <Link to="/order?type=delivery" className="btn-type-select">
-                <span>Delivery</span>
-              </Link>
+              <a href="https://order.online/store/super-crab-palmer-hwy-2519187?utm_id=97757_v0_s00_e0_tv0&fbclid=IwY2xjawSiMLRleHRuA2FlbQIxMABicmlkETF3ZHNwWEcwZmhXeUE0S21hc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHvh1dshdA9SIHiYPlSsqGydpM2CXrBo74wV2RZdQknVODcuVEeSSDevaBNUf_aem__1rPImzAoWoAvodEpsUFyA&delivery=true" target="_blank" rel="noopener noreferrer" className="btn-type-select">
+                <span>DELIVERY</span>
+              </a>
             </div>
           </div>
         </div>

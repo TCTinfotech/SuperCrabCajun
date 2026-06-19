@@ -40,10 +40,10 @@ export default function AboutPreview() {
           </h2>
 
           <p className="preview-story text-white">
-            SuperCrab first opened after our founders fell in love with <Link to="/menu?cat=seafood-boil" className="text-highlight-red">seafood boil</Link>. Our founders realized that they had an opportunity to improve upon the flavor they loved.
+            Super Crab TX first opened after our founders fell in love with <Link to="/menu?cat=seafood-boil" className="text-highlight-red">seafood boil</Link>. Our founders realized that they had an opportunity to improve upon the flavor they loved.
           </p>
           <p className="preview-story text-white">
-            After a year of experimenting with spices and seasonings from all over the world, they finally found the perfect combination that would give SuperCrab its signature flavor...
+            After a year of experimenting with spices and seasonings from all over the world, they finally found the perfect combination that would give Super Crab TX its signature flavor...
           </p>
 
           <div className="preview-links">

@@ -1,4 +1,4 @@
-/* Red Crab Seafood Hero Section Styling */
+/* Super Crab TX Hero Section Styling */
 
 .hero-section {
   position: relative;
@@ -255,14 +255,63 @@
   align-items: center;
 }
 
+.plate-top-wrapper,
+.plate-bottom-wrapper {
+  position: absolute;
+  aspect-ratio: 1;
+  z-index: 2;
+}
+
+.plate-top-wrapper {
+  width: 200px;
+  top: 15%;
+  right: 15%;
+  animation: floatingPlates 7s ease-in-out infinite alternate;
+}
+
+.plate-bottom-wrapper {
+  width: 220px;
+  bottom: 12%;
+  left: 25%;
+  animation: floatingPlates 6s ease-in-out infinite alternate-reverse;
+}
+
+@media (min-width: 640px) {
+  .plate-top-wrapper {
+    width: 280px;
+    top: 10%;
+    right: 12%;
+  }
+
+  .plate-bottom-wrapper {
+    width: 300px;
+    bottom: 10%;
+    left: 20%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .plate-top-wrapper {
+    width: 320px;
+    top: 8%;
+    right: 15%;
+  }
+
+  .plate-bottom-wrapper {
+    width: 340px;
+    bottom: 8%;
+    left: 15%;
+  }
+}
+
 .plate-top,
 .plate-bottom {
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
   border: 8px solid #ffffff;
   overflow: hidden;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-  position: absolute;
-  aspect-ratio: 1;
   transition: transform var(--transition-normal);
 }
 
@@ -271,48 +320,6 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-.plate-top {
-  width: 200px;
-  top: 15%;
-  right: 15%;
-  animation: floatingPlates 7s ease-in-out infinite alternate;
-}
-
-.plate-bottom {
-  width: 220px;
-  bottom: 12%;
-  left: 25%;
-  animation: floatingPlates 6s ease-in-out infinite alternate-reverse;
-}
-
-@media (min-width: 640px) {
-  .plate-top {
-    width: 280px;
-    top: 10%;
-    right: 12%;
-  }
-
-  .plate-bottom {
-    width: 300px;
-    bottom: 10%;
-    left: 20%;
-  }
-}
-
-@media (min-width: 1024px) {
-  .plate-top {
-    width: 320px;
-    top: 8%;
-    right: 15%;
-  }
-
-  .plate-bottom {
-    width: 340px;
-    bottom: 8%;
-    left: 15%;
-  }
 }
 
 .plate-top:hover,
@@ -349,4 +356,35 @@
   100% {
     transform: translateY(-10px);
   }
+}
+
+/* Entry animations for plates */
+@keyframes plateTopEntry {
+  from {
+    opacity: 0;
+    transform: translate(50px, -50px) scale(0.7) rotate(15deg);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+}
+
+@keyframes plateBottomEntry {
+  from {
+    opacity: 0;
+    transform: translate(-50px, 50px) scale(0.7) rotate(-15deg);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+}
+
+.plate-top-animate {
+  animation: plateTopEntry 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.plate-bottom-animate {
+  animation: plateBottomEntry 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }

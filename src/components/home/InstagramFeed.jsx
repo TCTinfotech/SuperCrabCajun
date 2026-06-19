@@ -46,7 +46,7 @@ export default function InstagramFeed() {
             >
               <img 
                 src={post.img} 
-                alt="SuperCrab TX Instagram post" 
+                alt="Super Crab TX Instagram post" 
                 className="insta-img"
                 loading="lazy"
               />

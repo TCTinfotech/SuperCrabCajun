@@ -101,7 +101,7 @@
 
 .btn-type-select:hover {
   background-color: var(--color-primary);
-  /* Red Crab primary red */
+  /* Super Crab TX primary red */
   transform: translateY(-2px);
   box-shadow: 0 10px 25px rgba(223, 56, 43, 0.4);
 }

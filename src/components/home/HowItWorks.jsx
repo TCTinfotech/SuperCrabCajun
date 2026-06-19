@@ -36,10 +36,15 @@ export default function HowItWorks() {
       <div className="container">
         {/* Header */}
         <div className="how-it-works-header reveal">
-          <h2 className="section-title text-center">
-            <span className="subtitle">Build Your Boil</span>
-            <span className="text-gradient">HOW WE MAKE MAGIC HAPPEN</span>
+          <span className="subtitle-elegant">Build Your Boil</span>
+          <h2 className="section-title-clean">
+            HOW WE MAKE MAGIC HAPPEN
           </h2>
+          <div className="section-separator">
+            <span className="separator-line"></span>
+            <span className="separator-icon">🦀</span>
+            <span className="separator-line"></span>
+          </div>
           <p className="section-description">
             Creating the perfect seafood boil is an art. Customize your dining experience in three simple steps.
           </p>
@@ -48,8 +53,8 @@ export default function HowItWorks() {
         {/* Steps Grid */}
         <div className="steps-grid">
           {steps.map((step, idx) => (
-            <div 
-              key={step.num} 
+            <div
+              key={step.num}
               className={`step-card glass-card reveal reveal-delay-${idx + 1}`}
             >
               <div className="step-card-header">
@@ -58,7 +63,7 @@ export default function HowItWorks() {
               </div>
               <h3 className="step-title">{step.title}</h3>
               <p className="step-desc">{step.desc}</p>
-              
+
               <div className="step-options-container">
                 <span className="options-heading">Options include:</span>
                 <div className="step-badge-group">

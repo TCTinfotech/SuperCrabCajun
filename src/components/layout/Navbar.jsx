@@ -28,7 +28,7 @@ export default function Navbar() {
   const navLinks = [
     { path: '/', label: 'Home' },
     { path: '/menu', label: 'Menu' },
-    { path: '/locations', label: 'Locations' },
+    { path: '/locations', label: 'Location' },
     { path: '/about', label: 'About Us' },
     { path: '/events', label: 'Events & Catering' },
     { path: '/contact', label: 'Contact' }
@@ -58,10 +58,10 @@ export default function Navbar() {
 
         {/* Action Button */}
         <div className="navbar-actions">
-          <Link to="/order" className="btn-primary navbar-order-btn btn-glow">
+          <a href="https://order.online/store/super-crab-palmer-hwy-2519187?utm_id=97757_v0_s00_e0_tv0&fbclid=IwY2xjawSiMLRleHRuA2FlbQIxMABicmlkETF3ZHNwWEcwZmhXeUE0S21hc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHvh1dshdA9SIHiYPlSsqGydpM2CXrBo74wV2RZdQknVODcuVEeSSDevaBNUf_aem__1rPImzAoWoAvodEpsUFyA" target="_blank" rel="noopener noreferrer" className="btn-primary navbar-order-btn btn-glow">
             <ShoppingBag size={18} />
             <span>Order Now</span>
-          </Link>
+          </a>
           
           {/* Mobile Menu Toggle */}
           <button
@@ -89,14 +89,16 @@ export default function Navbar() {
               {link.label}
             </NavLink>
           ))}
-          <Link
-            to="/order"
+          <a
+            href="https://order.online/store/super-crab-palmer-hwy-2519187?utm_id=97757_v0_s00_e0_tv0&fbclid=IwY2xjawSiMLRleHRuA2FlbQIxMABicmlkETF3ZHNwWEcwZmhXeUE0S21hc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHvh1dshdA9SIHiYPlSsqGydpM2CXrBo74wV2RZdQknVODcuVEeSSDevaBNUf_aem__1rPImzAoWoAvodEpsUFyA"
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn-primary navbar-mobile-order-btn"
             onClick={closeMenu}
           >
             <ShoppingBag size={20} />
             <span>Order Online</span>
-          </Link>
+          </a>
         </nav>
       </div>
     </header>

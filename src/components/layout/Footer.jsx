@@ -50,7 +50,7 @@ export default function Footer() {
             <ul className="footer-links-list">
               <li><Link to="/menu">Menu</Link></li>
               <li><Link to="/careers">Careers</Link></li>
-              <li><Link to="/locations">Locations</Link></li>
+              <li><Link to="/locations">Location</Link></li>
             </ul>
           </div>
 
@@ -62,23 +62,47 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 4: Anchor Graphic */}
-          <div className="footer-col anchor-graphic-col">
-            <div className="anchor-graphic-wrapper">
-              {/* White Anchor SVG vector */}
-              <svg viewBox="0 0 100 100" className="anchor-svg" fill="none" stroke="#ffffff" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round">
-                {/* Ring */}
-                <circle cx="50" cy="18" r="7" />
-                {/* Vertical shaft */}
-                <line x1="50" y1="25" x2="50" y2="75" />
-                {/* Crossbar */}
-                <line x1="32" y1="38" x2="68" y2="38" />
-                {/* Curved arms */}
-                <path d="M20,60 C25,85 75,85 80,60" />
-                {/* Left/Right points */}
-                <path d="M15,62 L20,60 L25,65" />
-                <path d="M85,62 L80,60 L75,65" />
-              </svg>
+          {/* Column 4: Animated Crab & Shrimp */}
+          <div className="footer-col seafood-graphic-col">
+            <div className="seafood-scene">
+              {/* Crab */}
+              <div className="scene-crab">
+                <svg viewBox="0 0 120 100" className="crab-svg" fill="none">
+                  {/* Body */}
+                  <ellipse cx="60" cy="55" rx="28" ry="22" fill="#df382b" opacity="0.9" />
+                  <ellipse cx="60" cy="55" rx="22" ry="17" fill="#e8564a" />
+                  {/* Eyes */}
+                  <circle cx="50" cy="38" r="5" fill="#df382b" />
+                  <circle cx="70" cy="38" r="5" fill="#df382b" />
+                  <circle cx="50" cy="36" r="3" fill="#ffffff" />
+                  <circle cx="70" cy="36" r="3" fill="#ffffff" />
+                  <circle cx="51" cy="35.5" r="1.5" fill="#1a1a2e" />
+                  <circle cx="71" cy="35.5" r="1.5" fill="#1a1a2e" />
+                  {/* Claws */}
+                  <path d="M32,50 Q18,42 12,48 Q8,52 14,56 Q20,60 32,55" fill="#df382b" stroke="#c42f24" strokeWidth="1" />
+                  <path d="M14,48 Q10,44 8,48" stroke="#c42f24" strokeWidth="2" strokeLinecap="round" />
+                  <path d="M88,50 Q102,42 108,48 Q112,52 106,56 Q100,60 88,55" fill="#df382b" stroke="#c42f24" strokeWidth="1" />
+                  <path d="M106,48 Q110,44 112,48" stroke="#c42f24" strokeWidth="2" strokeLinecap="round" />
+                  {/* Legs */}
+                  <line x1="38" y1="65" x2="25" y2="78" stroke="#df382b" strokeWidth="2.5" strokeLinecap="round" />
+                  <line x1="42" y1="68" x2="30" y2="82" stroke="#df382b" strokeWidth="2.5" strokeLinecap="round" />
+                  <line x1="46" y1="70" x2="36" y2="85" stroke="#df382b" strokeWidth="2.5" strokeLinecap="round" />
+                  <line x1="82" y1="65" x2="95" y2="78" stroke="#df382b" strokeWidth="2.5" strokeLinecap="round" />
+                  <line x1="78" y1="68" x2="90" y2="82" stroke="#df382b" strokeWidth="2.5" strokeLinecap="round" />
+                  <line x1="74" y1="70" x2="84" y2="85" stroke="#df382b" strokeWidth="2.5" strokeLinecap="round" />
+                  {/* Smile */}
+                  <path d="M52,58 Q60,64 68,58" stroke="#c42f24" strokeWidth="1.5" fill="none" strokeLinecap="round" />
+                </svg>
+              </div>
+
+              {/* Bubbles */}
+              <span className="scene-bubble bubble-1"></span>
+              <span className="scene-bubble bubble-2"></span>
+              <span className="scene-bubble bubble-3"></span>
+              <span className="scene-bubble bubble-4"></span>
+
+              {/* Small shrimp */}
+              <div className="scene-shrimp">🦐</div>
             </div>
           </div>
 
@@ -88,7 +112,7 @@ export default function Footer() {
       {/* Bottom Red Copyright Bar */}
       <div className="footer-copyright-strip">
         <div className="container strip-content text-center">
-          <p>&copy; {currentYear} Red Crab Juicy Seafood. All Rights Reserved. <Link to="/privacy">Privacy Policy</Link>. <Link to="/sitemap">Sitemap</Link>.</p>
+          <p>&copy; {currentYear} Super Crab TX. All Rights Reserved. <Link to="/privacy">Privacy Policy</Link>. <Link to="/sitemap">Sitemap</Link>.</p>
         </div>
       </div>
     </footer>

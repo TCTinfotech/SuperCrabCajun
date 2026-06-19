@@ -16,12 +16,10 @@ export default function OrderPage() {
 
   useScrollReveal();
 
-  // Keep state in sync with URL search params
+  // Redirect to DoorDash
   useEffect(() => {
-    if (locationParam && LOCATIONS.find(l => l.id === locationParam)) {
-      setSelectedLocId(locationParam);
-    }
-  }, [locationParam]);
+    window.location.replace("https://order.online/store/super-crab-palmer-hwy-2519187?utm_id=97757_v0_s00_e0_tv0&fbclid=IwY2xjawSiMLRleHRuA2FlbQIxMABicmlkETF3ZHNwWEcwZmhXeUE0S21hc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHvh1dshdA9SIHiYPlSsqGydpM2CXrBo74wV2RZdQknVODcuVEeSSDevaBNUf_aem__1rPImzAoWoAvodEpsUFyA");
+  }, []);
 
   const handleLocationChange = (locId) => {
     setSelectedLocId(locId);
@@ -44,7 +42,7 @@ export default function OrderPage() {
     <div className="order-page">
       <SEOHead 
         title="Order Online" 
-        description="Order SuperCrab TX online. Select your nearest Texas branch (Houston, Austin, Dallas) and order fresh Cajun boils via Square, Postmates or Order.online."
+        description="Order Super Crab TX online. Select your nearest Texas branch (Houston, Austin, Dallas) and order fresh Cajun boils via Square, Postmates or Order.online."
         canonicalUrl="/order"
       />
 

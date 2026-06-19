@@ -55,7 +55,7 @@ export default function EventsPage() {
     <div className="events-page">
       <SEOHead 
         title="Catering & Private Events" 
-        description="Host your next event with SuperCrab TX. We offer crawfish boil catering, VIP crab banquets, corporate setups, and private restaurant rentals."
+        description="Host your next event with Super Crab TX. We offer crawfish boil catering, VIP crab banquets, corporate setups, and private restaurant rentals."
         canonicalUrl="/events"
       />
 

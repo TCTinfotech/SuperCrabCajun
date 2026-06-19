@@ -32,7 +32,7 @@ export default function ContactPage() {
     <div className="contact-page">
       <SEOHead 
         title="Contact Us" 
-        description="Get in touch with SuperCrab TX. Send inquiries about catering services, private dinners, or general feedback. We are here to help!"
+        description="Get in touch with Super Crab TX. Send inquiries about catering services, private dinners, or general feedback. We are here to help!"
         canonicalUrl="/contact"
       />
 
@@ -55,7 +55,7 @@ export default function ContactPage() {
           <div className="contact-info-side reveal">
             <h2>DIRECT CONTACT</h2>
             <p className="info-desc">
-              Have a question about a specific order, lost item, or reservations? Reach out directly to your local SuperCrab TX:
+              Have a question about a specific order, lost item, or reservations? Reach out directly to your local Super Crab TX:
             </p>
 
             <div className="branches-info-list">
@@ -166,7 +166,7 @@ export default function ContactPage() {
             allowFullScreen="" 
             loading="lazy" 
             referrerPolicy="no-referrer-when-downgrade"
-            title="SuperCrab TX Primary Location Map"
+            title="Super Crab TX Primary Location Map"
             className="contact-map-iframe"
           />
         </div>

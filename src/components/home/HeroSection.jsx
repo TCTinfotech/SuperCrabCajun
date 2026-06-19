@@ -1,19 +1,111 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { ShoppingBag } from 'lucide-react';
 import './HeroSection.css';
 
+const SLIDES = [
+  {
+    titleWord1: "BUILD",
+    titleWord2: "YOUR OWN",
+    titleWord3: "BOIL!",
+    titleEmoji: "🍋",
+    buttonText: "ORDER NOW",
+    buttonLink: "https://order.online/store/super-crab-palmer-hwy-2519187?utm_id=97757_v0_s00_e0_tv0&fbclid=IwY2xjawSiMLRleHRuA2FlbQIxMABicmlkETF3ZHNwWEcwZmhXeUE0S21hc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHvh1dshdA9SIHiYPlSsqGydpM2CXrBo74wV2RZdQknVODcuVEeSSDevaBNUf_aem__1rPImzAoWoAvodEpsUFyA",
+    plateTopImg: "/images/seafood_spread.jpg",
+    plateBottomImg: "/images/seafood_boil_close.jpg",
+    floatingBadges: [
+      { text: "🦐", className: "float-shrimp-1" },
+      { text: "🦐", className: "float-shrimp-2" },
+      { text: "🦀", className: "float-claw" }
+    ]
+  },
+  {
+    titleWord1: "FRESH",
+    titleWord2: "CAJUN",
+    titleWord3: "CRAWFISH!",
+    titleEmoji: "🔥",
+    buttonText: "VIEW MENU",
+    buttonLink: "/menu",
+    plateTopImg: "/images/crawfish_close.jpg",
+    plateBottomImg: "/images/crawfish_pile.jpg",
+    floatingBadges: [
+      { text: "🌶️", className: "float-shrimp-1" },
+      { text: "🔥", className: "float-shrimp-2" },
+      { text: "🦞", className: "float-claw" }
+    ]
+  },
+  {
+    titleWord1: "GOURMET",
+    titleWord2: "LOBSTER",
+    titleWord3: "FEAST!",
+    titleEmoji: "🦞",
+    buttonText: "SPECIAL OFFERS",
+    buttonLink: "/menu",
+    plateTopImg: "/images/gourmet_lobster_tray.jpg",
+    plateBottomImg: "/images/crab_legs.jpg",
+    floatingBadges: [
+      { text: "🦀", className: "float-shrimp-1" },
+      { text: "🍋", className: "float-shrimp-2" },
+      { text: "🦐", className: "float-claw" }
+    ]
+  },
+  {
+    titleWord1: "OYSTERS",
+    titleWord2: "ON THE",
+    titleWord3: "HALF SHELL!",
+    titleEmoji: "✨",
+    buttonText: "CONTACT US",
+    buttonLink: "/contact",
+    plateTopImg: "/images/oysters_platter.jpg",
+    plateBottomImg: "/images/blue_crabs.jpg",
+    floatingBadges: [
+      { text: "🦪", className: "float-shrimp-1" },
+      { text: "🍋", className: "float-shrimp-2" },
+      { text: "🌊", className: "float-claw" }
+    ]
+  }
+];
+
 export default function HeroSection() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const autoPlayRef = useRef(null);
+
+  const startAutoPlay = () => {
+    stopAutoPlay();
+    autoPlayRef.current = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % SLIDES.length);
+    }, 6000); // Shift slide every 6 seconds
+  };
+
+  const stopAutoPlay = () => {
+    if (autoPlayRef.current) {
+      clearInterval(autoPlayRef.current);
+    }
+  };
+
+  useEffect(() => {
+    startAutoPlay();
+    return () => stopAutoPlay();
+  }, []);
+
+  const handleDotClick = (index) => {
+    setActiveIndex(index);
+    startAutoPlay(); // Reset autoPlay timer on manual interaction
+  };
+
+  const currentSlide = SLIDES[activeIndex];
+
   return (
     <section className="hero-section">
       {/* Decorative Wave Background */}
       <div className="hero-waves-bg" />
 
       {/* Floating Graphics Column (Left Side Decor) */}
-      <div className="floating-graphics-container">
-        <div className="float-shrimp-1">🦐</div>
-        <div className="float-shrimp-2">🦐</div>
-        <div className="float-claw">🦀</div>
+      <div key={`floating-${activeIndex}`} className="floating-graphics-container">
+        {currentSlide.floatingBadges.map((badge, idx) => (
+          <div key={idx} className={`${badge.className} animate-fade-in`}>
+            {badge.text}
+          </div>
+        ))}
         <div className="float-dash-1" />
         <div className="float-dash-2" />
       </div>
@@ -21,43 +113,56 @@ export default function HeroSection() {
       <div className="container hero-container">
         <div className="hero-grid">
           {/* Left Column: Text & CTA */}
-          <div className="hero-content animate-slide-up">
+          <div key={`content-${activeIndex}`} className="hero-content animate-slide-up">
             <h1 className="hero-title">
-              <span className="hero-word-build">BUILD</span>
-              <span className="hero-word-your-own">YOUR OWN</span>
+              <span className="hero-word-build">{currentSlide.titleWord1}</span>
+              <span className="hero-word-your-own">{currentSlide.titleWord2}</span>
               <span className="hero-word-boil-wrapper">
-                <span className="hero-word-boil">BOIL!</span>
-                <span className="hero-lemon-slice">🍋</span>
+                <span className="hero-word-boil">{currentSlide.titleWord3}</span>
+                <span className="hero-lemon-slice">{currentSlide.titleEmoji}</span>
               </span>
             </h1>
 
             <div className="hero-buttons">
-              <Link to="/order" className="btn-primary btn-lg btn-glow hero-cta-btn">
-                <span>ORDER NOW</span>
-              </Link>
+              {currentSlide.buttonLink.startsWith('http') ? (
+                <a href={currentSlide.buttonLink} target="_blank" rel="noopener noreferrer" className="btn-primary btn-lg btn-glow hero-cta-btn">
+                  <span>{currentSlide.buttonText}</span>
+                </a>
+              ) : (
+                <Link to={currentSlide.buttonLink} className="btn-primary btn-lg btn-glow hero-cta-btn">
+                  <span>{currentSlide.buttonText}</span>
+                </Link>
+              )}
             </div>
 
             {/* Slider Dots */}
             <div className="hero-dots">
-              <span className="dot active" />
-              <span className="dot" />
-              <span className="dot" />
-              <span className="dot" />
+              {SLIDES.map((_, index) => (
+                <span
+                  key={index}
+                  className={`dot ${index === activeIndex ? 'active' : ''}`}
+                  onClick={() => handleDotClick(index)}
+                />
+              ))}
             </div>
           </div>
 
           {/* Right Column: Red Slant + Overlapping Plates */}
-          <div className="hero-visual animate-fade-in">
+          <div className="hero-visual">
             {/* Red Slanted Background Block */}
             <div className="visual-red-slant" />
 
             {/* Overlapping Platters */}
-            <div className="plates-container">
-              <div className="plate-top">
-                <img src="/images/seafood_spread.jpg" alt="Seafood Platter Top" />
+            <div key={`visual-${activeIndex}`} className="plates-container">
+              <div className="plate-top-wrapper">
+                <div className="plate-top plate-top-animate">
+                  <img src={currentSlide.plateTopImg} alt={`Seafood Platter Top ${activeIndex}`} />
+                </div>
               </div>
-              <div className="plate-bottom">
-                <img src="/images/seafood_boil_close.jpg" alt="Seafood Platter Bottom" />
+              <div className="plate-bottom-wrapper">
+                <div className="plate-bottom plate-bottom-animate">
+                  <img src={currentSlide.plateBottomImg} alt={`Seafood Platter Bottom ${activeIndex}`} />
+                </div>
               </div>
             </div>
           </div>

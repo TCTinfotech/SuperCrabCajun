@@ -43,8 +43,8 @@ export default function LocationsPage() {
   return (
     <div className="locations-page">
       <SEOHead 
-        title="Locations & Hours" 
-        description="Visit SuperCrab TX in Houston (The Heights), Austin (Downtown), or Dallas (Uptown). Find addresses, contact phone numbers, hours, and direction details."
+        title="Location & Hours" 
+        description="Visit SuperCrab TX in Texas City. Find address, contact phone number, hours, and direction details."
         canonicalUrl="/locations"
       />
 
@@ -52,9 +52,9 @@ export default function LocationsPage() {
       <section className="locations-hero-banner" style={{ backgroundImage: `linear-gradient(rgba(10, 14, 23, 0.45), rgba(10, 14, 23, 0.8)), url('/images/restaurant.png')` }}>
         <div className="container banner-text reveal">
           <span className="banner-subtitle">Texas Pride</span>
-          <h1 className="banner-title text-gradient">OUR LOCATIONS</h1>
+          <h1 className="banner-title text-gradient">OUR LOCATION</h1>
           <p className="banner-desc">
-            Find address directions, operating schedules, phone lines, and order links for all three Texas locations.
+            Find address directions, operating schedule, phone lines, and order links for our Texas City location.
           </p>
         </div>
       </section>
@@ -111,10 +111,10 @@ export default function LocationsPage() {
 
                 {/* CTAs */}
                 <div className="location-actions">
-                  <Link to={`/order?location=${loc.id}`} className="btn-primary btn-glow">
+                  <a href={loc.posLinks.order_online || "https://order.online/store/super-crab-palmer-hwy-2519187?utm_id=97757_v0_s00_e0_tv0&fbclid=IwY2xjawSiMLRleHRuA2FlbQIxMABicmlkETF3ZHNwWEcwZmhXeUE0S21hc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHvh1dshdA9SIHiYPlSsqGydpM2CXrBo74wV2RZdQknVODcuVEeSSDevaBNUf_aem__1rPImzAoWoAvodEpsUFyA"} target="_blank" rel="noopener noreferrer" className="btn-primary btn-glow">
                     <ShoppingBag size={18} />
                     <span>Order Online</span>
-                  </Link>
+                  </a>
                   
                   <a 
                     href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(loc.address)}`} 

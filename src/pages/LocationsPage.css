@@ -29,7 +29,7 @@
 
 @media (min-width: 1024px) {
   .location-card {
-    grid-template-columns: 1.1fr 1fr;
+    grid-template-columns: 0.8fr 1.2fr;
   }
   
   .location-card.reverse {
