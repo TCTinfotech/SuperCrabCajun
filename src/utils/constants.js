@@ -46,7 +46,7 @@ export const LOCATIONS = [
     id: 'palmer-hwy',
     name: 'Super Crab TX',
     address: '3506 Palmer Hwy, Texas City, TX 77590, USA',
-    phone: '',
+    phone: '(409) 655-5502',
     email: 'info@supercrabtx.com',
     hours: {
       weekday: '11:00 AM - 9:45 PM',

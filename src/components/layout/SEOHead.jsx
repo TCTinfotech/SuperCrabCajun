@@ -25,7 +25,7 @@ export default function SEOHead({ title, description, canonicalUrl, schema }) {
     'name': BRAND_NAME,
     'image': ogImage,
     'url': siteUrl,
-    'telephone': '(713) 555-0192',
+    'telephone': '(409) 655-5502',
     'priceRange': '$$',
     'servesCuisine': 'Cajun Seafood, American',
     'address': {
