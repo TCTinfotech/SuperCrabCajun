@@ -30,7 +30,6 @@ export default function Navbar() {
     { path: '/menu', label: 'Menu' },
     { path: '/locations', label: 'Location' },
     { path: '/about', label: 'About Us' },
-    { path: '/events', label: 'Events & Catering' },
     { path: '/contact', label: 'Contact' }
   ];
 
