@@ -58,7 +58,7 @@ export const LOCATIONS = [
     googleMapsEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3472.932822452818!2d-94.9431872!3d29.3995831!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x863f9da372fffffb%3A0xc665b17b6dc0af4c!2s3506%20Palmer%20Hwy%2C%20Texas%20City%2C%20TX%2077590%2C%20USA!5e0!3m2!1sen!2s!4v1718625500000!5m2!1sen!2s',
     googleMapsLink: 'https://maps.app.goo.gl/3506PalmerHwy',
     posLinks: {},
-    image: '/images/restaurant.png'
+    image: '/images/restaurant.webp'
   }
 ];
 
@@ -92,15 +92,15 @@ export const BOIL_STEPS = {
 };
 
 export const MENU_CATEGORIES = [
-  { id: 'seafood-boil', name: 'SEAFOOD BOILS', subtitle: 'Our Signature Catches - By The Half Pound Or Full Pound', listImages: ['/images/seafood_boil_list_1.jpg', '/images/seafood_boil_list_2.jpg', '/images/seafood_boil_list_3.jpg', '/images/seafood_boil_list_4.jpg', '/images/seafood_boil_list_5.jpg', '/images/seafood_boil_list_6.jpg'] },
-  { id: 'combos', name: 'Combos', subtitle: 'The Ultimate Seafood Experience', listImages: ['/images/combo_1.jpg', '/images/combo_2.jpg', '/images/combo_3_new.jpg', '/images/combo_list_1.jpg', '/images/combo_list_2.jpg', '/images/combo_list_3.jpg'] },
+  { id: 'seafood-boil', name: 'SEAFOOD BOILS', subtitle: 'Our Signature Catches - By The Half Pound Or Full Pound', listImages: ['/images/seafood_boil_list_1.webp', '/images/seafood_boil_list_2.webp', '/images/seafood_boil_list_3.webp', '/images/seafood_boil_list_4.webp', '/images/seafood_boil_list_5.webp', '/images/seafood_boil_list_6.webp'] },
+  { id: 'combos', name: 'Combos', subtitle: 'The Ultimate Seafood Experience', listImages: ['/images/combo_1.webp', '/images/combo_2.webp', '/images/combo_3_new.webp', '/images/combo_list_1.webp', '/images/combo_list_2.webp', '/images/combo_list_3.webp'] },
   { id: 'chicken-wings', name: 'Chicken Wings' },
-  { id: 'fried-baskets', name: 'Fried Basket', subtitle: 'Southern Fried Perfection Served With Cajun Fries', listImages: ['/images/fried_shrimp_basket.jpg', '/images/combo_1.jpg', '/images/combo_3_new.jpg'] },
-  { id: 'po-boys', name: 'Sandwiches - Po Boy', subtitle: 'Hearty Po Boys & Sandwiches (Served with Cajun Fries)', listImages: ['/images/fried_shrimp_basket.jpg', '/images/combo_3_new.jpg', '/images/chicken_wings.jpg'] },
-  { id: 'appetizers', name: 'TEXAS STARTERS', subtitle: 'Delicious Beginnings To Share', listImages: ['/images/oysters_platter.jpg', '/images/chicken_wings.jpg', '/images/gourmet_lobster_tray.jpg'] },
-  { id: 'sides', name: 'Sides & Add-Ons', subtitle: 'Perfect Pairings For Your Seafood Feast', listImages: ['/images/crawfish_pile.jpg', '/images/shrimp_boil.jpg', '/images/combo_4.jpg'] },
-  { id: 'drinks-soda', name: 'Drinks - Soda', listImages: ['/images/pepsi.png', '/images/mist_twist.png', '/images/orange_soda.png'] },
-  { id: 'drinks-non-carbonated', name: 'Drinks - Non-Carbonated', listImages: ['/images/lemonade.png', '/images/apple_juice.png', '/images/ice_tea.png'] },
+  { id: 'fried-baskets', name: 'Fried Basket', subtitle: 'Southern Fried Perfection Served With Cajun Fries', listImages: ['/images/fried_shrimp_basket.webp', '/images/combo_1.webp', '/images/combo_3_new.webp'] },
+  { id: 'po-boys', name: 'Sandwiches - Po Boy', subtitle: 'Hearty Po Boys & Sandwiches (Served with Cajun Fries)', listImages: ['/images/fried_shrimp_basket.webp', '/images/combo_3_new.webp', '/images/chicken_wings.webp'] },
+  { id: 'appetizers', name: 'TEXAS STARTERS', subtitle: 'Delicious Beginnings To Share', listImages: ['/images/oysters_platter.webp', '/images/chicken_wings.webp', '/images/gourmet_lobster_tray.webp'] },
+  { id: 'sides', name: 'Sides & Add-Ons', subtitle: 'Perfect Pairings For Your Seafood Feast', listImages: ['/images/crawfish_pile.webp', '/images/shrimp_boil.webp', '/images/combo_4.webp'] },
+  { id: 'drinks-soda', name: 'Drinks - Soda', listImages: ['/images/pepsi.webp', '/images/mist_twist.webp', '/images/orange_soda.webp'] },
+  { id: 'drinks-non-carbonated', name: 'Drinks - Non-Carbonated', listImages: ['/images/lemonade.webp', '/images/apple_juice.webp', '/images/ice_tea.webp'] },
   { id: 'grilled', name: 'Grilled' }
 ];
 
@@ -112,7 +112,7 @@ export const MENU_ITEMS = [
     name: 'Snow Crab',
     description: 'per pound.',
     price: '38.35',
-    image: '/images/snow_crab.jpg',
+    image: '/images/snow_crab.webp',
     spiceLevel: 0,
     featured: true
   },
@@ -122,7 +122,7 @@ export const MENU_ITEMS = [
     name: 'King Crab legs',
     description: 'Tender king crab legs served with lime wedges and a garnish.',
     price: '83.95',
-    image: '/images/king_crab.jpg',
+    image: '/images/king_crab.webp',
     spiceLevel: 0,
     featured: true
   },
@@ -132,7 +132,7 @@ export const MENU_ITEMS = [
     name: 'Dungeness Crab',
     description: 'Per Pound.',
     price: '39.55',
-    image: '/images/crab_legs.jpg',
+    image: '/images/crab_legs.webp',
     spiceLevel: 0,
     featured: false
   },
@@ -142,7 +142,7 @@ export const MENU_ITEMS = [
     name: 'Shrimp (Head Off)',
     description: '#1 Most liked item. 3/4 lb.',
     price: '20.35',
-    image: '/images/shrimp_boil.jpg',
+    image: '/images/shrimp_boil.webp',
     spiceLevel: 0,
     featured: true
   },
@@ -152,7 +152,7 @@ export const MENU_ITEMS = [
     name: 'Shrimp (Head On)',
     description: 'Per pound. Popular item.',
     price: '20.35',
-    image: '/images/shrimp_boil.jpg',
+    image: '/images/shrimp_boil.webp',
     spiceLevel: 0,
     featured: false
   },
@@ -162,7 +162,7 @@ export const MENU_ITEMS = [
     name: 'Crawfish',
     description: 'Per pound.',
     price: '13.15',
-    image: '/images/crawfish.jpg',
+    image: '/images/crawfish.webp',
     spiceLevel: 0,
     featured: true
   },
@@ -172,7 +172,7 @@ export const MENU_ITEMS = [
     name: 'Mussels',
     description: 'Per pound.',
     price: '16.75',
-    image: '/images/mussels.jpg',
+    image: '/images/mussels.webp',
     spiceLevel: 0,
     featured: false
   },
@@ -182,7 +182,7 @@ export const MENU_ITEMS = [
     name: 'Clams',
     description: 'Per pound.',
     price: '15.50',
-    image: '/images/crawfish_close.jpg',
+    image: '/images/crawfish_close.webp',
     spiceLevel: 0,
     featured: false
   },
@@ -192,7 +192,7 @@ export const MENU_ITEMS = [
     name: 'Lobster Tail',
     description: 'Each.',
     price: '22.75',
-    image: '/images/gourmet_lobster_tray.jpg',
+    image: '/images/gourmet_lobster_tray.webp',
     spiceLevel: 0,
     featured: false
   },
@@ -204,7 +204,7 @@ export const MENU_ITEMS = [
     name: 'Combo 1',
     description: '1 lb. crawfish, 1 lb. mussel, 2 corns, 2 potatoes, 4 sausages.',
     price: '33.55',
-    image: '/images/combo_1.jpg',
+    image: '/images/combo_1.webp',
     spiceLevel: 0,
     featured: true
   },
@@ -214,7 +214,7 @@ export const MENU_ITEMS = [
     name: 'Combo 2',
     description: '1 lb. shrimp (head on) or 3/4 shrimp (head off), 1 lb. clam, 2 corns, 2 potatoes, 4 sausages.',
     price: '37.15',
-    image: '/images/combo_2.jpg',
+    image: '/images/combo_2.webp',
     spiceLevel: 0,
     featured: true
   },
@@ -224,7 +224,7 @@ export const MENU_ITEMS = [
     name: 'Combo 3',
     description: 'Snow crab legs, dungeness crab or king crab legs combo. 1 lb. shrimp (head on) or 3/4 shrimp (head off), 2 corns, 2 potatoes, 4 sausages.',
     price: '56.35',
-    image: '/images/combo_3_new.jpg',
+    image: '/images/combo_3_new.webp',
     spiceLevel: 0,
     featured: true
   },
@@ -234,7 +234,7 @@ export const MENU_ITEMS = [
     name: 'Combo 4',
     description: '1 lobster or 1 dungeness crab, 1 lb. shrimp (head on) or 3/4 lb shrimp (head off), 1lb. crawfish, 1 lb clams, 2 corns, 2 potatoes, 4 sausages.',
     price: '95.95',
-    image: '/images/combo_4_v2.jpg',
+    image: '/images/combo_4_v2.webp',
     spiceLevel: 0,
     featured: false
   },
@@ -244,7 +244,7 @@ export const MENU_ITEMS = [
     name: 'Combo 5',
     description: 'Mixed shrimp options with head on or off, multiple flavor choices including Cajun, Garlic Butter, and more. Spice levels range from mild to fiery hot.',
     price: '37.15',
-    image: '/images/combo_5.jpg',
+    image: '/images/combo_5.webp',
     spiceLevel: 0,
     featured: false
   },
@@ -256,7 +256,7 @@ export const MENU_ITEMS = [
     name: 'Cajun Wings',
     description: 'Spicy. popular item.',
     price: '10.75',
-    image: '/images/chicken_wings.jpg',
+    image: '/images/chicken_wings.webp',
     spiceLevel: 1,
     featured: true
   },
@@ -266,7 +266,7 @@ export const MENU_ITEMS = [
     name: 'Spicy Korean',
     description: 'Spicy.',
     price: '10.75',
-    image: '/images/chicken_wings.jpg',
+    image: '/images/chicken_wings.webp',
     spiceLevel: 2,
     featured: false
   },
@@ -276,7 +276,7 @@ export const MENU_ITEMS = [
     name: 'Lemon Pepper Wings',
     description: 'Juicy chicken wings tossed in tangy lemon pepper seasoning. Available in 6 or 10 pieces.',
     price: '10.75',
-    image: '/images/chicken_wings.jpg',
+    image: '/images/chicken_wings.webp',
     spiceLevel: 0,
     featured: false
   },
@@ -286,7 +286,7 @@ export const MENU_ITEMS = [
     name: 'BBQ Wings',
     description: 'BBQ chicken wings available in 6 or 10 pieces.',
     price: '10.75',
-    image: '/images/chicken_wings.jpg',
+    image: '/images/chicken_wings.webp',
     spiceLevel: 0,
     featured: false
   },
@@ -296,7 +296,7 @@ export const MENU_ITEMS = [
     name: 'Mango Habañero',
     description: 'Spicy.',
     price: '10.75',
-    image: '/images/chicken_wings.jpg',
+    image: '/images/chicken_wings.webp',
     spiceLevel: 1,
     featured: true
   },
@@ -306,7 +306,7 @@ export const MENU_ITEMS = [
     name: 'Hot Wings',
     description: 'Spicy.',
     price: '10.75',
-    image: '/images/chicken_wings.jpg',
+    image: '/images/chicken_wings.webp',
     spiceLevel: 2,
     featured: false
   },
@@ -318,7 +318,7 @@ export const MENU_ITEMS = [
     name: 'Fried Fish',
     description: 'popular item.',
     price: '16.15',
-    image: '/images/fried_fish.jpg',
+    image: '/images/fried_fish.webp',
     spiceLevel: 0,
     featured: true
   },
@@ -328,7 +328,7 @@ export const MENU_ITEMS = [
     name: 'Calamari Rings',
     description: 'Golden-brown breaded calamari rings served with a side of crisp fries.',
     price: '13.75',
-    image: '/images/fried_shrimp_basket.jpg',
+    image: '/images/fried_shrimp_basket.webp',
     spiceLevel: 0,
     featured: false
   },
@@ -338,7 +338,7 @@ export const MENU_ITEMS = [
     name: 'Chicken Tender',
     description: 'Breaded and fried chicken strips, golden brown and crispy.',
     price: '13.75',
-    image: '/images/chicken_tender.jpg',
+    image: '/images/chicken_tender.webp',
     spiceLevel: 0,
     featured: false
   },
@@ -348,7 +348,7 @@ export const MENU_ITEMS = [
     name: 'Fried Oyster',
     description: 'Golden-breaded oysters, deep-fried to a crisp and served in a portion suitable for sharing.',
     price: '17.35',
-    image: '/images/fried_oyster.jpg',
+    image: '/images/fried_oyster.webp',
     spiceLevel: 0,
     featured: false
   },
@@ -358,7 +358,7 @@ export const MENU_ITEMS = [
     name: 'Fried Shrimp',
     description: 'Golden-breaded shrimp, crispy on the outside with a succulent bite, served alongside a portion of golden fries.',
     price: '17.35',
-    image: '/images/fried_shrimp_new.jpg',
+    image: '/images/fried_shrimp_new.webp',
     spiceLevel: 0,
     featured: true
   },
@@ -370,7 +370,7 @@ export const MENU_ITEMS = [
     name: 'Cajun Fish',
     description: 'Topped with mango salsa, rice and salad on the side.',
     price: '16.75',
-    image: '/images/cajun_fish_mango.jpg',
+    image: '/images/cajun_fish_mango.webp',
     spiceLevel: 0,
     featured: false
   },
@@ -380,7 +380,7 @@ export const MENU_ITEMS = [
     name: 'House Grilled Shrimp',
     description: 'Rice and Salad on the side',
     price: '19.15',
-    image: '/images/seafood_tray.jpg',
+    image: '/images/seafood_tray.webp',
     spiceLevel: 0,
     featured: false
   },
@@ -392,7 +392,7 @@ export const MENU_ITEMS = [
     name: 'Oyster Po Boy',
     description: 'Fried oysters on a toasted baguette, typically includes lettuce, tomato, and a spread of Cajun remoulade.',
     price: '16.75',
-    image: '/images/oyster_po_boy.png',
+    image: '/images/oyster_po_boy.webp',
     spiceLevel: 0,
     featured: false
   },
@@ -402,7 +402,7 @@ export const MENU_ITEMS = [
     name: 'Fish Po Boy',
     description: 'Crispy fried fish on a soft roll with lettuce and tomato.',
     price: '16.75',
-    image: '/images/fish_po_boy.png',
+    image: '/images/fish_po_boy.webp',
     spiceLevel: 0,
     featured: true
   },
@@ -412,7 +412,7 @@ export const MENU_ITEMS = [
     name: 'Shrimp Po Boy',
     description: 'Crispy battered shrimp, shredded lettuce, and a zesty sauce nestled in a soft, long roll.',
     price: '16.75',
-    image: '/images/shrimp_po_boy.jpg',
+    image: '/images/shrimp_po_boy.webp',
     spiceLevel: 0,
     featured: true
   },
@@ -424,7 +424,7 @@ export const MENU_ITEMS = [
     name: 'Organic House Green Salad',
     description: 'A medley of organic mixed greens, crisp red cabbage, cherry tomatoes, cucumbers, and topped with crunchy fried onions.',
     price: '6.30',
-    image: '/images/green_salad.png',
+    image: '/images/green_salad.webp',
     spiceLevel: 0,
     featured: false
   },
@@ -434,7 +434,7 @@ export const MENU_ITEMS = [
     name: 'Gumbo',
     description: 'A hearty stew with a mix of seafood, sausage, and vegetables, thickened with a dark roux.',
     price: '8.35',
-    image: '/images/gumbo.png',
+    image: '/images/gumbo.webp',
     spiceLevel: 1,
     featured: true
   },
@@ -444,7 +444,7 @@ export const MENU_ITEMS = [
     name: 'French Fries',
     description: 'Golden strips of potatoes, deep-fried to a crisp texture.',
     price: '5.70',
-    image: '/images/french_fries.jpg',
+    image: '/images/french_fries.webp',
     spiceLevel: 0,
     featured: false
   },
@@ -454,7 +454,7 @@ export const MENU_ITEMS = [
     name: 'Cajun Fries',
     description: 'Spicy. popular item.',
     price: '6.55',
-    image: '/images/cajun_fries.jpg',
+    image: '/images/cajun_fries.webp',
     spiceLevel: 1,
     featured: true
   },
@@ -464,7 +464,7 @@ export const MENU_ITEMS = [
     name: 'Lemon Pepper Fries',
     description: 'Crispy fries seasoned with tangy lemon pepper seasoning.',
     price: '6.55',
-    image: '/images/cajun_fries.jpg',
+    image: '/images/cajun_fries.webp',
     spiceLevel: 0,
     featured: false
   },
@@ -474,7 +474,7 @@ export const MENU_ITEMS = [
     name: 'Sweet Potato Fries',
     description: 'Crispy sweet potato fries with a deep golden hue, offering a naturally sweet and savory bite.',
     price: '6.55',
-    image: '/images/french_fries.jpg',
+    image: '/images/french_fries.webp',
     spiceLevel: 0,
     featured: false
   },
@@ -484,7 +484,7 @@ export const MENU_ITEMS = [
     name: 'Garlic Fries',
     description: 'Crispy fries tossed with minced garlic, fresh parsley, and grated Parmesan cheese.',
     price: '7.10',
-    image: '/images/garlic_fries.jpg',
+    image: '/images/garlic_fries.webp',
     spiceLevel: 0,
     featured: true
   },
@@ -494,7 +494,7 @@ export const MENU_ITEMS = [
     name: 'Baked Oysters (6)',
     description: 'Baked oysters: East coast oysters with cream spinach, bacon, and pecorino romano.',
     price: '17.95',
-    image: '/images/baked_oysters.jpg',
+    image: '/images/baked_oysters.webp',
     spiceLevel: 0,
     featured: true
   },
@@ -504,7 +504,7 @@ export const MENU_ITEMS = [
     name: 'Raw Oysters',
     description: 'The above food item may be served raw or undercooked. Consuming raw or undercooked meats, poultry, seafoods or eggs may increase your risk of food borne illness.',
     price: '16.15',
-    image: '/images/raw_oysters.png',
+    image: '/images/raw_oysters.webp',
     spiceLevel: 0,
     featured: false
   },
@@ -516,7 +516,7 @@ export const MENU_ITEMS = [
     name: 'Corn On the Cob',
     description: 'popular item.',
     price: '1.50',
-    image: '/images/corn_on_cob.png',
+    image: '/images/corn_on_cob.webp',
     spiceLevel: 0,
     featured: false
   },
@@ -526,7 +526,7 @@ export const MENU_ITEMS = [
     name: 'Hard Boiled Egg',
     description: '',
     price: '1.25',
-    image: '/images/hard_boiled_egg.png',
+    image: '/images/hard_boiled_egg.webp',
     spiceLevel: 0,
     featured: false
   },
@@ -536,7 +536,7 @@ export const MENU_ITEMS = [
     name: 'Potatoes',
     description: '3 pieces.',
     price: '3.00',
-    image: '/images/boiled_potatoes.png',
+    image: '/images/boiled_potatoes.webp',
     spiceLevel: 0,
     featured: false
   },
@@ -546,7 +546,7 @@ export const MENU_ITEMS = [
     name: 'Steamed Rice',
     description: 'Steamed white rice, a simple and versatile side.',
     price: '3.00',
-    image: '/images/steamed_rice.jpg',
+    image: '/images/steamed_rice.webp',
     spiceLevel: 0,
     featured: false
   },
@@ -556,7 +556,7 @@ export const MENU_ITEMS = [
     name: 'Seafood Spaghetti',
     description: 'Spaghetti with shrimp and clam.',
     price: '20.35',
-    image: '/images/seafood_spaghetti.png',
+    image: '/images/seafood_spaghetti.webp',
     spiceLevel: 0,
     featured: true
   },
@@ -566,7 +566,7 @@ export const MENU_ITEMS = [
     name: 'Garlic Noodles',
     description: 'popular item.',
     price: '8.35',
-    image: '/images/garlic_noodles.jpg',
+    image: '/images/garlic_noodles.webp',
     spiceLevel: 0,
     featured: true
   },
@@ -576,7 +576,7 @@ export const MENU_ITEMS = [
     name: 'Louisiana Sausages',
     description: '6 pieces.',
     price: '3.90',
-    image: '/images/louisiana_sausages.png',
+    image: '/images/louisiana_sausages.webp',
     spiceLevel: 1,
     featured: true
   },
@@ -586,7 +586,7 @@ export const MENU_ITEMS = [
     name: 'Garlic Bread',
     description: '3 pieces. Popular item.',
     price: '4.75',
-    image: '/images/garlic_bread.jpg',
+    image: '/images/garlic_bread.webp',
     spiceLevel: 0,
     featured: true
   },
@@ -598,7 +598,7 @@ export const MENU_ITEMS = [
     name: 'Pepsi',
     description: 'The bold, refreshing, robust cola',
     price: '3.90',
-    image: '/images/pepsi.png',
+    image: '/images/pepsi.webp',
     spiceLevel: 0,
     featured: false
   },
@@ -608,7 +608,7 @@ export const MENU_ITEMS = [
     name: 'Diet Pepsi',
     description: 'A crisp tasting, refreshing pop of sweet, fizzy bubbles without calories.',
     price: '3.90',
-    image: '/images/pepsi.png',
+    image: '/images/pepsi.webp',
     spiceLevel: 0,
     featured: false
   },
@@ -618,7 +618,7 @@ export const MENU_ITEMS = [
     name: 'Mist Twist',
     description: 'Mist Twist, a lemon-lime flavored soda offering a refreshing and crisp taste with a hint of citrus.',
     price: '3.90',
-    image: '/images/mist_twist.png',
+    image: '/images/mist_twist.webp',
     spiceLevel: 0,
     featured: false
   },
@@ -628,7 +628,7 @@ export const MENU_ITEMS = [
     name: 'Orange Soda',
     description: 'Effervescent Orange Soda: A Sweet, Citrus-Infused Beverage',
     price: '3.90',
-    image: '/images/orange_soda.png',
+    image: '/images/orange_soda.webp',
     spiceLevel: 0,
     featured: false
   },
@@ -638,7 +638,7 @@ export const MENU_ITEMS = [
     name: 'Dr. Pepper',
     description: 'Unique blend of 23 flavors, carbonated soft drink.',
     price: '3.90',
-    image: '/images/dr_pepper.png',
+    image: '/images/dr_pepper.webp',
     spiceLevel: 0,
     featured: false
   },
@@ -650,7 +650,7 @@ export const MENU_ITEMS = [
     name: 'Fruit Punch',
     description: 'A refreshing blend of juicy fruits, perfectly sweetened for a thirst-quenching treat.',
     price: '3.90',
-    image: '/images/fruit_punch.png',
+    image: '/images/fruit_punch.webp',
     spiceLevel: 0,
     featured: false
   },
@@ -660,7 +660,7 @@ export const MENU_ITEMS = [
     name: 'Apple Juice',
     description: 'Freshly squeezed apple nectar, packed with the tart and sweet essence of ripe apples.',
     price: '3.90',
-    image: '/images/apple_juice.png',
+    image: '/images/apple_juice.webp',
     spiceLevel: 0,
     featured: false
   },
@@ -670,7 +670,7 @@ export const MENU_ITEMS = [
     name: 'Orange Juice',
     description: 'Classic citrus refreshment.',
     price: '3.90',
-    image: '/images/orange_soda.png',
+    image: '/images/orange_soda.webp',
     spiceLevel: 0,
     featured: false
   },
@@ -680,7 +680,7 @@ export const MENU_ITEMS = [
     name: 'Lemonade',
     description: 'Refreshing citrus beverage.',
     price: '3.90',
-    image: '/images/lemonade.png',
+    image: '/images/lemonade.webp',
     spiceLevel: 0,
     featured: false
   },
@@ -690,7 +690,7 @@ export const MENU_ITEMS = [
     name: 'Ice Tea',
     description: 'Refreshing chilled tea, perfectly brewed for a revitalizing experience.',
     price: '3.90',
-    image: '/images/ice_tea.png',
+    image: '/images/ice_tea.webp',
     spiceLevel: 0,
     featured: false
   }

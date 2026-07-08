@@ -10,8 +10,8 @@ const SLIDES = [
     titleEmoji: "🍋",
     buttonText: "ORDER NOW",
     buttonLink: "https://order.online/store/super-crab-palmer-hwy-2519187?utm_id=97757_v0_s00_e0_tv0&fbclid=IwY2xjawSiMLRleHRuA2FlbQIxMABicmlkETF3ZHNwWEcwZmhXeUE0S21hc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHvh1dshdA9SIHiYPlSsqGydpM2CXrBo74wV2RZdQknVODcuVEeSSDevaBNUf_aem__1rPImzAoWoAvodEpsUFyA",
-    plateTopImg: "/images/seafood_spread.jpg",
-    plateBottomImg: "/images/seafood_boil_close.jpg",
+    plateTopImg: "/images/seafood_spread.webp",
+    plateBottomImg: "/images/seafood_boil_close.webp",
     floatingBadges: [
       { text: "🦐", className: "float-shrimp-1" },
       { text: "🦐", className: "float-shrimp-2" },
@@ -25,8 +25,8 @@ const SLIDES = [
     titleEmoji: "🔥",
     buttonText: "VIEW MENU",
     buttonLink: "/menu",
-    plateTopImg: "/images/crawfish_close.jpg",
-    plateBottomImg: "/images/crawfish_pile.jpg",
+    plateTopImg: "/images/crawfish_close.webp",
+    plateBottomImg: "/images/crawfish_pile.webp",
     floatingBadges: [
       { text: "🌶️", className: "float-shrimp-1" },
       { text: "🔥", className: "float-shrimp-2" },
@@ -40,8 +40,8 @@ const SLIDES = [
     titleEmoji: "🦞",
     buttonText: "SPECIAL OFFERS",
     buttonLink: "/menu",
-    plateTopImg: "/images/gourmet_lobster_tray.jpg",
-    plateBottomImg: "/images/crab_legs.jpg",
+    plateTopImg: "/images/gourmet_lobster_tray.webp",
+    plateBottomImg: "/images/crab_legs.webp",
     floatingBadges: [
       { text: "🦀", className: "float-shrimp-1" },
       { text: "🍋", className: "float-shrimp-2" },
@@ -55,8 +55,8 @@ const SLIDES = [
     titleEmoji: "✨",
     buttonText: "CONTACT US",
     buttonLink: "/contact",
-    plateTopImg: "/images/oysters_platter.jpg",
-    plateBottomImg: "/images/blue_crabs.jpg",
+    plateTopImg: "/images/oysters_platter.webp",
+    plateBottomImg: "/images/blue_crabs.webp",
     floatingBadges: [
       { text: "🦪", className: "float-shrimp-1" },
       { text: "🍋", className: "float-shrimp-2" },
@@ -156,12 +156,12 @@ export default function HeroSection() {
             <div key={`visual-${activeIndex}`} className="plates-container">
               <div className="plate-top-wrapper">
                 <div className="plate-top plate-top-animate">
-                  <img src={currentSlide.plateTopImg} alt={`Seafood Platter Top ${activeIndex}`} />
+                  <img src={currentSlide.plateTopImg} alt={`Seafood Platter Top ${activeIndex}`} fetchpriority="high" />
                 </div>
               </div>
               <div className="plate-bottom-wrapper">
                 <div className="plate-bottom plate-bottom-animate">
-                  <img src={currentSlide.plateBottomImg} alt={`Seafood Platter Bottom ${activeIndex}`} />
+                  <img src={currentSlide.plateBottomImg} alt={`Seafood Platter Bottom ${activeIndex}`} fetchpriority="high" />
                 </div>
               </div>
             </div>

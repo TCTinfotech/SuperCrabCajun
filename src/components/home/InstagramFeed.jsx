@@ -5,12 +5,12 @@ import './InstagramFeed.css';
 export default function InstagramFeed() {
   // Mock posts data
   const feedPosts = [
-    { id: 1, img: '/images/crawfish_pile.jpg', likes: '1.2k', comments: '84' },
-    { id: 2, img: '/images/oysters_platter.jpg', likes: '948', comments: '53' },
-    { id: 3, img: '/images/chicken_wings.jpg', likes: '1.5k', comments: '120' },
-    { id: 4, img: '/images/cooked_crab.jpg', likes: '870', comments: '41' },
-    { id: 5, img: '/images/shrimp_boil.jpg', likes: '1.1k', comments: '78' },
-    { id: 6, img: '/images/crab_legs.jpg', likes: '2.1k', comments: '194' }
+    { id: 1, img: '/images/crawfish_pile.webp', likes: '1.2k', comments: '84' },
+    { id: 2, img: '/images/oysters_platter.webp', likes: '948', comments: '53' },
+    { id: 3, img: '/images/chicken_wings.webp', likes: '1.5k', comments: '120' },
+    { id: 4, img: '/images/cooked_crab.webp', likes: '870', comments: '41' },
+    { id: 5, img: '/images/shrimp_boil.webp', likes: '1.1k', comments: '78' },
+    { id: 6, img: '/images/crab_legs.webp', likes: '2.1k', comments: '194' }
   ];
 
   return (

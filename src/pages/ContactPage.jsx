@@ -37,7 +37,7 @@ export default function ContactPage() {
       />
 
       {/* Hero Header */}
-      <section className="contact-hero-banner" style={{ backgroundImage: `linear-gradient(rgba(10, 14, 23, 0.45), rgba(10, 14, 23, 0.8)), url('/images/restaurant.png')` }}>
+      <section className="contact-hero-banner" style={{ backgroundImage: `linear-gradient(rgba(10, 14, 23, 0.45), rgba(10, 14, 23, 0.8)), url('/images/restaurant.webp')` }}>
         <div className="container banner-text reveal">
           <span className="banner-subtitle">Get In Touch</span>
           <h1 className="banner-title text-gradient">CONTACT US</h1>

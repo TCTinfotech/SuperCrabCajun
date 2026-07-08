@@ -47,7 +47,7 @@ export default function OrderPage() {
       />
 
       {/* Hero Header */}
-      <section className="order-hero-banner" style={{ backgroundImage: `linear-gradient(rgba(10, 14, 23, 0.45), rgba(10, 14, 23, 0.8)), url('/images/seafood_spread.jpg')` }}>
+      <section className="order-hero-banner" style={{ backgroundImage: `linear-gradient(rgba(10, 14, 23, 0.45), rgba(10, 14, 23, 0.8)), url('/images/seafood_spread.webp')` }}>
         <div className="container banner-text reveal">
           <span className="banner-subtitle">Order Now</span>
           <h1 className="banner-title text-gradient">ONLINE ORDERING</h1>

@@ -35,7 +35,7 @@ export default function AboutPage() {
       />
 
       {/* Hero Header */}
-      <section className="about-hero-banner" style={{ backgroundImage: `linear-gradient(rgba(10, 14, 23, 0.45), rgba(10, 14, 23, 0.8)), url('/images/restaurant.png')` }}>
+      <section className="about-hero-banner" style={{ backgroundImage: `linear-gradient(rgba(10, 14, 23, 0.45), rgba(10, 14, 23, 0.8)), url('/images/restaurant.webp')` }}>
         <div className="container banner-text reveal">
           <span className="banner-subtitle">The Crab house</span>
           <h1 className="banner-title text-gradient">OUR STORY</h1>
@@ -66,7 +66,7 @@ export default function AboutPage() {
           <div className="story-visual-side reveal reveal-delay-1">
             <div className="story-image-card">
               <img 
-                src="/images/seafood_spread.jpg" 
+                src="/images/seafood_spread.webp" 
                 alt="Super Crab TX seafood boil feast"
                 className="about-story-img"
               />
@@ -113,28 +113,28 @@ export default function AboutPage() {
 
           <div className="gallery-grid reveal">
             <div className="gallery-item item-wide">
-              <img src="/images/seafood_spread.jpg" alt="Super Crab TX Spread" />
+              <img src="/images/seafood_spread.webp" alt="Super Crab TX Spread" />
             </div>
             <div className="gallery-item">
-              <img src="/images/crawfish_pile.jpg" alt="Cajun crawfish boil pile" />
+              <img src="/images/crawfish_pile.webp" alt="Cajun crawfish boil pile" />
             </div>
             <div className="gallery-item">
-              <img src="/images/oysters_platter.jpg" alt="Fresh raw oysters on the half shell" />
+              <img src="/images/oysters_platter.webp" alt="Fresh raw oysters on the half shell" />
             </div>
             <div className="gallery-item item-tall">
-              <img src="/images/restaurant.png" alt="Lively dining booth interior" />
+              <img src="/images/restaurant.webp" alt="Lively dining booth interior" />
             </div>
             <div className="gallery-item">
-              <img src="/images/chicken_wings.jpg" alt="Crispy Cajun wings in a basket" />
+              <img src="/images/chicken_wings.webp" alt="Crispy Cajun wings in a basket" />
             </div>
             <div className="gallery-item">
-              <img src="/images/crab_legs.jpg" alt="Garlic butter crab legs close-up" />
+              <img src="/images/crab_legs.webp" alt="Garlic butter crab legs close-up" />
             </div>
             <div className="gallery-item">
-              <img src="/images/seafood_boil_platter_new_1.png" alt="Cajun seafood boil platter" />
+              <img src="/images/seafood_boil_platter_new_1.webp" alt="Cajun seafood boil platter" />
             </div>
             <div className="gallery-item item-wide">
-              <img src="/images/lobster_crab_seafood_feast_new_1.png" alt="Lobster and crab seafood feast" />
+              <img src="/images/lobster_crab_seafood_feast_new_1.webp" alt="Lobster and crab seafood feast" />
             </div>
           </div>
         </div>

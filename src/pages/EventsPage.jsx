@@ -60,7 +60,7 @@ export default function EventsPage() {
       />
 
       {/* Hero Header */}
-      <section className="events-hero-banner" style={{ backgroundImage: `linear-gradient(rgba(10, 14, 23, 0.45), rgba(10, 14, 23, 0.8)), url('/images/restaurant.png')` }}>
+      <section className="events-hero-banner" style={{ backgroundImage: `linear-gradient(rgba(10, 14, 23, 0.45), rgba(10, 14, 23, 0.8)), url('/images/restaurant.webp')` }}>
         <div className="container banner-text reveal">
           <span className="banner-subtitle">Catering Services</span>
           <h1 className="banner-title text-gradient">EVENTS & CATERING</h1>
