@@ -246,27 +246,27 @@
 .step-badge-group {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.55rem;
+  column-gap: 1.25rem;
+  row-gap: 0.65rem;
 }
 
-.step-badge-seafood {
-  font-size: 0.8rem;
+.step-badge {
+  font-family: inherit;
+  font-size: 0.95rem;
   font-weight: 600;
-  padding: 0.45rem 0.9rem;
-  background-color: #fef9e7; /* Warm light yellow background */
-  border: 1px solid #f9e79f; /* Gold border */
-  color: #b7950b; /* Dark gold text */
-  border-radius: 30px;
-  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  box-shadow: 0 2px 4px rgba(241, 196, 15, 0.05);
+  color: #121e3d; /* Dark navy color from the original screenshot */
+  text-decoration: none;
+  display: inline-block;
+  transition: color var(--transition-fast), opacity var(--transition-fast);
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  background: transparent;
 }
 
-.step-badge-seafood:hover {
-  transform: scale(1.08) translateY(-2px);
-  background-color: #f1c40f;
-  border-color: #f1c40f;
-  color: #ffffff;
-  box-shadow: 0 5px 15px rgba(241, 196, 15, 0.35);
+.step-badge:hover {
+  color: var(--color-primary);
+  opacity: 0.85;
 }
 
 /* Step 2 Options */

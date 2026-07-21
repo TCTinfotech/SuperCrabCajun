@@ -39,26 +39,17 @@ export default function Footer() {
               <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer" className="social-red-icon" aria-label="Instagram">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
               </a>
-              <a href={SOCIAL_LINKS.youtube || "https://youtube.com"} target="_blank" rel="noopener noreferrer" className="social-red-icon" aria-label="Youtube">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.107C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.388.511a3.002 3.002 0 0 0-2.11 2.107C0 8.021 0 12 0 12s0 3.979.502 5.837a3.001 3.001 0 0 0 2.11 2.107C4.495 20.455 12 20.455 12 20.455s7.505 0 9.388-.511a3.002 3.002 0 0 0 2.11-2.107C24 15.979 24 12 24 12s0-3.979-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" /></svg>
+              <a href={SOCIAL_LINKS.tiktok} target="_blank" rel="noopener noreferrer" className="social-red-icon" aria-label="TikTok">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743l-.002-.001.002.001a2.895 2.895 0 0 1 3.183-4.51v-3.5a6.329 6.329 0 0 0-5.394 10.692 6.33 6.33 0 0 0 10.857-4.424V8.687a8.182 8.182 0 0 0 4.773 1.526V6.79a4.831 4.831 0 0 1-1.003-.104z"/></svg>
               </a>
             </div>
           </div>
 
-          {/* Column 2 & 3: Middle Links list */}
-          <div className="footer-col links-col-1">
+          {/* Column 2: Middle Links list */}
+          <div className="footer-col links-col">
             <ul className="footer-links-list">
               <li><Link to="/menu">Menu</Link></li>
-              <li><Link to="/careers">Careers</Link></li>
-              <li><Link to="/locations">Location</Link></li>
-            </ul>
-          </div>
-
-          <div className="footer-col links-col-2">
-            <ul className="footer-links-list">
-              <li><Link to="/blogs">Blogs</Link></li>
               <li><Link to="/contact">Contact Us</Link></li>
-              <li><Link to="/privacy">Privacy Policy</Link></li>
             </ul>
           </div>
 
@@ -112,7 +103,7 @@ export default function Footer() {
       {/* Bottom Red Copyright Bar */}
       <div className="footer-copyright-strip">
         <div className="container strip-content text-center">
-          <p>&copy; {currentYear} Super Crab TX. All Rights Reserved. <Link to="/privacy">Privacy Policy</Link>. <Link to="/sitemap">Sitemap</Link>.</p>
+          <p>&copy; {currentYear} Super Crab TX. All Rights Reserved. <Link to="/sitemap">Sitemap</Link>.</p>
         </div>
       </div>
     </footer>

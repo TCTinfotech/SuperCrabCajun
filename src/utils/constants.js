@@ -5,9 +5,9 @@ export const BRAND_TAGLINE = 'Premium Cajun Seafood & Juicy Crab';
 
 export const SOCIAL_LINKS = {
   instagram: 'https://www.instagram.com/supercrabtx/',
-  facebook: 'https://facebook.com/supercrabtx',
+  facebook: 'https://www.facebook.com/SuperCrab?mibextid=wwXIfr&rdid=pMiIIRKJinwGHLEv&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1GXmRGFdXz%2F%3Fmibextid%3DwwXIfr#',
   twitter: 'https://twitter.com/supercrabtx',
-  tiktok: 'https://tiktok.com/@supercrabtx'
+  tiktok: 'https://www.tiktok.com/@supercrabtx?_r=1&_d=secCgYIASAHKAESPgo8yWeZ3Z3Qaxi6VpvfywCmD4ZE2u%2FUEQ4X5bU2i3FEKf2w8yH1nOlZ2r4EMNUMmcE23epKY2wU86qk9PLVGgA%3D&_svg=3&checksum=e4cb3aa36fa7ef6faf569f50337535002dadc19ea737f3f2dc0221d15c5b4f9a&item_author_type=2&panel_source_v2=share_panel&reflow_sign_scene=7&rgssign=8.1.uqITtOBCOQw4_TtX14PN_w&sec_uid=MS4wLjABAAAAhnumkyINLKvWvt0eL3C2J0X4VCJB3OvIql-4fp4oZWs8CD8CPT_-GCZZVEgqkX2h&sec_user_id=MS4wLjABAAAAJTsBsuFlFcyKfti-tFH-mseVKmNjQNlgGMYELxBC-1xc0CRXqePvztT8-M-9aSYq&share_app_id=1233&share_author_id=7641770909477553166&share_enter_from=others_homepage&share_link_id=A2A02EED-70BB-4556-9C95-6341406DF9E7&share_region=US&share_scene=1&sharer_language=en&social_share_type=5&source=h5_m&timestamp=1783993110&tt_from=copy&u_code=d04mcljc4k5a63&ug_btm=b6880%2Cb5836&user_id=6557218652314583041&utm_campaign=client_share&utm_medium=ios&utm_source=copy&fbclid=IwY2xjawTMOQRleHRuA2FlbQIxMABicmlkETFQbkhDenY2YzE4ZUNDTzFnc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHu3DV_sL0fD2LEZeduxjnsEnRIxCQjRHxvnu1VFsti-761wrhInjzebULhZf_aem_u74Nv2WOI5q9kwut_qC7kg'
 };
 
 export const POS_PLATFORMS = [
@@ -58,7 +58,7 @@ export const LOCATIONS = [
     googleMapsEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3472.932822452818!2d-94.9431872!3d29.3995831!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x863f9da372fffffb%3A0xc665b17b6dc0af4c!2s3506%20Palmer%20Hwy%2C%20Texas%20City%2C%20TX%2077590%2C%20USA!5e0!3m2!1sen!2s!4v1718625500000!5m2!1sen!2s',
     googleMapsLink: 'https://maps.app.goo.gl/3506PalmerHwy',
     posLinks: {},
-    image: '/images/restaurant.webp'
+    image: '/images/restaurant_heb.jpg'
   }
 ];
 
@@ -66,7 +66,7 @@ export const BOIL_STEPS = {
   step1: {
     title: 'Pick Your Seafood',
     description: 'Sold by the pound. Placed in a steam bag with corn and potato.',
-    options: ['King Crab Legs', 'Snow Crab Legs', 'Lobster Tail', 'Shrimp (Head-on/off)', 'Crawfish', 'Clams', 'Green Mussels']
+    options: ['King Crab Legs', 'Snow Crab', 'Dungeness Crab', 'Shrimp (Head Off)', 'Shrimp (Head On)', 'Crawfish', 'Mussels', 'Clams', 'Lobster Tail']
   },
   step2: {
     title: 'Choose Your Sauce',

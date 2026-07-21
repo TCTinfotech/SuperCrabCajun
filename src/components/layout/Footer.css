@@ -45,14 +45,24 @@
 
 @media (min-width: 640px) {
   .footer-columns-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1.2fr 1fr;
+    align-items: flex-start;
   }
 }
 
 @media (min-width: 1024px) {
   .footer-columns-grid {
-    grid-template-columns: 2fr 1fr 1fr 1.5fr;
-    gap: 1.5rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    align-items: center;
+  }
+  
+  .links-col {
+    align-items: center;
+  }
+  
+  .links-col .footer-links-list {
+    align-items: flex-start; /* Center the list block but left-align the text items relative to each other */
   }
 }
 

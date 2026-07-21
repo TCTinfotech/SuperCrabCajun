@@ -7,7 +7,6 @@ import FeaturedMenu from '../components/home/FeaturedMenu';
 import Specials from '../components/home/Specials';
 import Testimonials from '../components/home/Testimonials';
 import LocationsPreview from '../components/home/LocationsPreview';
-import Newsletter from '../components/home/Newsletter';
 import InstagramFeed from '../components/home/InstagramFeed';
 import { useScrollReveal } from '../utils/scrollReveal';
 
@@ -31,7 +30,6 @@ export default function HomePage() {
       <Specials />
       <Testimonials />
       <LocationsPreview />
-      <Newsletter />
       <InstagramFeed />
     </>
   );

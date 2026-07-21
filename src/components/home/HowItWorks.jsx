@@ -1,7 +1,20 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Sparkles, Flame, HelpCircle } from 'lucide-react';
 import { BOIL_STEPS } from '../../utils/constants';
 import './HowItWorks.css';
+
+const SEAFOOD_ITEM_MAPPING = {
+  'King Crab Legs': 'king-crab',
+  'Snow Crab': 'snow-crab',
+  'Dungeness Crab': 'dungeness-crab',
+  'Shrimp (Head Off)': 'shrimp-head-off',
+  'Shrimp (Head On)': 'shrimp-head-on',
+  'Crawfish': 'crawfish',
+  'Mussels': 'mussels',
+  'Clams': 'clams',
+  'Lobster Tail': 'lobster-tail'
+};
 
 export default function HowItWorks() {
   const steps = [
@@ -52,28 +65,46 @@ export default function HowItWorks() {
 
         {/* Steps Grid */}
         <div className="steps-grid">
-          {steps.map((step, idx) => (
-            <div
-              key={step.num}
-              className={`step-card glass-card reveal reveal-delay-${idx + 1}`}
-            >
-              <div className="step-card-header">
-                <span className="step-number">{step.num}</span>
-                <div className="step-icon-container">{step.icon}</div>
-              </div>
-              <h3 className="step-title">{step.title}</h3>
-              <p className="step-desc">{step.desc}</p>
+          {steps.map((step, idx) => {
+            return (
+              <div
+                key={step.num}
+                className={`step-card glass-card reveal reveal-delay-${idx + 1}`}
+              >
+                <div className="step-card-header">
+                  <span className="step-number">{step.num}</span>
+                  <div className="step-icon-container">{step.icon}</div>
+                </div>
+                <h3 className="step-title">{step.title}</h3>
+                <p className="step-desc">{step.desc}</p>
 
-              <div className="step-options-container">
-                <span className="options-heading">Options include:</span>
-                <div className="step-badge-group">
-                  {step.options.map((opt) => (
-                    <span key={opt} className="step-badge">{opt}</span>
-                  ))}
+                <div className="step-options-container">
+                  <span className="options-heading">Options include:</span>
+                  <div className="step-badge-group">
+                    {step.options.map((opt) => {
+                      let url = '/menu?cat=seafood-boil';
+                      if (idx === 0) {
+                        const itemId = SEAFOOD_ITEM_MAPPING[opt];
+                        if (itemId) {
+                          url = `/menu?cat=seafood-boil&item=${itemId}`;
+                        }
+                      }
+                      
+                      return (
+                        <Link 
+                          key={opt} 
+                          to={url} 
+                          className="step-badge"
+                        >
+                          {opt}
+                        </Link>
+                      );
+                    })}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

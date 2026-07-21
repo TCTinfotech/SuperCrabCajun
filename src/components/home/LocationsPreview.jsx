@@ -35,7 +35,7 @@ export default function LocationsPreview() {
             {/* Card Image */}
             <div className="loc-card-image-wrapper">
               <img 
-                src="/images/storefront_new.webp" 
+                src={LOCATIONS[0].image} 
                 alt={LOCATIONS[0].name}
                 className="loc-card-img"
                 loading="lazy"
@@ -79,7 +79,7 @@ export default function LocationsPreview() {
             <img src="/images/loc/1.webp" alt="Super Crab Atmosphere" className="collage-img img-1" loading="lazy" />
             <img src="/images/loc/2.webp" alt="Super Crab Interior" className="collage-img img-2" loading="lazy" />
             <img src="/images/loc/4.webp" alt="Super Crab Drinks" className="collage-img img-4" loading="lazy" />
-            <img src="/images/loc/3_new.webp" alt="Super Crab Food" className="collage-img img-3" loading="lazy" />
+            <img src="/images/seafood_feast_group.jpg" alt="Super Crab Seafood Feast" className="collage-img img-3" loading="lazy" />
           </div>
 
         </div>

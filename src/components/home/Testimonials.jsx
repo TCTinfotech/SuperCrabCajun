@@ -6,24 +6,27 @@ export default function Testimonials() {
   const reviews = [
     {
       id: 1,
-      name: 'Sarah B.',
+      name: 'Mutha Rod',
       stars: 5,
       image: '/images/avatar_sarah.webp',
-      comment: 'Had an amazing time at Super Crab TX! The seafood boil was flavorful, fresh, and perfectly seasoned. The staff was friendly, the atmosphere lively, and portions generous. A must-visit for seafood lovers!'
+      comment: 'My go to place for seafood boils! Husband and I finally found our place after SEVERAL trips around Houston. We always get our boils with their House Special Sauce in Mild. We usually spend $100 for 3 people. I think it’s totally worth it. Staff are very nice and accommodating!',
+      link: 'https://maps.app.goo.gl/gwWpZj6Yz4uH5AcY9'
     },
     {
       id: 2,
-      name: 'David S.',
+      name: 'Elisha Ybarra',
       stars: 5,
       image: '/images/avatar_david.webp',
-      comment: 'Exceptional seafood experience at Super Crab TX! The flavors were outstanding, and the freshness of the seafood was top-notch. The staff was welcoming, and the lively atmosphere added to the enjoyment. Definitely a go-to spot for a delightful seafood treat!'
+      comment: 'Amazing service! Amazing food, the sauce was so good and our food was delivered by robot! Loved the vibe even with the WIFI being out they still invited us in with open arms with other ways to pay and that’s top tier to me! Will definitely be back 10/10',
+      link: 'https://maps.app.goo.gl/JhE1fE8d3rfNm2S89'
     },
     {
       id: 3,
-      name: 'William M.',
+      name: 'Trino Sowell',
       stars: 5,
       image: '/images/avatar_william.webp',
-      comment: 'Just had an incredible seafood feast at Super Crab TX! The flavors were on point, the staff was friendly, and the atmosphere was vibrant. Generous portions and a perfect spot for a seafood night out.'
+      comment: 'This seafood was great. The flavor was everything you will be looking for. I got a seafood boil. I choose house sauce and 1 notch from the hottest. When I say it was delicious 😋 I mean it. I spoke with the owner of the restaurant as well to give him his flowers. They even have the robot 🤖 bring your food out which is really cool. This is now my number one seafood spot.',
+      link: 'https://maps.app.goo.gl/pNVTx4jRgnAKmykB8'
     }
   ];
 
@@ -50,19 +53,26 @@ export default function Testimonials() {
           <div className="testimonials-grid">
             {reviews.map((r) => (
               <div key={r.id} className="testimonial-card">
-                <div className="testimonial-avatar">
-                  <img src={r.image} alt={r.name} />
-                </div>
-                <p className="testimonial-text">{r.comment}</p>
+                <a 
+                  href={r.link} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="testimonial-card-content-link"
+                >
+                  <div className="testimonial-avatar">
+                    <img src={r.image} alt={r.name} />
+                  </div>
+                  <p className="testimonial-text">{r.comment}</p>
 
-                {/* Rating stars */}
-                <div className="star-rating justify-center">
-                  {[...Array(r.stars)].map((_, i) => (
-                    <Star key={i} size={16} fill="var(--color-accent)" color="var(--color-accent)" />
-                  ))}
-                </div>
+                  {/* Rating stars */}
+                  <div className="star-rating justify-center">
+                    {[...Array(r.stars)].map((_, i) => (
+                      <Star key={i} size={16} fill="var(--color-accent)" color="var(--color-accent)" />
+                    ))}
+                  </div>
 
-                <h4 className="author-name text-center">{r.name}</h4>
+                  <h4 className="author-name text-center">{r.name}</h4>
+                </a>
               </div>
             ))}
           </div>

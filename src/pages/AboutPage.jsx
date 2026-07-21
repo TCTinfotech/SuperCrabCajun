@@ -122,7 +122,7 @@ export default function AboutPage() {
               <img src="/images/oysters_platter.webp" alt="Fresh raw oysters on the half shell" />
             </div>
             <div className="gallery-item item-tall">
-              <img src="/images/restaurant.webp" alt="Lively dining booth interior" />
+              <img src="/images/seafood_boil_close.webp" alt="Close-up Cajun seafood boil" />
             </div>
             <div className="gallery-item">
               <img src="/images/chicken_wings.webp" alt="Crispy Cajun wings in a basket" />
@@ -135,6 +135,9 @@ export default function AboutPage() {
             </div>
             <div className="gallery-item item-wide">
               <img src="/images/lobster_crab_seafood_feast_new_1.webp" alt="Lobster and crab seafood feast" />
+            </div>
+            <div className="gallery-item">
+              <img src="/images/baked_oysters.webp" alt="Delicious baked oysters" />
             </div>
           </div>
         </div>

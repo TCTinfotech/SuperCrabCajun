@@ -1,17 +1,39 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useSearchParams } from 'react-router-dom';
 import { ChevronDown, ChevronUp, MapPin, LayoutGrid, List } from 'lucide-react';
 import SEOHead from '../components/layout/SEOHead';
-import { MENU_CATEGORIES, MENU_ITEMS } from '../utils/constants';
+import { MENU_CATEGORIES, MENU_ITEMS, BOIL_STEPS } from '../utils/constants';
 import './MenuPage.css';
 
 export default function MenuPage() {
-  const [openSection, setOpenSection] = useState(MENU_CATEGORIES[0]?.id || null);
+  const [searchParams] = useSearchParams();
+  const catParam = searchParams.get('cat');
+  const itemParam = searchParams.get('item');
+
+  const [openSection, setOpenSection] = useState(catParam || MENU_CATEGORIES[0]?.id || null);
   const [viewMode, setViewMode] = useState('list');
 
   const toggleSection = (sectionId) => {
     setOpenSection(openSection === sectionId ? null : sectionId);
   };
+
+  useEffect(() => {
+    if (catParam) {
+      setOpenSection(catParam);
+    }
+  }, [catParam]);
+
+  useEffect(() => {
+    if (itemParam) {
+      const timer = setTimeout(() => {
+        const element = document.getElementById(itemParam);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }, 300);
+      return () => clearTimeout(timer);
+    }
+  }, [itemParam, openSection, viewMode]);
 
   return (
     <div className="menu-page">
@@ -49,40 +71,33 @@ export default function MenuPage() {
             {/* Step 1 */}
             <div className="step-navy-card">
               <h3 className="card-step-num">STEP 1</h3>
-              <h4 className="card-step-title">PICK YOUR CATCH</h4>
+              <h4 className="card-step-title">{BOIL_STEPS.step1.title.toUpperCase()}</h4>
               <ul className="card-step-list">
-                <li>SNOW CRAB</li>
-                <li>SHRIMP (HEAD-OFF)</li>
-                <li>SHRIMP (HEAD-ON)</li>
-                <li>CRAWFISH</li>
-                <li>CLAMS</li>
-                <li>MUSSELS</li>
-                <li>LOBSTER TAIL</li>
+                {BOIL_STEPS.step1.options.map((opt) => (
+                  <li key={opt}>{opt.toUpperCase()}</li>
+                ))}
               </ul>
             </div>
 
             {/* Step 2 */}
             <div className="step-navy-card">
               <h3 className="card-step-num">STEP 2</h3>
-              <h4 className="card-step-title">THROW IN THE SAUCE</h4>
+              <h4 className="card-step-title">{BOIL_STEPS.step2.title.toUpperCase()}</h4>
               <ul className="card-step-list">
-                <li>CAJUN</li>
-                <li>LEMON PEPPER</li>
-                <li>GARLIC BUTTER</li>
-                <li>JUICY SPECIAL (ALL OF THE ABOVE)</li>
+                {BOIL_STEPS.step2.options.map((opt) => (
+                  <li key={opt.name}>{opt.name.toUpperCase()}</li>
+                ))}
               </ul>
             </div>
 
             {/* Step 3 */}
             <div className="step-navy-card">
               <h3 className="card-step-num">STEP 3</h3>
-              <h4 className="card-step-title">LET'S GET SPICY</h4>
+              <h4 className="card-step-title">{BOIL_STEPS.step3.title.toUpperCase()}</h4>
               <ul className="card-step-list">
-                <li>NO SPICE</li>
-                <li>MILD</li>
-                <li>MEDIUM</li>
-                <li>HOT</li>
-                <li>EXTRA HOT</li>
+                {BOIL_STEPS.step3.options.map((opt) => (
+                  <li key={opt.name}>{opt.name.toUpperCase()}</li>
+                ))}
               </ul>
             </div>
           </div>
@@ -159,13 +174,37 @@ export default function MenuPage() {
                             <>
                               <div className="panel-columns-grid">
                                 <ul className="panel-list-col">
-                                  {col1.map(item => <li key={item.id}>• {item.name.toUpperCase()}</li>)}
+                                  {col1.map(item => (
+                                    <li 
+                                      key={item.id} 
+                                      id={item.id}
+                                      className={itemParam === item.id ? 'highlighted-menu-item' : ''}
+                                    >
+                                      • {item.name.toUpperCase()}
+                                    </li>
+                                  ))}
                                 </ul>
                                 <ul className="panel-list-col">
-                                  {col2.map(item => <li key={item.id}>• {item.name.toUpperCase()}</li>)}
+                                  {col2.map(item => (
+                                    <li 
+                                      key={item.id} 
+                                      id={item.id}
+                                      className={itemParam === item.id ? 'highlighted-menu-item' : ''}
+                                    >
+                                      • {item.name.toUpperCase()}
+                                    </li>
+                                  ))}
                                 </ul>
                                 <ul className="panel-list-col">
-                                  {col3.map(item => <li key={item.id}>• {item.name.toUpperCase()}</li>)}
+                                  {col3.map(item => (
+                                    <li 
+                                      key={item.id} 
+                                      id={item.id}
+                                      className={itemParam === item.id ? 'highlighted-menu-item' : ''}
+                                    >
+                                      • {item.name.toUpperCase()}
+                                    </li>
+                                  ))}
                                 </ul>
                               </div>
                               
@@ -184,7 +223,11 @@ export default function MenuPage() {
                       ) : (
                         <div className="menu-items-grid">
                           {itemsInCategory.map(item => (
-                            <div key={item.id} className="menu-item-card">
+                            <div 
+                              key={item.id} 
+                              id={item.id}
+                              className={`menu-item-card ${itemParam === item.id ? 'highlighted-menu-item' : ''}`}
+                            >
                               <div className="menu-item-info">
                                 <h4 className="menu-item-name">{item.name}</h4>
                                 <p className="menu-item-desc">{item.description}</p>

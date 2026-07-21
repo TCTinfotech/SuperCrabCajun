@@ -537,3 +537,48 @@
   height: 100%;
   object-fit: cover;
 }
+
+/* Highlighted Menu Item Animations */
+@keyframes menuHighlightPulse {
+  0% {
+    background-color: transparent;
+  }
+  30% {
+    background-color: rgba(241, 196, 15, 0.25);
+    transform: scale(1.03);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+.highlighted-menu-item {
+  animation: menuHighlightPulse 2s ease-in-out infinite;
+  border-radius: 4px;
+  padding: 2px 6px;
+  color: var(--color-accent) !important;
+  font-weight: 800;
+  display: inline-block;
+  transform-origin: left;
+}
+
+@keyframes cardHighlightPulse {
+  0% {
+    box-shadow: 0 4px 15px rgba(18, 30, 61, 0.04);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+  30% {
+    box-shadow: 0 0 20px rgba(241, 196, 15, 0.5);
+    border-color: #f1c40f;
+    transform: scale(1.02);
+  }
+  100% {
+    box-shadow: 0 4px 15px rgba(18, 30, 61, 0.04);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+div.menu-item-card.highlighted-menu-item {
+  animation: cardHighlightPulse 2.5s ease-in-out infinite;
+  background-color: rgba(241, 196, 15, 0.08) !important;
+}
