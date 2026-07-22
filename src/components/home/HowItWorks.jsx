@@ -5,12 +5,18 @@ import { BOIL_STEPS } from '../../utils/constants';
 import './HowItWorks.css';
 
 const SEAFOOD_ITEM_MAPPING = {
+  'Lobster': 'lobster-tail',
+  'Dungeness Crab': 'dungeness-crab',
   'King Crab Legs': 'king-crab',
   'Snow Crab': 'snow-crab',
-  'Dungeness Crab': 'dungeness-crab',
+  'Snow Crab Legs': 'snow-crab',
   'Shrimp (Head Off)': 'shrimp-head-off',
+  'Shrimp (Head off)': 'shrimp-head-off',
   'Shrimp (Head On)': 'shrimp-head-on',
+  'Shrimp (Head on)': 'shrimp-head-on',
   'Crawfish': 'crawfish',
+  'Crawfish (Seasonal)': 'crawfish',
+  'Crawfish (Frozen)': 'crawfish',
   'Mussels': 'mussels',
   'Clams': 'clams',
   'Lobster Tail': 'lobster-tail'
@@ -36,7 +42,7 @@ export default function HowItWorks() {
       num: '03',
       title: BOIL_STEPS.step3.title,
       desc: BOIL_STEPS.step3.description,
-      options: BOIL_STEPS.step3.options.map(opt => `${opt.name} (${'🌶️'.repeat(opt.spice)})`),
+      options: BOIL_STEPS.step3.options.map(opt => opt.spice > 0 ? `${opt.name} (${'🌶️'.repeat(opt.spice)})` : opt.name),
       icon: <Flame size={28} className="step-icon-svg" />
     }
   ];

@@ -103,7 +103,7 @@ export default function Footer() {
       {/* Bottom Red Copyright Bar */}
       <div className="footer-copyright-strip">
         <div className="container strip-content text-center">
-          <p>&copy; {currentYear} Super Crab TX. All Rights Reserved. <Link to="/sitemap">Sitemap</Link>.</p>
+          <p>&copy; {currentYear} Super Crab TX. All Rights Reserved.</p>
         </div>
       </div>
     </footer>

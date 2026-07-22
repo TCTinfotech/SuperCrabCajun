@@ -66,27 +66,41 @@ export const BOIL_STEPS = {
   step1: {
     title: 'Pick Your Seafood',
     description: 'Sold by the pound. Placed in a steam bag with corn and potato.',
-    options: ['King Crab Legs', 'Snow Crab', 'Dungeness Crab', 'Shrimp (Head Off)', 'Shrimp (Head On)', 'Crawfish', 'Mussels', 'Clams', 'Lobster Tail']
+    options: [
+      'Lobster',
+      'Dungeness Crab',
+      'King Crab Legs',
+      'Snow Crab Legs',
+      'Crawfish (Seasonal)',
+      'Crawfish (Frozen)',
+      'Shrimp (Head on)',
+      'Shrimp (Head off)',
+      'Mussels',
+      'Clams',
+      'Lobster Tail'
+    ]
   },
   step2: {
-    title: 'Choose Your Sauce',
+    title: 'Choose a Seasoning',
     description: 'Coated in our signature flavor recipes made fresh daily.',
     options: [
-      { name: 'Cajun Signature', desc: 'Bold, herbal, and Louisiana-spiced' },
-      { name: 'Garlic Butter', desc: 'Creamy butter with mountains of minced garlic' },
+      { name: 'Louisiana Flavor', desc: 'Authentic Creole & Louisiana seasonings' },
+      { name: 'Original Cajun', desc: 'Bold, herbal, and traditional Cajun recipe' },
       { name: 'Lemon Pepper', desc: 'Zesty lemon zest with cracked black pepper' },
-      { name: 'Super Crab TX Special', desc: 'The ultimate blend of all three sauces!' }
+      { name: 'Garlic Butter', desc: 'Creamy butter with mountains of minced garlic' },
+      { name: 'House Special Sauce', desc: 'Our signature blend of all favorite flavors!' }
     ]
   },
   step3: {
     title: 'Select Your Spice Level',
-    description: 'From mild flavor-focused to explosive fiery heat.',
+    description: 'From non-spicy to fiery extra hot.',
     options: [
-      { name: 'Mild', spice: 1, desc: 'Zero heat, full flavor' },
-      { name: 'Medium', spice: 2, desc: 'A nice warm kick' },
-      { name: 'Hot', spice: 3, desc: 'Standard Louisiana boil heat' },
-      { name: 'Super Hot', spice: 4, desc: 'Burn baby burn' },
-      { name: 'Volcano', spice: 5, desc: 'Caution: Extreme heat! 🌶️🌶️🌶️' }
+      { name: 'Not Spicy', spice: 0, desc: 'Zero heat, pure delicious flavor' },
+      { name: 'Little Bit', spice: 1, desc: 'A gentle touch of warmth' },
+      { name: 'Mild', spice: 2, desc: 'Mild flavor-focused kick' },
+      { name: 'Medium', spice: 3, desc: 'Balanced medium heat' },
+      { name: 'Dynamite X', spice: 4, desc: 'Fiery hot heat!' },
+      { name: 'On Fire XX', spice: 5, desc: 'Caution: Extreme heat! 🔥🔥' }
     ]
   }
 };
