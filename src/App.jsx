@@ -11,6 +11,7 @@ import AboutPage from './pages/AboutPage';
 import EventsPage from './pages/EventsPage';
 import ContactPage from './pages/ContactPage';
 import OrderPage from './pages/OrderPage';
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 
 export default function App() {
   return (
@@ -26,6 +27,7 @@ export default function App() {
             <Route path="events" element={<EventsPage />} />
             <Route path="contact" element={<ContactPage />} />
             <Route path="order" element={<OrderPage />} />
+            <Route path="privacy-policy" element={<PrivacyPolicyPage />} />
             {/* Fallback routing */}
             <Route path="*" element={<HomePage />} />
           </Route>

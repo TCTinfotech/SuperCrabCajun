@@ -110,12 +110,13 @@ export const MENU_CATEGORIES = [
   { id: 'combos', name: 'Combos', subtitle: 'The Ultimate Seafood Experience', listImages: ['/images/combo_1.webp', '/images/combo_2.webp', '/images/combo_3_new.webp', '/images/combo_list_1.webp', '/images/combo_list_2.webp', '/images/combo_list_3.webp'] },
   { id: 'chicken-wings', name: 'Chicken Wings' },
   { id: 'fried-baskets', name: 'Fried Basket', subtitle: 'Southern Fried Perfection Served With Cajun Fries', listImages: ['/images/fried_shrimp_basket.webp', '/images/combo_1.webp', '/images/combo_3_new.webp'] },
-  { id: 'po-boys', name: 'Sandwiches - Po Boy', subtitle: 'Hearty Po Boys & Sandwiches (Served with Cajun Fries)', listImages: ['/images/fried_shrimp_basket.webp', '/images/combo_3_new.webp', '/images/chicken_wings.webp'] },
+  { id: 'po-boys', name: 'Sandwiches - Po Boy', subtitle: 'Hearty Po Boys & Sandwiches (Served with Cajun Fries)', listImages: ['/images/shrimp_po_boy.webp', '/images/oyster_po_boy.webp', '/images/fish_po_boy.webp'] },
   { id: 'appetizers', name: 'TEXAS STARTERS', subtitle: 'Delicious Beginnings To Share', listImages: ['/images/oysters_platter.webp', '/images/chicken_wings.webp', '/images/gourmet_lobster_tray.webp'] },
   { id: 'sides', name: 'Sides & Add-Ons', subtitle: 'Perfect Pairings For Your Seafood Feast', listImages: ['/images/crawfish_pile.webp', '/images/shrimp_boil.webp', '/images/combo_4.webp'] },
   { id: 'drinks-soda', name: 'Drinks - Soda', listImages: ['/images/pepsi.webp', '/images/mist_twist.webp', '/images/orange_soda.webp'] },
   { id: 'drinks-non-carbonated', name: 'Drinks - Non-Carbonated', listImages: ['/images/lemonade.webp', '/images/apple_juice.webp', '/images/ice_tea.webp'] },
-  { id: 'grilled', name: 'Grilled' }
+  { id: 'grilled', name: 'Grilled' },
+  { id: 'dessert', name: 'Dessert', subtitle: 'Sweet Cajun Treats & Delights', listImages: ['/images/dessert.webp'] }
 ];
 
 export const MENU_ITEMS = [
@@ -707,6 +708,18 @@ export const MENU_ITEMS = [
     image: '/images/ice_tea.webp',
     spiceLevel: 0,
     featured: false
+  },
+
+  // Dessert
+  {
+    id: 'beignets',
+    category: 'dessert',
+    name: 'New Orleans Beignets',
+    description: 'Warm, golden fried pastries heavily dusted with powdered sugar and served with a chocolate dipping sauce.',
+    price: '7.95',
+    image: '/images/dessert.webp',
+    spiceLevel: 0,
+    featured: true
   }
 ];
 

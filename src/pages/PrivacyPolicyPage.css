@@ -1,0 +1,226 @@
+/* Privacy Policy Page CSS */
+
+.privacy-policy-page {
+  background-color: var(--color-bg-navy);
+  color: var(--color-text-main);
+  min-height: 100vh;
+}
+
+/* Banner Styling */
+.privacy-hero-banner {
+  position: relative;
+  padding: 5rem 1rem 4rem;
+  background: linear-gradient(135deg, #0a0e17 0%, #151c2e 50%, #0d121d 100%);
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.privacy-hero-banner .banner-subtitle {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-primary);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.privacy-hero-banner .banner-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 900;
+  margin-bottom: 1rem;
+  letter-spacing: 0.02em;
+}
+
+.privacy-hero-banner .banner-desc {
+  max-width: 650px;
+  margin: 0 auto 1.5rem;
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+.policy-dates-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 1.25rem;
+  background: rgba(223, 56, 43, 0.1);
+  border: 1px solid rgba(223, 56, 43, 0.3);
+  border-radius: 50px;
+  font-size: 0.9rem;
+  color: #ffffff;
+}
+
+.date-divider {
+  color: var(--color-primary);
+}
+
+/* Content Container */
+.privacy-container {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.privacy-card {
+  padding: 2.25rem;
+  border-radius: 16px;
+  background: rgba(21, 28, 46, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  transition: transform var(--transition-normal), border-color var(--transition-normal);
+}
+
+.privacy-card:hover {
+  border-color: rgba(223, 56, 43, 0.3);
+  transform: translateY(-2px);
+}
+
+.privacy-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 1rem;
+}
+
+.privacy-card-header .card-icon {
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.privacy-card-header h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+.privacy-intro-text {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--color-text-muted);
+}
+
+.privacy-link {
+  color: var(--color-primary);
+  text-decoration: underline;
+  word-break: break-all;
+  transition: opacity var(--transition-fast);
+}
+
+.privacy-link:hover {
+  opacity: 0.85;
+}
+
+.privacy-card p {
+  line-height: 1.7;
+  color: var(--color-text-muted);
+  margin-bottom: 1rem;
+}
+
+.privacy-card p:last-child {
+  margin-bottom: 0;
+}
+
+.policy-subgroup {
+  margin-top: 1.5rem;
+}
+
+.policy-subgroup h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.policy-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 0.75rem;
+  margin-bottom: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.policy-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+.policy-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0.35rem;
+  top: 0;
+  color: var(--color-primary);
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.policy-list li strong {
+  color: #ffffff;
+}
+
+/* Contact Details Grid */
+.contact-details-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .contact-details-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.contact-detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1rem;
+  background: rgba(10, 14, 23, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+.contact-detail-item.full-width {
+  grid-column: 1 / -1;
+}
+
+.detail-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.detail-value {
+  font-size: 1rem;
+  color: #ffffff;
+  word-break: break-word;
+}
+
+.detail-value a {
+  color: #ffffff;
+  text-decoration: underline;
+  transition: color var(--transition-fast);
+}
+
+.detail-value a:hover {
+  color: var(--color-primary);
+}
