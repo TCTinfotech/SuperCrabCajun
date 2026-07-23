@@ -19,7 +19,11 @@ export default function MenuPage() {
 
   useEffect(() => {
     if (catParam) {
-      setOpenSection(catParam);
+      if (catParam === 'drinks') {
+        setOpenSection('drinks-soda');
+      } else {
+        setOpenSection(catParam);
+      }
     }
   }, [catParam]);
 

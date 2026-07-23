@@ -9,7 +9,7 @@ export default function FeaturedMenu() {
     { id: 'fried-baskets', name: 'Something Fried', image: '/images/fried_shrimp_basket.webp' },
     { id: 'po-boys', name: 'Po Boys', image: '/images/shrimp_po_boy.webp' },
     { id: 'sides', name: 'Sides', image: '/images/crawfish_close.webp' },
-    { id: 'dessert', name: 'Dessert', image: '/images/dessert.webp' }
+    { id: 'drinks-soda', name: 'Drinks', image: '/images/lemonade.webp' }
   ];
 
   return (
