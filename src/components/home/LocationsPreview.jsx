@@ -76,10 +76,10 @@ export default function LocationsPreview() {
 
           {/* Right Side Visual Collage */}
           <div className="locations-preview-collage reveal reveal-delay-1">
-            <img src="/images/loc/1.webp" alt="Super Crab Atmosphere" className="collage-img img-1" loading="lazy" />
-            <img src="/images/loc/2.webp" alt="Super Crab Interior" className="collage-img img-2" loading="lazy" />
-            <img src="/images/loc/4.webp" alt="Super Crab Drinks" className="collage-img img-4" loading="lazy" />
-            <img src="/images/seafood_feast_group.jpg" alt="Super Crab Seafood Feast" className="collage-img img-3" loading="lazy" />
+            <img src="/images/location_1.webp" alt="Super Crab Atmosphere" className="collage-img img-1" loading="lazy" />
+            <img src="/images/location_2.webp" alt="Super Crab Interior" className="collage-img img-2" loading="lazy" />
+            <img src="/images/location_4.webp" alt="Super Crab Drinks" className="collage-img img-4" loading="lazy" />
+            <img src="/images/seafood_feast_group.webp" alt="Super Crab Seafood Feast" className="collage-img img-3" loading="lazy" />
           </div>
 
         </div>

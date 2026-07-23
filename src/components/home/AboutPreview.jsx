@@ -26,7 +26,7 @@ export default function AboutPreview() {
         <div className="about-preview-image-side reveal">
           <div className="rotated-image-wrapper">
             <img
-              src="/images/restaurant_interior.jpg"
+              src="/images/restaurant_interior.webp"
               alt="How We Started"
               className="preview-img"
             />
