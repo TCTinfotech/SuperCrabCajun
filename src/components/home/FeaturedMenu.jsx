@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { DOORDASH_ORDER_URL } from '../../utils/constants';
 import './FeaturedMenu.css';
 
 export default function FeaturedMenu() {
@@ -34,9 +34,14 @@ export default function FeaturedMenu() {
               <div className="card-body">
                 <h3 className="card-title text-center">{cat.name}</h3>
                 <div className="card-footer-row justify-center">
-                  <Link to={`/menu?cat=${cat.id}`} className="btn-card-order-outline">
+                  <a 
+                    href={DOORDASH_ORDER_URL} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="btn-card-order-outline"
+                  >
                     <span>Order Now</span>
-                  </Link>
+                  </a>
                 </div>
               </div>
             </article>

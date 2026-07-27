@@ -8,7 +8,7 @@ export default function InstagramFeed() {
     { id: 1, img: '/images/crawfish_pile.webp', likes: '1.2k', comments: '84', link: SOCIAL_LINKS.instagram },
     { id: 2, img: '/images/oysters_platter.webp', likes: '948', comments: '53', link: SOCIAL_LINKS.facebook },
     { id: 3, img: '/images/chicken_wings.webp', likes: '1.5k', comments: '120', link: SOCIAL_LINKS.tiktok },
-    { id: 4, img: '/images/cooked_crab.webp', likes: '870', comments: '41', link: SOCIAL_LINKS.instagram },
+    { id: 4, img: '/images/lobster_crab_seafood_feast_new_1.webp', likes: '1.8k', comments: '142', link: SOCIAL_LINKS.instagram },
     { id: 5, img: '/images/shrimp_boil.webp', likes: '1.1k', comments: '78', link: SOCIAL_LINKS.facebook },
     { id: 6, img: '/images/crab_legs.webp', likes: '2.1k', comments: '194', link: SOCIAL_LINKS.tiktok }
   ];
@@ -20,7 +20,7 @@ export default function InstagramFeed() {
         {/* Header */}
         <div className="instagram-header reveal">
           <h2 className="section-title">
-            <span className="subtitle">Social Feed</span>
+            <span className="subtitle d-block">Social Feed</span>
             <span className="text-gradient d-block">FOLLOW US ON SOCIAL MEDIA</span>
           </h2>
 

@@ -302,7 +302,34 @@
   transition: color var(--transition-fast);
 }
 
-.panel-list-col li:hover {
+.list-item-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.list-item-bullet-name {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #ffffff;
+}
+
+.list-item-price-tag {
+  font-weight: 700;
+  color: #f7a048; /* Warm orange highlight for price */
+  font-size: 0.95rem;
+}
+
+.list-item-subdesc {
+  font-size: 0.88rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0.25rem 0 0.5rem 0.85rem;
+  line-height: 1.4;
+}
+
+.panel-list-col li:hover .list-item-bullet-name {
   color: var(--color-primary);
 }
 

@@ -3,6 +3,8 @@
 export const BRAND_NAME = 'Super Crab TX';
 export const BRAND_TAGLINE = 'Premium Cajun Seafood & Juicy Crab';
 
+export const DOORDASH_ORDER_URL = 'https://order.online/store/super-crab-palmer-hwy-2519187?utm_id=97757_v0_s00_e0_tv0&fbclid=IwY2xjawSiMLRleHRuA2FlbQIxMABicmlkETF3ZHNwWEcwZmhXeUE0S21hc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHvh1dshdA9SIHiYPlSsqGydpM2CXrBo74wV2RZdQknVODcuVEeSSDevaBNUf_aem__1rPImzAoWoAvodEpsUFyA';
+
 export const SOCIAL_LINKS = {
   instagram: 'https://www.instagram.com/supercrabtx/',
   facebook: 'https://www.facebook.com/SuperCrab?mibextid=wwXIfr&rdid=pMiIIRKJinwGHLEv&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1GXmRGFdXz%2F%3Fmibextid%3DwwXIfr#',
@@ -106,7 +108,7 @@ export const BOIL_STEPS = {
 };
 
 export const MENU_CATEGORIES = [
-  { id: 'seafood-boil', name: 'SEAFOOD BOILS', subtitle: 'Our Signature Catches - By The Half Pound Or Full Pound', listImages: ['/images/seafood_boil_list_1.webp', '/images/seafood_boil_list_2.webp', '/images/seafood_boil_list_3.webp', '/images/seafood_boil_list_4.webp', '/images/seafood_boil_list_5.webp', '/images/seafood_boil_list_6.webp'] },
+  { id: 'seafood-boil', name: 'SEAFOOD BOILS', subtitle: 'Our Signature Catches - By The Half Pound Or Full Pound', listImages: ['/images/seafood_boil_list_1.webp', '/images/seafood_boil_list_2.webp', '/images/seafood_boil_list_3.webp', '/images/seafood_boil_list_4.webp', '/images/crab_legs.webp', '/images/shrimp_boil.webp'] },
   { id: 'combos', name: 'Combos', subtitle: 'The Ultimate Seafood Experience', listImages: ['/images/combo_1.webp', '/images/combo_2.webp', '/images/combo_3_new.webp', '/images/combo_list_1.webp', '/images/combo_list_2.webp', '/images/combo_list_3.webp'] },
   { id: 'chicken-wings', name: 'Chicken Wings' },
   { id: 'fried-baskets', name: 'Fried Basket', subtitle: 'Southern Fried Perfection Served With Cajun Fries', listImages: ['/images/fried_shrimp_basket.webp', '/images/combo_1.webp', '/images/combo_3_new.webp'] },
@@ -115,8 +117,7 @@ export const MENU_CATEGORIES = [
   { id: 'sides', name: 'Sides & Add-Ons', subtitle: 'Perfect Pairings For Your Seafood Feast', listImages: ['/images/crawfish_pile.webp', '/images/shrimp_boil.webp', '/images/combo_4.webp'] },
   { id: 'drinks-soda', name: 'Drinks - Soda', listImages: ['/images/pepsi.webp', '/images/mist_twist.webp', '/images/orange_soda.webp'] },
   { id: 'drinks-non-carbonated', name: 'Drinks - Non-Carbonated', listImages: ['/images/lemonade.webp', '/images/apple_juice.webp', '/images/ice_tea.webp'] },
-  { id: 'grilled', name: 'Grilled' },
-  { id: 'dessert', name: 'Dessert', subtitle: 'Sweet Cajun Treats & Delights', listImages: ['/images/dessert.webp'] }
+  { id: 'grilled', name: 'Grilled' }
 ];
 
 export const MENU_ITEMS = [
@@ -247,8 +248,8 @@ export const MENU_ITEMS = [
     id: 'combo-4',
     category: 'combos',
     name: 'Combo 4',
-    description: '1 lobster or 1 dungeness crab, 1 lb. shrimp (head on) or 3/4 lb shrimp (head off), 1lb. crawfish, 1 lb clams, 2 corns, 2 potatoes, 4 sausages.',
-    price: '95.95',
+    description: '1 lobster or 1 dungeness crab, 1 lb. shrimp (head on) or 3/4 lb shrimp (head off), 1 lb. crawfish, 1 lb. clams, 2 corns, 2 potatoes, 4 sausages.',
+    price: '107.95',
     image: '/images/combo_4_v2.webp',
     spiceLevel: 0,
     featured: false
@@ -708,18 +709,6 @@ export const MENU_ITEMS = [
     image: '/images/ice_tea.webp',
     spiceLevel: 0,
     featured: false
-  },
-
-  // Dessert
-  {
-    id: 'beignets',
-    category: 'dessert',
-    name: 'New Orleans Beignets',
-    description: 'Warm, golden fried pastries heavily dusted with powdered sugar and served with a chocolate dipping sauce.',
-    price: '7.95',
-    image: '/images/dessert.webp',
-    spiceLevel: 0,
-    featured: true
   }
 ];
 

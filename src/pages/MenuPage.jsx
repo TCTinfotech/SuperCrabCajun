@@ -57,7 +57,7 @@ export default function MenuPage() {
         </div>
 
         <div className="container banner-text animate-slide-up">
-          <h1 className="banner-title">OUR MENU</h1>
+          <h1 className="banner-title">GET DOWN & MESSY !</h1>
           <div className="banner-title-line" />
           <p className="banner-desc">
             Louisiana soul, Texas heat. At Super Crab TX, every seafood boil is a celebration — snow crab, crawfish, shrimp, and lobster tail, smothered in our signature Cajun sauces and seasoned to perfection.
@@ -184,7 +184,13 @@ export default function MenuPage() {
                                       id={item.id}
                                       className={itemParam === item.id ? 'highlighted-menu-item' : ''}
                                     >
-                                      • {item.name.toUpperCase()}
+                                      <div className="list-item-title-row">
+                                        <span className="list-item-bullet-name">• {item.name.toUpperCase()}</span>
+                                        {item.price && <span className="list-item-price-tag">${item.price}</span>}
+                                      </div>
+                                      {item.description && (
+                                        <p className="list-item-subdesc">{item.description}</p>
+                                      )}
                                     </li>
                                   ))}
                                 </ul>
@@ -195,7 +201,13 @@ export default function MenuPage() {
                                       id={item.id}
                                       className={itemParam === item.id ? 'highlighted-menu-item' : ''}
                                     >
-                                      • {item.name.toUpperCase()}
+                                      <div className="list-item-title-row">
+                                        <span className="list-item-bullet-name">• {item.name.toUpperCase()}</span>
+                                        {item.price && <span className="list-item-price-tag">${item.price}</span>}
+                                      </div>
+                                      {item.description && (
+                                        <p className="list-item-subdesc">{item.description}</p>
+                                      )}
                                     </li>
                                   ))}
                                 </ul>
@@ -206,7 +218,13 @@ export default function MenuPage() {
                                       id={item.id}
                                       className={itemParam === item.id ? 'highlighted-menu-item' : ''}
                                     >
-                                      • {item.name.toUpperCase()}
+                                      <div className="list-item-title-row">
+                                        <span className="list-item-bullet-name">• {item.name.toUpperCase()}</span>
+                                        {item.price && <span className="list-item-price-tag">${item.price}</span>}
+                                      </div>
+                                      {item.description && (
+                                        <p className="list-item-subdesc">{item.description}</p>
+                                      )}
                                     </li>
                                   ))}
                                 </ul>
