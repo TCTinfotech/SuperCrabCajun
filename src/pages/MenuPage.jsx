@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import { ChevronDown, ChevronUp, MapPin, LayoutGrid, List } from 'lucide-react';
+import { ChevronDown, ChevronUp, MapPin } from 'lucide-react';
 import SEOHead from '../components/layout/SEOHead';
 import { MENU_CATEGORIES, MENU_ITEMS, BOIL_STEPS } from '../utils/constants';
 import './MenuPage.css';
@@ -11,7 +11,6 @@ export default function MenuPage() {
   const itemParam = searchParams.get('item');
 
   const [openSection, setOpenSection] = useState(catParam || MENU_CATEGORIES[0]?.id || null);
-  const [viewMode, setViewMode] = useState('list');
 
   const toggleSection = (sectionId) => {
     setOpenSection(openSection === sectionId ? null : sectionId);
@@ -37,7 +36,7 @@ export default function MenuPage() {
       }, 300);
       return () => clearTimeout(timer);
     }
-  }, [itemParam, openSection, viewMode]);
+  }, [itemParam, openSection]);
 
   return (
     <div className="menu-page">
@@ -111,23 +110,6 @@ export default function MenuPage() {
       {/* Accordions List */}
       <section className="menu-accordions-section">
         <div className="container">
-          <div className="view-mode-toggle-container">
-            <span className="view-mode-label">View Menu As:</span>
-            <div className="view-mode-buttons">
-              <button 
-                className={`view-mode-btn ${viewMode === 'list' ? 'active' : ''}`}
-                onClick={() => setViewMode('list')}
-              >
-                <List size={18} /> List
-              </button>
-              <button 
-                className={`view-mode-btn ${viewMode === 'grid' ? 'active' : ''}`}
-                onClick={() => setViewMode('grid')}
-              >
-                <LayoutGrid size={18} /> Grid
-              </button>
-            </div>
-          </div>
           <div className="accordions-container">
             {MENU_CATEGORIES.map((category) => {
               const isOpen = openSection === category.id;
@@ -154,112 +136,25 @@ export default function MenuPage() {
                         <p className="panel-subtitle">{category.subtitle}</p>
                       )}
                       
-                      {viewMode === 'list' ? (
-                        (() => {
-                          const chunkSize = Math.ceil(itemsInCategory.length / 3) || 1;
-                          const col1 = itemsInCategory.slice(0, chunkSize);
-                          const col2 = itemsInCategory.slice(chunkSize, chunkSize * 2);
-                          const col3 = itemsInCategory.slice(chunkSize * 2);
-
-                          let displayImages = [];
-                          if (category.listImages && category.listImages.length > 0) {
-                            displayImages = category.listImages.map((src, i) => ({ id: `cat-img-${i}`, image: src, name: `${category.name} featured` }));
-                          } else {
-                            displayImages = itemsInCategory.filter(item => item.featured && item.image);
-                            if (displayImages.length < 3) {
-                              const otherImages = itemsInCategory.filter(item => !item.featured && item.image);
-                              displayImages = [...displayImages, ...otherImages].slice(0, 3);
-                            } else {
-                              displayImages = displayImages.slice(0, 3);
-                            }
-                          }
-
-                          return (
-                            <>
-                              <div className="panel-columns-grid">
-                                <ul className="panel-list-col">
-                                  {col1.map(item => (
-                                    <li 
-                                      key={item.id} 
-                                      id={item.id}
-                                      className={itemParam === item.id ? 'highlighted-menu-item' : ''}
-                                    >
-                                      <div className="list-item-title-row">
-                                        <span className="list-item-bullet-name">• {item.name.toUpperCase()}</span>
-                                      </div>
-                                      {item.description && (
-                                        <p className="list-item-subdesc">{item.description}</p>
-                                      )}
-                                    </li>
-                                  ))}
-                                </ul>
-                                <ul className="panel-list-col">
-                                  {col2.map(item => (
-                                    <li 
-                                      key={item.id} 
-                                      id={item.id}
-                                      className={itemParam === item.id ? 'highlighted-menu-item' : ''}
-                                    >
-                                      <div className="list-item-title-row">
-                                        <span className="list-item-bullet-name">• {item.name.toUpperCase()}</span>
-                                      </div>
-                                      {item.description && (
-                                        <p className="list-item-subdesc">{item.description}</p>
-                                      )}
-                                    </li>
-                                  ))}
-                                </ul>
-                                <ul className="panel-list-col">
-                                  {col3.map(item => (
-                                    <li 
-                                      key={item.id} 
-                                      id={item.id}
-                                      className={itemParam === item.id ? 'highlighted-menu-item' : ''}
-                                    >
-                                      <div className="list-item-title-row">
-                                        <span className="list-item-bullet-name">• {item.name.toUpperCase()}</span>
-                                      </div>
-                                      {item.description && (
-                                        <p className="list-item-subdesc">{item.description}</p>
-                                      )}
-                                    </li>
-                                  ))}
-                                </ul>
-                              </div>
-                              
-                              {displayImages.length > 0 && (
-                                <div className={`panel-images-row cols-${displayImages.length}`}>
-                                  {displayImages.map(item => (
-                                    <div key={`img-${item.id}`} className="panel-image-card">
-                                      <img src={item.image} alt={item.name} />
-                                    </div>
-                                  ))}
-                                </div>
-                              )}
-                            </>
-                          );
-                        })()
-                      ) : (
-                        <div className="menu-items-grid">
-                          {itemsInCategory.map(item => (
-                            <div 
-                              key={item.id} 
-                              id={item.id}
-                              className={`menu-item-card ${itemParam === item.id ? 'highlighted-menu-item' : ''}`}
-                            >
-                              <div className="menu-item-info">
-                                <h4 className="menu-item-name">{item.name}</h4>
-                                <p className="menu-item-desc">{item.description}</p>
-                              </div>
-                              {item.image && (
-                                <div className="menu-item-img-container">
-                                  <img src={item.image} alt={item.name} />
-                                </div>
-                              )}
+                      <div className="menu-items-grid">
+                        {itemsInCategory.map(item => (
+                          <div 
+                            key={item.id} 
+                            id={item.id}
+                            className={`menu-item-card ${itemParam === item.id ? 'highlighted-menu-item' : ''}`}
+                          >
+                            <div className="menu-item-info">
+                              <h4 className="menu-item-name">{item.name}</h4>
+                              {item.description && <p className="menu-item-desc">{item.description}</p>}
                             </div>
-                          ))}
-                        </div>
-                      )}
+                            {item.image && (
+                              <div className="menu-item-img-container">
+                                <img src={item.image} alt={item.name} />
+                              </div>
+                            )}
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   )}
                 </div>

@@ -106,7 +106,7 @@ export default function AboutPage() {
       {/* Gallery Section */}
       <section className="about-gallery-section section-padding">
         <div className="container">
-          <h2 className="text-gradient text-center reveal">RESTURANT GALLERY</h2>
+          <h2 className="text-gradient text-center reveal">RESTAURANT GALLERY</h2>
           <p className="section-description text-center reveal">
             Sneak peek into our kitchens, dining tables, and lively atmosphere.
           </p>

@@ -254,19 +254,14 @@
   font-family: inherit;
   font-size: 0.95rem;
   font-weight: 600;
-  color: #121e3d; /* Dark navy color from the original screenshot */
+  color: #121e3d; /* Dark navy color */
   text-decoration: none;
   display: inline-block;
-  transition: color var(--transition-fast), opacity var(--transition-fast);
-  cursor: pointer;
+  cursor: default;
   padding: 0;
   border: none;
   background: transparent;
-}
-
-.step-badge:hover {
-  color: var(--color-primary);
-  opacity: 0.85;
+  user-select: text;
 }
 
 /* Step 2 Options */

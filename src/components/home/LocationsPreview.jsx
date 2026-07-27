@@ -14,7 +14,7 @@ export default function LocationsPreview() {
         <div className="locations-preview-header reveal">
           <div className="header-text">
             <h2 className="section-title">
-              <span className="subtitle">Our Location</span>
+              <span className="subtitle d-block">Our Location</span>
               <span className="text-gradient d-block">FIND SUPER CRAB NEAR YOU</span>
             </h2>
             <p className="section-description">

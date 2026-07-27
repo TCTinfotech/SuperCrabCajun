@@ -1,26 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Sparkles, Flame, HelpCircle } from 'lucide-react';
 import { BOIL_STEPS } from '../../utils/constants';
 import './HowItWorks.css';
-
-const SEAFOOD_ITEM_MAPPING = {
-  'Lobster': 'lobster-tail',
-  'Dungeness Crab': 'dungeness-crab',
-  'King Crab Legs': 'king-crab',
-  'Snow Crab': 'snow-crab',
-  'Snow Crab Legs': 'snow-crab',
-  'Shrimp (Head Off)': 'shrimp-head-off',
-  'Shrimp (Head off)': 'shrimp-head-off',
-  'Shrimp (Head On)': 'shrimp-head-on',
-  'Shrimp (Head on)': 'shrimp-head-on',
-  'Crawfish': 'crawfish',
-  'Crawfish (Seasonal)': 'crawfish',
-  'Crawfish (Frozen)': 'crawfish',
-  'Mussels': 'mussels',
-  'Clams': 'clams',
-  'Lobster Tail': 'lobster-tail'
-};
 
 export default function HowItWorks() {
   const steps = [
@@ -87,25 +68,14 @@ export default function HowItWorks() {
                 <div className="step-options-container">
                   <span className="options-heading">Options include:</span>
                   <div className="step-badge-group">
-                    {step.options.map((opt) => {
-                      let url = '/menu?cat=seafood-boil';
-                      if (idx === 0) {
-                        const itemId = SEAFOOD_ITEM_MAPPING[opt];
-                        if (itemId) {
-                          url = `/menu?cat=seafood-boil&item=${itemId}`;
-                        }
-                      }
-                      
-                      return (
-                        <Link 
-                          key={opt} 
-                          to={url} 
-                          className="step-badge"
-                        >
-                          {opt}
-                        </Link>
-                      );
-                    })}
+                    {step.options.map((opt) => (
+                      <span 
+                        key={opt} 
+                        className="step-badge"
+                      >
+                        {opt}
+                      </span>
+                    ))}
                   </div>
                 </div>
               </div>

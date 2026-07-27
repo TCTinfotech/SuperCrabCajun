@@ -20,8 +20,8 @@ export default function Testimonials() {
       serviceRating: 5,
       atmosphereRating: 4,
       photos: [
-        '/images/seafood_boil_close.webp',
-        '/images/crab_legs.webp'
+        '/images/reviews/review_1_photo_1.jpg',
+        '/images/reviews/review_1_photo_2.jpg'
       ],
       likes: 14,
       link: 'https://maps.app.goo.gl/gwWpZj6Yz4uH5AcY9'
@@ -42,8 +42,8 @@ export default function Testimonials() {
       serviceRating: 5,
       atmosphereRating: 5,
       photos: [
-        '/images/shrimp_boil.webp',
-        '/images/crawfish_pile.webp'
+        '/images/reviews/review_2_photo_1.png',
+        '/images/reviews/review_2_photo_2.jpg'
       ],
       likes: 9,
       link: 'https://maps.app.goo.gl/JhE1fE8d3rfNm2S89'
@@ -64,8 +64,8 @@ export default function Testimonials() {
       serviceRating: 5,
       atmosphereRating: 5,
       photos: [
-        '/images/lobster_crab_seafood_feast_new_1.webp',
-        '/images/oysters_platter.webp'
+        '/images/reviews/review_3_photo_1.jpg',
+        '/images/reviews/review_3_photo_2.jpg'
       ],
       likes: 18,
       link: 'https://maps.app.goo.gl/pNVTx4jRgnAKmykB8'

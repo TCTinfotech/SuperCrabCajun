@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { DOORDASH_ORDER_URL } from '../../utils/constants';
 import './HeroSection.css';
 
 const SLIDES = [
@@ -9,7 +10,7 @@ const SLIDES = [
     titleWord3: "BOIL!",
     titleEmoji: "🍋",
     buttonText: "ORDER NOW",
-    buttonLink: "https://order.online/store/super-crab-palmer-hwy-2519187?utm_id=97757_v0_s00_e0_tv0&fbclid=IwY2xjawSiMLRleHRuA2FlbQIxMABicmlkETF3ZHNwWEcwZmhXeUE0S21hc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHvh1dshdA9SIHiYPlSsqGydpM2CXrBo74wV2RZdQknVODcuVEeSSDevaBNUf_aem__1rPImzAoWoAvodEpsUFyA",
+    buttonLink: DOORDASH_ORDER_URL,
     plateTopImg: "/images/seafood_spread.webp",
     plateBottomImg: "/images/seafood_boil_close.webp",
     floatingBadges: [
@@ -23,8 +24,8 @@ const SLIDES = [
     titleWord2: "CAJUN",
     titleWord3: "CRAWFISH!",
     titleEmoji: "🔥",
-    buttonText: "VIEW MENU",
-    buttonLink: "/menu",
+    buttonText: "ORDER NOW",
+    buttonLink: DOORDASH_ORDER_URL,
     plateTopImg: "/images/crawfish_close.webp",
     plateBottomImg: "/images/crawfish_pile.webp",
     floatingBadges: [
@@ -38,8 +39,8 @@ const SLIDES = [
     titleWord2: "LOBSTER",
     titleWord3: "FEAST!",
     titleEmoji: "🦞",
-    buttonText: "SPECIAL OFFERS",
-    buttonLink: "/menu",
+    buttonText: "ORDER NOW",
+    buttonLink: DOORDASH_ORDER_URL,
     plateTopImg: "/images/gourmet_lobster_tray.webp",
     plateBottomImg: "/images/crab_legs.webp",
     floatingBadges: [
@@ -53,8 +54,8 @@ const SLIDES = [
     titleWord2: "ON THE",
     titleWord3: "HALF SHELL!",
     titleEmoji: "✨",
-    buttonText: "CONTACT US",
-    buttonLink: "/contact",
+    buttonText: "ORDER NOW",
+    buttonLink: DOORDASH_ORDER_URL,
     plateTopImg: "/images/oysters_platter.webp",
     plateBottomImg: "/images/blue_crabs.webp",
     floatingBadges: [
