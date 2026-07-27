@@ -186,7 +186,6 @@ export default function MenuPage() {
                                     >
                                       <div className="list-item-title-row">
                                         <span className="list-item-bullet-name">• {item.name.toUpperCase()}</span>
-                                        {item.price && <span className="list-item-price-tag">${item.price}</span>}
                                       </div>
                                       {item.description && (
                                         <p className="list-item-subdesc">{item.description}</p>
@@ -203,7 +202,6 @@ export default function MenuPage() {
                                     >
                                       <div className="list-item-title-row">
                                         <span className="list-item-bullet-name">• {item.name.toUpperCase()}</span>
-                                        {item.price && <span className="list-item-price-tag">${item.price}</span>}
                                       </div>
                                       {item.description && (
                                         <p className="list-item-subdesc">{item.description}</p>
@@ -220,7 +218,6 @@ export default function MenuPage() {
                                     >
                                       <div className="list-item-title-row">
                                         <span className="list-item-bullet-name">• {item.name.toUpperCase()}</span>
-                                        {item.price && <span className="list-item-price-tag">${item.price}</span>}
                                       </div>
                                       {item.description && (
                                         <p className="list-item-subdesc">{item.description}</p>
@@ -253,7 +250,6 @@ export default function MenuPage() {
                               <div className="menu-item-info">
                                 <h4 className="menu-item-name">{item.name}</h4>
                                 <p className="menu-item-desc">{item.description}</p>
-                                <span className="menu-item-price">${item.price}</span>
                               </div>
                               {item.image && (
                                 <div className="menu-item-img-container">
