@@ -42,7 +42,7 @@ export default function Testimonials() {
       serviceRating: 5,
       atmosphereRating: 5,
       photos: [
-        '/images/reviews/review_2_photo_1.png',
+        '/images/reviews/review_2_photo_1.jpg',
         '/images/reviews/review_2_photo_2.jpg'
       ],
       likes: 9,
