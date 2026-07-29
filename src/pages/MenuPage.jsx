@@ -157,7 +157,7 @@ export default function MenuPage() {
                             </div>
                             {item.image && (
                               <div className="menu-item-img-container">
-                                <img src={item.image} alt={item.name} />
+                                <img src={item.image} alt={item.name} loading="lazy" decoding="async" width="100" height="100" />
                               </div>
                             )}
                           </div>

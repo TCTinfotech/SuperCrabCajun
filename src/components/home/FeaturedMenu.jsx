@@ -29,6 +29,7 @@ export default function FeaturedMenu() {
                   alt={cat.name}
                   className="card-circle-image"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
 
