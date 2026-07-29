@@ -6,9 +6,10 @@ export default function FeaturedMenu() {
   const categories = [
     { id: 'seafood-boil', name: 'Seafood Boils', image: '/images/seafood_boil_close.webp' },
     { id: 'appetizers', name: 'Appetizers', image: '/images/oysters_platter.webp' },
-    { id: 'fried-baskets', name: 'Something Fried', image: '/images/fried_shrimp_basket.webp' },
-    { id: 'po-boys', name: 'Po Boys', image: '/images/shrimp_po_boy.webp' },
-    { id: 'sides', name: 'Sides', image: '/images/crawfish_close.webp' },
+    { id: 'fried-baskets', name: 'Fried Basket', image: '/images/fried_shrimp_basket.webp' },
+    { id: 'salad-soups', name: 'Salad & Soups', image: '/images/green_salad.webp' },
+    { id: 'combos', name: 'Combos', image: '/images/combo_1.webp' },
+    { id: 'sides', name: 'Sides & Add-ons', image: '/images/crawfish_close.webp' },
     { id: 'drinks-soda', name: 'Drinks', image: '/images/lemonade.webp' }
   ];
 

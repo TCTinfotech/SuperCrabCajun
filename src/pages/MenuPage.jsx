@@ -144,7 +144,15 @@ export default function MenuPage() {
                             className={`menu-item-card ${itemParam === item.id ? 'highlighted-menu-item' : ''}`}
                           >
                             <div className="menu-item-info">
-                              <h4 className="menu-item-name">{item.name}</h4>
+                              <div className="menu-item-header-block">
+                                <h4 className="menu-item-name">{item.name}</h4>
+                                {item.badge && (
+                                  <span className={`menu-item-badge ${item.badgeType || 'popular'}`}>
+                                    {item.badgeType?.startsWith('most-liked') ? '👍 ' : '🔥 '}
+                                    {item.badge}
+                                  </span>
+                                )}
+                              </div>
                               {item.description && <p className="menu-item-desc">{item.description}</p>}
                             </div>
                             {item.image && (

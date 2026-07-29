@@ -108,111 +108,199 @@ export const BOIL_STEPS = {
 };
 
 export const MENU_CATEGORIES = [
-  { id: 'seafood-boil', name: 'SEAFOOD BOILS', subtitle: 'Our Signature Catches - By The Half Pound Or Full Pound', listImages: ['/images/seafood_boil_list_1.webp', '/images/seafood_boil_list_2.webp', '/images/seafood_boil_list_3.webp', '/images/seafood_boil_list_4.webp', '/images/crab_legs.webp', '/images/shrimp_boil.webp'] },
-  { id: 'combos', name: 'Combos', subtitle: 'The Ultimate Seafood Experience', listImages: ['/images/combo_1.webp', '/images/combo_2.webp', '/images/combo_3_new.webp', '/images/combo_list_1.webp', '/images/combo_list_2.webp', '/images/combo_list_3.webp'] },
-  { id: 'chicken-wings', name: 'Chicken Wings' },
+  { id: 'appetizers', name: 'Appetizers', subtitle: 'Delicious Beginnings To Share', listImages: ['/images/oysters_platter.webp', '/images/chicken_wings.webp', '/images/gourmet_lobster_tray.webp'] },
   { id: 'fried-baskets', name: 'Fried Basket', subtitle: 'Southern Fried Perfection Served With Cajun Fries', listImages: ['/images/fried_shrimp_basket.webp', '/images/combo_1.webp', '/images/combo_3_new.webp'] },
-  { id: 'po-boys', name: 'Sandwiches - Po Boy', subtitle: 'Hearty Po Boys & Sandwiches (Served with Cajun Fries)', listImages: ['/images/shrimp_po_boy.webp', '/images/oyster_po_boy.webp', '/images/fish_po_boy.webp'] },
-  { id: 'appetizers', name: 'TEXAS STARTERS', subtitle: 'Delicious Beginnings To Share', listImages: ['/images/oysters_platter.webp', '/images/chicken_wings.webp', '/images/gourmet_lobster_tray.webp'] },
-  { id: 'sides', name: 'Sides & Add-Ons', subtitle: 'Perfect Pairings For Your Seafood Feast', listImages: ['/images/crawfish_pile.webp', '/images/shrimp_boil.webp', '/images/combo_4.webp'] },
+  { id: 'salad-soups', name: 'Salad & Soups', subtitle: 'Fresh Greens & Warm Creole Soups', listImages: ['/images/green_salad.webp', '/images/gumbo.webp'] },
+  { id: 'combos', name: 'Combos', subtitle: 'The Ultimate Seafood Experience', listImages: ['/images/combo_1.webp', '/images/combo_2.webp', '/images/combo_3_new.webp', '/images/combo_list_1.webp', '/images/combo_list_2.webp', '/images/combo_list_3.webp'] },
+  { id: 'sides', name: 'Sides & add-ons', subtitle: 'Perfect Pairings & Seafood Catches For Your Feast', listImages: ['/images/crawfish_pile.webp', '/images/shrimp_boil.webp', '/images/combo_4.webp'] },
+  { id: 'grilled', name: 'Grilled', subtitle: 'Sizzling Grilled Seafood & House Specialties' },
+  { id: 'chicken-wings', name: 'Chicken wings', subtitle: 'Crispy Wings Tossed In Your Favorite Seasoning' },
+  { id: 'sandwiches', name: 'Sandwiches', subtitle: 'Hearty Po Boys & Sandwiches (Served with Cajun Fries)', listImages: ['/images/shrimp_po_boy.webp', '/images/oyster_po_boy.webp', '/images/fish_po_boy.webp'] },
   { id: 'drinks-soda', name: 'Drinks - Soda', listImages: ['/images/pepsi.webp', '/images/mist_twist.webp', '/images/orange_soda.webp'] },
   { id: 'drinks-non-carbonated', name: 'Drinks - Non-Carbonated', listImages: ['/images/lemonade.webp', '/images/apple_juice.webp', '/images/ice_tea.webp'] },
-  { id: 'grilled', name: 'Grilled' }
+  { id: 'kids-menu', name: 'Kids Menu', subtitle: 'Delightful Meals For Kids Under 10 (Served with Fries)' },
+  { id: 'lunch-specials', name: 'Lunch Specials', subtitle: 'Daily Lunch Deals (Mon - Fri 11:00 AM - 3:00 PM)' }
 ];
 
 export const MENU_ITEMS = [
-  // Get Down & Messy! (Seafood Boil)
+  // Appetizers
   {
-    id: 'snow-crab',
-    category: 'seafood-boil',
-    name: 'Snow Crab',
-    description: 'per pound.',
-    price: '38.35',
-    image: '/images/snow_crab.webp',
-    spiceLevel: 0,
-    featured: true
-  },
-  {
-    id: 'king-crab',
-    category: 'seafood-boil',
-    name: 'King Crab legs',
-    description: 'Tender king crab legs served with lime wedges and a garnish.',
-    price: '83.95',
-    image: '/images/king_crab.webp',
-    spiceLevel: 0,
-    featured: true
-  },
-  {
-    id: 'dungeness-crab',
-    category: 'seafood-boil',
-    name: 'Dungeness Crab',
-    description: 'Per Pound.',
-    price: '39.55',
-    image: '/images/crab_legs.webp',
+    id: 'french-fries',
+    category: 'appetizers',
+    name: 'French Fries',
+    description: 'Golden strips of potatoes, deep-fried to a crisp texture.',
+    price: '5.70',
+    image: '/images/french_fries.webp',
     spiceLevel: 0,
     featured: false
   },
   {
-    id: 'shrimp-head-off',
-    category: 'seafood-boil',
-    name: 'Shrimp (Head Off)',
-    description: '#1 Most liked item. 3/4 lb.',
-    price: '20.35',
-    image: '/images/shrimp_boil.webp',
-    spiceLevel: 0,
-    featured: true
+    id: 'cajun-fries',
+    category: 'appetizers',
+    name: 'Cajun Fries',
+    description: 'Crispy fries tossed in our signature bold Cajun seasoning blend.',
+    price: '6.55',
+    image: '/images/cajun_fries.webp',
+    spiceLevel: 1,
+    featured: true,
+    badge: 'Popular Item',
+    badgeType: 'popular'
   },
   {
-    id: 'shrimp-head-on',
-    category: 'seafood-boil',
-    name: 'Shrimp (Head On)',
-    description: 'Per pound. Popular item.',
-    price: '20.35',
-    image: '/images/shrimp_boil.webp',
+    id: 'lemon-pepper-fries',
+    category: 'appetizers',
+    name: 'Lemon Pepper Fries',
+    description: 'Crispy fries seasoned with tangy lemon zest and cracked black pepper.',
+    price: '6.55',
+    image: '/images/cajun_fries.webp',
     spiceLevel: 0,
     featured: false
   },
   {
-    id: 'crawfish',
-    category: 'seafood-boil',
-    name: 'Crawfish',
-    description: 'Per pound.',
-    price: '13.15',
-    image: '/images/crawfish.webp',
-    spiceLevel: 0,
-    featured: true
-  },
-  {
-    id: 'mussels',
-    category: 'seafood-boil',
-    name: 'Mussels',
-    description: 'Per pound.',
-    price: '16.75',
-    image: '/images/mussels.webp',
+    id: 'sweet-potato-fries',
+    category: 'appetizers',
+    name: 'Sweet Potato Fries',
+    description: 'Crispy sweet potato fries offering a naturally sweet and savory bite.',
+    price: '6.55',
+    image: '/images/french_fries.webp',
     spiceLevel: 0,
     featured: false
   },
   {
-    id: 'clams',
-    category: 'seafood-boil',
-    name: 'Clams',
-    description: 'Per pound.',
-    price: '15.50',
-    image: '/images/crawfish_close.webp',
+    id: 'garlic-fries',
+    category: 'appetizers',
+    name: 'Garlic Fries',
+    description: 'Crispy fries tossed with minced garlic, fresh parsley, and Parmesan cheese.',
+    price: '7.10',
+    image: '/images/garlic_fries.webp',
+    spiceLevel: 0,
+    featured: true,
+    badge: 'Popular Item',
+    badgeType: 'popular'
+  },
+  {
+    id: 'baked-oysters',
+    category: 'appetizers',
+    name: 'Baked Oysters (6)',
+    description: 'East Coast oysters baked with creamy spinach, bacon, and pecorino romano.',
+    price: '17.95',
+    image: '/images/baked_oysters.webp',
+    spiceLevel: 0,
+    featured: true,
+    badge: 'Chef Choice',
+    badgeType: 'popular'
+  },
+  {
+    id: 'raw-oysters',
+    category: 'appetizers',
+    name: 'Raw Oysters',
+    description: 'Fresh half-shell raw oysters served cold with zesty cocktail sauce and lemon.',
+    price: '16.15',
+    image: '/images/raw_oysters.webp',
+    spiceLevel: 0,
+    featured: false
+  },
+
+  // Fried Basket
+  {
+    id: 'fried-fish',
+    category: 'fried-baskets',
+    name: 'Fried Fish',
+    description: 'Golden-crisp fried fish fillets served hot with seasoned Cajun fries.',
+    price: '16.15',
+    image: '/images/fried_fish.webp',
+    spiceLevel: 0,
+    featured: true,
+    badge: 'Popular Item',
+    badgeType: 'popular'
+  },
+  {
+    id: 'calamari-rings',
+    category: 'fried-baskets',
+    name: 'Calamari Rings',
+    description: 'Golden-brown breaded calamari rings served with crisp fries.',
+    price: '13.75',
+    image: '/images/fried_shrimp_basket.webp',
     spiceLevel: 0,
     featured: false
   },
   {
-    id: 'lobster-tail',
-    category: 'seafood-boil',
-    name: 'Lobster Tail',
-    description: 'Each.',
-    price: '22.75',
-    image: '/images/gourmet_lobster_tray.webp',
+    id: 'chicken-tender',
+    category: 'fried-baskets',
+    name: 'Chicken Tender',
+    description: 'Breaded and fried tender chicken strips served with crisp fries.',
+    price: '13.75',
+    image: '/images/chicken_tender.webp',
     spiceLevel: 0,
     featured: false
   },
-  
+  {
+    id: 'fried-oyster',
+    category: 'fried-baskets',
+    name: 'Fried Oyster',
+    description: 'Golden-breaded oysters deep-fried to perfection with fries.',
+    price: '17.35',
+    image: '/images/fried_oyster.webp',
+    spiceLevel: 0,
+    featured: false
+  },
+  {
+    id: 'fried-shrimp',
+    category: 'fried-baskets',
+    name: 'Fried Shrimp',
+    description: 'Crispy butterflied shrimp served alongside golden Cajun fries.',
+    price: '17.35',
+    image: '/images/fried_shrimp_new.webp',
+    spiceLevel: 0,
+    featured: true,
+    badge: 'Popular Item',
+    badgeType: 'popular'
+  },
+
+  // Salad & Soups
+  {
+    id: 'green-salad',
+    category: 'salad-soups',
+    name: 'Organic House Green Salad',
+    description: 'Mixed greens, red cabbage, cherry tomatoes, cucumbers & fried onions.',
+    price: '6.30',
+    image: '/images/green_salad.webp',
+    spiceLevel: 0,
+    featured: false
+  },
+  {
+    id: 'edamame',
+    category: 'salad-soups',
+    name: 'Edamame',
+    description: 'Steamed green soybeans lightly tossed with coarse sea salt.',
+    price: '8.15',
+    image: '/images/green_salad.webp',
+    spiceLevel: 0,
+    featured: false
+  },
+  {
+    id: 'gumbo',
+    category: 'salad-soups',
+    name: 'Gumbo',
+    description: 'Hearty Creole stew with seafood, sausage, and vegetables in dark roux.',
+    price: '8.35',
+    image: '/images/gumbo.webp',
+    spiceLevel: 1,
+    featured: true,
+    badge: 'Popular Item',
+    badgeType: 'popular'
+  },
+  {
+    id: 'clam-chowder',
+    category: 'salad-soups',
+    name: 'New England Clam Chowder',
+    description: 'Creamy soup packed with tender clams, diced potatoes & savory herbs.',
+    price: '7.95',
+    image: '/images/gumbo.webp',
+    spiceLevel: 0,
+    featured: false
+  },
+
   // Combos
   {
     id: 'combo-1',
@@ -228,7 +316,7 @@ export const MENU_ITEMS = [
     id: 'combo-2',
     category: 'combos',
     name: 'Combo 2',
-    description: '1 lb. shrimp (head on) or 3/4 shrimp (head off), 1 lb. clam, 2 corns, 2 potatoes, 4 sausages.',
+    description: '1 lb. shrimp (head-on) or 3/4 lb (head-off), 1 lb. clam, 2 corns, 2 potatoes, 4 sausages.',
     price: '37.15',
     image: '/images/combo_2.webp',
     spiceLevel: 0,
@@ -238,17 +326,19 @@ export const MENU_ITEMS = [
     id: 'combo-3',
     category: 'combos',
     name: 'Combo 3',
-    description: 'Snow crab legs, dungeness crab or king crab legs combo. 1 lb. shrimp (head on) or 3/4 shrimp (head off), 2 corns, 2 potatoes, 4 sausages.',
+    description: 'Snow crab legs combo with 1 lb. shrimp (head-on/off), 2 corns, 2 potatoes, 4 sausages.',
     price: '56.35',
     image: '/images/combo_3_new.webp',
     spiceLevel: 0,
-    featured: true
+    featured: true,
+    badge: 'Most Ordered',
+    badgeType: 'popular'
   },
   {
     id: 'combo-4',
     category: 'combos',
     name: 'Combo 4',
-    description: '1 lobster or 1 dungeness crab, 1 lb. shrimp (head on) or 3/4 lb shrimp (head off), 1 lb. crawfish, 1 lb. clams, 2 corns, 2 potatoes, 4 sausages.',
+    description: '1 lobster or dungeness crab, 1 lb. shrimp, 1 lb. crawfish, 1 lb. clams, corns & sausages.',
     price: '107.95',
     image: '/images/combo_4_v2.webp',
     spiceLevel: 0,
@@ -258,281 +348,157 @@ export const MENU_ITEMS = [
     id: 'combo-5',
     category: 'combos',
     name: 'Combo 5',
-    description: 'Mixed shrimp options with head on or off, multiple flavor choices including Cajun, Garlic Butter, and more. Spice levels range from mild to fiery hot.',
+    description: 'Mixed shrimp boil with your choice of flavor recipe and custom spice level.',
     price: '37.15',
     image: '/images/combo_5.webp',
     spiceLevel: 0,
     featured: false
   },
 
-  // Chicken Wings
-  {
-    id: 'cajun-wings',
-    category: 'chicken-wings',
-    name: 'Cajun Wings',
-    description: 'Spicy. popular item.',
-    price: '10.75',
-    image: '/images/chicken_wings.webp',
-    spiceLevel: 1,
-    featured: true
-  },
-  {
-    id: 'spicy-korean-wings',
-    category: 'chicken-wings',
-    name: 'Spicy Korean',
-    description: 'Spicy.',
-    price: '10.75',
-    image: '/images/chicken_wings.webp',
-    spiceLevel: 2,
-    featured: false
-  },
-  {
-    id: 'lemon-pepper-wings',
-    category: 'chicken-wings',
-    name: 'Lemon Pepper Wings',
-    description: 'Juicy chicken wings tossed in tangy lemon pepper seasoning. Available in 6 or 10 pieces.',
-    price: '10.75',
-    image: '/images/chicken_wings.webp',
-    spiceLevel: 0,
-    featured: false
-  },
-  {
-    id: 'bbq-wings',
-    category: 'chicken-wings',
-    name: 'BBQ Wings',
-    description: 'BBQ chicken wings available in 6 or 10 pieces.',
-    price: '10.75',
-    image: '/images/chicken_wings.webp',
-    spiceLevel: 0,
-    featured: false
-  },
-  {
-    id: 'mango-habanero-wings',
-    category: 'chicken-wings',
-    name: 'Mango Habañero',
-    description: 'Spicy.',
-    price: '10.75',
-    image: '/images/chicken_wings.webp',
-    spiceLevel: 1,
-    featured: true
-  },
-  {
-    id: 'hot-wings',
-    category: 'chicken-wings',
-    name: 'Hot Wings',
-    description: 'Spicy.',
-    price: '10.75',
-    image: '/images/chicken_wings.webp',
-    spiceLevel: 2,
-    featured: false
-  },
-
-  // Fried Baskets
-  {
-    id: 'fried-fish',
-    category: 'fried-baskets',
-    name: 'Fried Fish',
-    description: 'popular item.',
-    price: '16.15',
-    image: '/images/fried_fish.webp',
-    spiceLevel: 0,
-    featured: true
-  },
-  {
-    id: 'calamari-rings',
-    category: 'fried-baskets',
-    name: 'Calamari Rings',
-    description: 'Golden-brown breaded calamari rings served with a side of crisp fries.',
-    price: '13.75',
-    image: '/images/fried_shrimp_basket.webp',
-    spiceLevel: 0,
-    featured: false
-  },
-  {
-    id: 'chicken-tender',
-    category: 'fried-baskets',
-    name: 'Chicken Tender',
-    description: 'Breaded and fried chicken strips, golden brown and crispy.',
-    price: '13.75',
-    image: '/images/chicken_tender.webp',
-    spiceLevel: 0,
-    featured: false
-  },
-  {
-    id: 'fried-oyster',
-    category: 'fried-baskets',
-    name: 'Fried Oyster',
-    description: 'Golden-breaded oysters, deep-fried to a crisp and served in a portion suitable for sharing.',
-    price: '17.35',
-    image: '/images/fried_oyster.webp',
-    spiceLevel: 0,
-    featured: false
-  },
-  {
-    id: 'fried-shrimp',
-    category: 'fried-baskets',
-    name: 'Fried Shrimp',
-    description: 'Golden-breaded shrimp, crispy on the outside with a succulent bite, served alongside a portion of golden fries.',
-    price: '17.35',
-    image: '/images/fried_shrimp_new.webp',
-    spiceLevel: 0,
-    featured: true
-  },
-
-  // Grilled
-  {
-    id: 'cajun-fish',
-    category: 'grilled',
-    name: 'Cajun Fish',
-    description: 'Topped with mango salsa, rice and salad on the side.',
-    price: '16.75',
-    image: '/images/cajun_fish_mango.webp',
-    spiceLevel: 0,
-    featured: false
-  },
-  {
-    id: 'house-grilled-shrimp',
-    category: 'grilled',
-    name: 'House Grilled Shrimp',
-    description: 'Rice and Salad on the side',
-    price: '19.15',
-    image: '/images/seafood_tray.webp',
-    spiceLevel: 0,
-    featured: false
-  },
-
-  // Sandwiches - Po Boy
-  {
-    id: 'oyster-po-boy',
-    category: 'po-boys',
-    name: 'Oyster Po Boy',
-    description: 'Fried oysters on a toasted baguette, typically includes lettuce, tomato, and a spread of Cajun remoulade.',
-    price: '16.75',
-    image: '/images/oyster_po_boy.webp',
-    spiceLevel: 0,
-    featured: false
-  },
-  {
-    id: 'fish-po-boy',
-    category: 'po-boys',
-    name: 'Fish Po Boy',
-    description: 'Crispy fried fish on a soft roll with lettuce and tomato.',
-    price: '16.75',
-    image: '/images/fish_po_boy.webp',
-    spiceLevel: 0,
-    featured: true
-  },
-  {
-    id: 'shrimp-po-boy',
-    category: 'po-boys',
-    name: 'Shrimp Po Boy',
-    description: 'Crispy battered shrimp, shredded lettuce, and a zesty sauce nestled in a soft, long roll.',
-    price: '16.75',
-    image: '/images/shrimp_po_boy.webp',
-    spiceLevel: 0,
-    featured: true
-  },
-
-  // Appetizers, Salads & Soups
-  {
-    id: 'green-salad',
-    category: 'appetizers',
-    name: 'Organic House Green Salad',
-    description: 'A medley of organic mixed greens, crisp red cabbage, cherry tomatoes, cucumbers, and topped with crunchy fried onions.',
-    price: '6.30',
-    image: '/images/green_salad.webp',
-    spiceLevel: 0,
-    featured: false
-  },
-  {
-    id: 'gumbo',
-    category: 'appetizers',
-    name: 'Gumbo',
-    description: 'A hearty stew with a mix of seafood, sausage, and vegetables, thickened with a dark roux.',
-    price: '8.35',
-    image: '/images/gumbo.webp',
-    spiceLevel: 1,
-    featured: true
-  },
-  {
-    id: 'french-fries',
-    category: 'appetizers',
-    name: 'French Fries',
-    description: 'Golden strips of potatoes, deep-fried to a crisp texture.',
-    price: '5.70',
-    image: '/images/french_fries.webp',
-    spiceLevel: 0,
-    featured: false
-  },
-  {
-    id: 'cajun-fries',
-    category: 'appetizers',
-    name: 'Cajun Fries',
-    description: 'Spicy. popular item.',
-    price: '6.55',
-    image: '/images/cajun_fries.webp',
-    spiceLevel: 1,
-    featured: true
-  },
-  {
-    id: 'lemon-pepper-fries',
-    category: 'appetizers',
-    name: 'Lemon Pepper Fries',
-    description: 'Crispy fries seasoned with tangy lemon pepper seasoning.',
-    price: '6.55',
-    image: '/images/cajun_fries.webp',
-    spiceLevel: 0,
-    featured: false
-  },
-  {
-    id: 'sweet-potato-fries',
-    category: 'appetizers',
-    name: 'Sweet Potato Fries',
-    description: 'Crispy sweet potato fries with a deep golden hue, offering a naturally sweet and savory bite.',
-    price: '6.55',
-    image: '/images/french_fries.webp',
-    spiceLevel: 0,
-    featured: false
-  },
-  {
-    id: 'garlic-fries',
-    category: 'appetizers',
-    name: 'Garlic Fries',
-    description: 'Crispy fries tossed with minced garlic, fresh parsley, and grated Parmesan cheese.',
-    price: '7.10',
-    image: '/images/garlic_fries.webp',
-    spiceLevel: 0,
-    featured: true
-  },
-  {
-    id: 'baked-oysters',
-    category: 'appetizers',
-    name: 'Baked Oysters (6)',
-    description: 'Baked oysters: East coast oysters with cream spinach, bacon, and pecorino romano.',
-    price: '17.95',
-    image: '/images/baked_oysters.webp',
-    spiceLevel: 0,
-    featured: true
-  },
-  {
-    id: 'raw-oysters',
-    category: 'appetizers',
-    name: 'Raw Oysters',
-    description: 'The above food item may be served raw or undercooked. Consuming raw or undercooked meats, poultry, seafoods or eggs may increase your risk of food borne illness.',
-    price: '16.15',
-    image: '/images/raw_oysters.webp',
-    spiceLevel: 0,
-    featured: false
-  },
-
   // Sides & Add-Ons
+  {
+    id: 'shrimp-head-off',
+    category: 'sides',
+    name: 'Shrimp (Head Off)',
+    description: 'Easy-to-eat peeled shrimp soaked in rich garlic butter broth.',
+    price: '20.35',
+    image: '/images/shrimp_boil.webp',
+    spiceLevel: 0,
+    featured: true,
+    badge: '#1 Most Liked',
+    badgeType: 'most-liked-1'
+  },
+  {
+    id: 'potatoes',
+    category: 'sides',
+    name: 'Potatoes',
+    description: '3 tender boiled red potatoes coated in seasoned garlic butter.',
+    price: '3.00',
+    image: '/images/boiled_potatoes.webp',
+    spiceLevel: 0,
+    featured: false,
+    badge: '#2 Most Liked',
+    badgeType: 'most-liked-2'
+  },
   {
     id: 'corn-on-the-cob',
     category: 'sides',
     name: 'Corn On the Cob',
-    description: 'popular item.',
+    description: 'Sweet corn on the cob soaked in rich seafood boil broth.',
     price: '1.50',
     image: '/images/corn_on_cob.webp',
+    spiceLevel: 0,
+    featured: false,
+    badge: '#3 Most Liked',
+    badgeType: 'most-liked-3'
+  },
+  {
+    id: 'snow-crab',
+    category: 'sides',
+    name: 'Snow Crab (by lb)',
+    description: 'Sweet, tender snow crab legs boiled in your choice of sauce.',
+    price: '38.35',
+    image: '/images/snow_crab.webp',
+    spiceLevel: 0,
+    featured: true,
+    badge: 'Popular Item',
+    badgeType: 'popular'
+  },
+  {
+    id: 'king-crab',
+    category: 'sides',
+    name: 'King Crab legs (by lb)',
+    description: 'Massive king crab legs served with lime wedges and garlic butter.',
+    price: '83.95',
+    image: '/images/king_crab.webp',
+    spiceLevel: 0,
+    featured: true,
+    badge: 'Chef Special',
+    badgeType: 'popular'
+  },
+  {
+    id: 'dungeness-crab',
+    category: 'sides',
+    name: 'Dungeness Crab (by lb)',
+    description: 'Meaty Dungeness crab clusters steamed and smothered in Cajun spices.',
+    price: '39.55',
+    image: '/images/crab_legs.webp',
+    spiceLevel: 0,
+    featured: false
+  },
+  {
+    id: 'shrimp-head-on',
+    category: 'sides',
+    name: 'Shrimp (Head On)',
+    description: 'Flavorful whole head-on shrimp boiled in authentic Cajun spices.',
+    price: '20.35',
+    image: '/images/shrimp_boil.webp',
+    spiceLevel: 0,
+    featured: false,
+    badge: 'Popular Item',
+    badgeType: 'popular'
+  },
+  {
+    id: 'crawfish',
+    category: 'sides',
+    name: 'Crawfish (by lb)',
+    description: 'Fresh crawfish boiled daily in spicy Creole seasonings.',
+    price: '15.55',
+    image: '/images/crawfish.webp',
+    spiceLevel: 0,
+    featured: true,
+    badge: 'Popular Item',
+    badgeType: 'popular'
+  },
+  {
+    id: 'frozen-crawfish',
+    category: 'sides',
+    name: 'Frozen Crawfish (by lb)',
+    description: 'Tender frozen crawfish boiled in custom garlic cajun sauce.',
+    price: '13.15',
+    image: '/images/crawfish.webp',
+    spiceLevel: 0,
+    featured: false
+  },
+  {
+    id: 'mussels',
+    category: 'sides',
+    name: 'Mussels (by lb)',
+    description: 'Juicy ocean mussels steamed in flavorful garlic butter broth.',
+    price: '16.75',
+    image: '/images/mussels.webp',
+    spiceLevel: 0,
+    featured: false,
+    badge: 'Popular Item',
+    badgeType: 'popular'
+  },
+  {
+    id: 'clams',
+    category: 'sides',
+    name: 'Clams (by lb)',
+    description: 'Fresh clams steamed and tossed in spicy House Special sauce.',
+    price: '15.50',
+    image: '/images/crawfish_close.webp',
+    spiceLevel: 0,
+    featured: false
+  },
+  {
+    id: 'lobster-tail',
+    category: 'sides',
+    name: 'Lobster Tail',
+    description: 'Succulent lobster tail steamed and coated in warm garlic butter.',
+    price: '22.75',
+    image: '/images/gourmet_lobster_tray.webp',
+    spiceLevel: 0,
+    featured: false
+  },
+  {
+    id: 'whole-lobster',
+    category: 'sides',
+    name: 'Whole Lobster',
+    description: 'Whole lobster steamed to perfection, served with drawn butter.',
+    price: '55.15',
+    image: '/images/gourmet_lobster_tray.webp',
     spiceLevel: 0,
     featured: false
   },
@@ -540,19 +506,9 @@ export const MENU_ITEMS = [
     id: 'hard-boiled-egg',
     category: 'sides',
     name: 'Hard Boiled Egg',
-    description: '',
+    description: 'Boiled egg infused with rich garlic butter and Cajun seasonings.',
     price: '1.25',
     image: '/images/hard_boiled_egg.webp',
-    spiceLevel: 0,
-    featured: false
-  },
-  {
-    id: 'potatoes',
-    category: 'sides',
-    name: 'Potatoes',
-    description: '3 pieces.',
-    price: '3.00',
-    image: '/images/boiled_potatoes.webp',
     spiceLevel: 0,
     featured: false
   },
@@ -560,7 +516,7 @@ export const MENU_ITEMS = [
     id: 'steamed-rice',
     category: 'sides',
     name: 'Steamed Rice',
-    description: 'Steamed white rice, a simple and versatile side.',
+    description: 'Steamed white rice, perfect for soaking up delicious boil sauces.',
     price: '3.00',
     image: '/images/steamed_rice.webp',
     spiceLevel: 0,
@@ -570,41 +526,173 @@ export const MENU_ITEMS = [
     id: 'seafood-spaghetti',
     category: 'sides',
     name: 'Seafood Spaghetti',
-    description: 'Spaghetti with shrimp and clam.',
+    description: 'Spaghetti pasta tossed with fresh shrimp, clams & garlic broth.',
     price: '20.35',
     image: '/images/seafood_spaghetti.webp',
     spiceLevel: 0,
-    featured: true
+    featured: true,
+    badge: 'Popular Item',
+    badgeType: 'popular'
   },
   {
     id: 'garlic-noodles',
     category: 'sides',
     name: 'Garlic Noodles',
-    description: 'popular item.',
+    description: 'Savory noodles wok-tossed with sweet garlic butter and herbs.',
     price: '8.35',
     image: '/images/garlic_noodles.webp',
     spiceLevel: 0,
-    featured: true
+    featured: true,
+    badge: 'Popular Item',
+    badgeType: 'popular'
   },
   {
     id: 'louisiana-sausages',
     category: 'sides',
     name: 'Louisiana Sausages',
-    description: '6 pieces.',
+    description: '6 slices of savory smoked Louisiana pork sausages.',
     price: '3.90',
     image: '/images/louisiana_sausages.webp',
     spiceLevel: 1,
-    featured: true
+    featured: true,
+    badge: 'Popular Item',
+    badgeType: 'popular'
   },
   {
     id: 'garlic-bread',
     category: 'sides',
     name: 'Garlic Bread',
-    description: '3 pieces. Popular item.',
+    description: '3 thick slices of toasted garlic bread, ideal for dipping in sauce.',
     price: '4.75',
     image: '/images/garlic_bread.webp',
     spiceLevel: 0,
-    featured: true
+    featured: true,
+    badge: 'Popular Item',
+    badgeType: 'popular'
+  },
+
+  // Grilled
+  {
+    id: 'cajun-fish',
+    category: 'grilled',
+    name: 'Cajun Fish',
+    description: 'Grilled fish topped with fresh mango salsa, served with rice & salad.',
+    price: '16.75',
+    image: '/images/cajun_fish_mango.webp',
+    spiceLevel: 0,
+    featured: false
+  },
+  {
+    id: 'house-grilled-shrimp',
+    category: 'grilled',
+    name: 'House Grilled Shrimp',
+    description: 'Juicy seasoned grilled shrimp served with steamed rice & fresh salad.',
+    price: '19.15',
+    image: '/images/seafood_tray.webp',
+    spiceLevel: 0,
+    featured: false
+  },
+
+  // Chicken Wings
+  {
+    id: 'cajun-wings',
+    category: 'chicken-wings',
+    name: 'Cajun Wings',
+    description: 'Crispy chicken wings tossed in spicy authentic Cajun rub.',
+    price: '10.75',
+    image: '/images/chicken_wings.webp',
+    spiceLevel: 1,
+    featured: true,
+    badge: 'Popular Item',
+    badgeType: 'popular'
+  },
+  {
+    id: 'spicy-korean-wings',
+    category: 'chicken-wings',
+    name: 'Spicy Korean',
+    description: 'Crispy wings glazed in sweet and fiery Korean chili sauce.',
+    price: '10.75',
+    image: '/images/chicken_wings.webp',
+    spiceLevel: 2,
+    featured: false
+  },
+  {
+    id: 'lemon-pepper-wings',
+    category: 'chicken-wings',
+    name: 'Lemon Pepper Wings',
+    description: 'Juicy wings tossed in tangy lemon pepper seasoning.',
+    price: '10.75',
+    image: '/images/chicken_wings.webp',
+    spiceLevel: 0,
+    featured: false
+  },
+  {
+    id: 'bbq-wings',
+    category: 'chicken-wings',
+    name: 'BBQ Wings',
+    description: 'Crispy chicken wings coated in sweet and smoky BBQ glaze.',
+    price: '10.75',
+    image: '/images/chicken_wings.webp',
+    spiceLevel: 0,
+    featured: false
+  },
+  {
+    id: 'mango-habanero-wings',
+    category: 'chicken-wings',
+    name: 'Mango Habañero',
+    description: 'Crispy wings tossed in sweet mango glaze infused with fiery habanero.',
+    price: '10.75',
+    image: '/images/chicken_wings.webp',
+    spiceLevel: 1,
+    featured: true,
+    badge: 'Popular Item',
+    badgeType: 'popular'
+  },
+  {
+    id: 'hot-wings',
+    category: 'chicken-wings',
+    name: 'Hot Wings',
+    description: 'Classic spicy buffalo wings tossed in tangy hot sauce.',
+    price: '10.75',
+    image: '/images/chicken_wings.webp',
+    spiceLevel: 2,
+    featured: false
+  },
+
+  // Sandwiches
+  {
+    id: 'oyster-po-boy',
+    category: 'sandwiches',
+    name: 'Oyster Po Boy',
+    description: 'Fried oysters on toasted baguette with lettuce, tomato & remoulade.',
+    price: '16.75',
+    image: '/images/oyster_po_boy.webp',
+    spiceLevel: 0,
+    featured: false
+  },
+  {
+    id: 'fish-po-boy',
+    category: 'sandwiches',
+    name: 'Fish Po Boy',
+    description: 'Crispy fried fish fillet on soft roll with lettuce and fresh tomato.',
+    price: '16.75',
+    image: '/images/fish_po_boy.webp',
+    spiceLevel: 0,
+    featured: true,
+    badge: 'Popular Item',
+    badgeType: 'popular'
+  },
+  {
+    id: 'shrimp-po-boy',
+    category: 'sandwiches',
+    name: 'Shrimp Po Boy',
+    description: 'Crispy battered shrimp with shredded lettuce & zesty sauce on soft roll.',
+    price: '16.75',
+    image: '/images/shrimp_po_boy.webp',
+    spiceLevel: 0,
+    featured: true,
+    badge: 'Popular Item',
+    badgeType: 'popular'
   },
 
   // Drinks - Soda
@@ -612,7 +700,7 @@ export const MENU_ITEMS = [
     id: 'pepsi',
     category: 'drinks-soda',
     name: 'Pepsi',
-    description: 'The bold, refreshing, robust cola',
+    description: 'The bold, refreshing, robust cola.',
     price: '3.90',
     image: '/images/pepsi.webp',
     spiceLevel: 0,
@@ -622,7 +710,7 @@ export const MENU_ITEMS = [
     id: 'diet-pepsi',
     category: 'drinks-soda',
     name: 'Diet Pepsi',
-    description: 'A crisp tasting, refreshing pop of sweet, fizzy bubbles without calories.',
+    description: 'Crisp tasting, refreshing pop of fizzy sweet cola with zero calories.',
     price: '3.90',
     image: '/images/pepsi.webp',
     spiceLevel: 0,
@@ -632,7 +720,7 @@ export const MENU_ITEMS = [
     id: 'mist-twist',
     category: 'drinks-soda',
     name: 'Mist Twist',
-    description: 'Mist Twist, a lemon-lime flavored soda offering a refreshing and crisp taste with a hint of citrus.',
+    description: 'Crisp lemon-lime soda offering a sweet, citrusy pop.',
     price: '3.90',
     image: '/images/mist_twist.webp',
     spiceLevel: 0,
@@ -642,7 +730,7 @@ export const MENU_ITEMS = [
     id: 'orange-soda',
     category: 'drinks-soda',
     name: 'Orange Soda',
-    description: 'Effervescent Orange Soda: A Sweet, Citrus-Infused Beverage',
+    description: 'Effervescent orange soda with a sweet, citrus-infused flavor.',
     price: '3.90',
     image: '/images/orange_soda.webp',
     spiceLevel: 0,
@@ -652,7 +740,7 @@ export const MENU_ITEMS = [
     id: 'dr-pepper',
     category: 'drinks-soda',
     name: 'Dr. Pepper',
-    description: 'Unique blend of 23 flavors, carbonated soft drink.',
+    description: 'Unique blend of 23 flavors in a carbonated soft drink.',
     price: '3.90',
     image: '/images/dr_pepper.webp',
     spiceLevel: 0,
@@ -664,7 +752,7 @@ export const MENU_ITEMS = [
     id: 'fruit-punch',
     category: 'drinks-non-carbonated',
     name: 'Fruit Punch',
-    description: 'A refreshing blend of juicy fruits, perfectly sweetened for a thirst-quenching treat.',
+    description: 'Refreshing blend of sweet juicy fruit flavors served chilled.',
     price: '3.90',
     image: '/images/fruit_punch.webp',
     spiceLevel: 0,
@@ -674,7 +762,7 @@ export const MENU_ITEMS = [
     id: 'apple-juice',
     category: 'drinks-non-carbonated',
     name: 'Apple Juice',
-    description: 'Freshly squeezed apple nectar, packed with the tart and sweet essence of ripe apples.',
+    description: '100% pure apple juice packed with crisp and sweet fruit flavor.',
     price: '3.90',
     image: '/images/apple_juice.webp',
     spiceLevel: 0,
@@ -684,7 +772,7 @@ export const MENU_ITEMS = [
     id: 'orange-juice',
     category: 'drinks-non-carbonated',
     name: 'Orange Juice',
-    description: 'Classic citrus refreshment.',
+    description: 'Freshly squeezed 100% natural orange juice served ice cold.',
     price: '3.90',
     image: '/images/orange_soda.webp',
     spiceLevel: 0,
@@ -694,7 +782,7 @@ export const MENU_ITEMS = [
     id: 'lemonade',
     category: 'drinks-non-carbonated',
     name: 'Lemonade',
-    description: 'Refreshing citrus beverage.',
+    description: 'Classic freshly squeezed lemonade with the perfect sweet-tart balance.',
     price: '3.90',
     image: '/images/lemonade.webp',
     spiceLevel: 0,
@@ -704,9 +792,75 @@ export const MENU_ITEMS = [
     id: 'ice-tea',
     category: 'drinks-non-carbonated',
     name: 'Ice Tea',
-    description: 'Refreshing chilled tea, perfectly brewed for a revitalizing experience.',
+    description: 'Refreshing chilled tea, freshly brewed daily.',
     price: '3.90',
     image: '/images/ice_tea.webp',
+    spiceLevel: 0,
+    featured: false
+  },
+
+  // Kids Menu
+  {
+    id: 'kids-shrimp',
+    category: 'kids-menu',
+    name: 'Kids Fried Shrimp & Fries',
+    description: 'Crispy fried shrimp served with golden french fries.',
+    price: '8.95',
+    image: '/images/fried_shrimp_basket.webp',
+    spiceLevel: 0,
+    featured: false
+  },
+  {
+    id: 'kids-tenders',
+    category: 'kids-menu',
+    name: 'Kids Chicken Tenders & Fries',
+    description: 'Golden chicken tenders served with french fries.',
+    price: '7.95',
+    image: '/images/chicken_tender.webp',
+    spiceLevel: 0,
+    featured: false
+  },
+  {
+    id: 'kids-fish',
+    category: 'kids-menu',
+    name: 'Kids Fried Fish & Fries',
+    description: 'Tender fried fish strip served with crisp french fries.',
+    price: '8.95',
+    image: '/images/fried_fish.webp',
+    spiceLevel: 0,
+    featured: false
+  },
+
+  // Lunch Specials
+  {
+    id: 'lunch-boil-special',
+    category: 'lunch-specials',
+    name: 'Lunch Seafood Boil Special',
+    description: '1/2 lb Shrimp (head off), 1/2 lb Louisiana Sausage, 1 corn & 1 potato.',
+    price: '15.95',
+    image: '/images/shrimp_boil.webp',
+    spiceLevel: 0,
+    featured: true,
+    badge: 'Best Value',
+    badgeType: 'popular'
+  },
+  {
+    id: 'lunch-poboy-combo',
+    category: 'lunch-specials',
+    name: 'Lunch Po Boy Combo',
+    description: 'Choice of Shrimp or Fish Po Boy, served with Cajun Fries & Fountain Drink.',
+    price: '13.95',
+    image: '/images/shrimp_po_boy.webp',
+    spiceLevel: 0,
+    featured: true
+  },
+  {
+    id: 'lunch-basket-special',
+    category: 'lunch-specials',
+    name: 'Lunch Fried Basket Special',
+    description: 'Choice of 3pc Fried Fish or 5pc Fried Shrimp with Cajun Fries & Soda.',
+    price: '12.95',
+    image: '/images/fried_shrimp_basket.webp',
     spiceLevel: 0,
     featured: false
   }
