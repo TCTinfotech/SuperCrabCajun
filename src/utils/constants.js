@@ -600,7 +600,7 @@ export const MENU_ITEMS = [
     name: 'Cajun Wings',
     description: 'Crispy chicken wings tossed in spicy authentic Cajun rub.',
     price: '10.75',
-    image: '/images/chicken_wings.webp',
+    image: '/images/cajun_wings.webp',
     spiceLevel: 1,
     featured: true,
     badge: 'Popular Item',
@@ -612,7 +612,7 @@ export const MENU_ITEMS = [
     name: 'Spicy Korean',
     description: 'Crispy wings glazed in sweet and fiery Korean chili sauce.',
     price: '10.75',
-    image: '/images/chicken_wings.webp',
+    image: '/images/spicy_korean_wings.webp',
     spiceLevel: 2,
     featured: false
   },
@@ -622,7 +622,7 @@ export const MENU_ITEMS = [
     name: 'Lemon Pepper Wings',
     description: 'Juicy wings tossed in tangy lemon pepper seasoning.',
     price: '10.75',
-    image: '/images/chicken_wings.webp',
+    image: '/images/lemon_pepper_wings.webp',
     spiceLevel: 0,
     featured: false
   },
@@ -632,7 +632,7 @@ export const MENU_ITEMS = [
     name: 'BBQ Wings',
     description: 'Crispy chicken wings coated in sweet and smoky BBQ glaze.',
     price: '10.75',
-    image: '/images/chicken_wings.webp',
+    image: '/images/bbq_wings.webp',
     spiceLevel: 0,
     featured: false
   },
@@ -642,7 +642,7 @@ export const MENU_ITEMS = [
     name: 'Mango Habañero',
     description: 'Crispy wings tossed in sweet mango glaze infused with fiery habanero.',
     price: '10.75',
-    image: '/images/chicken_wings.webp',
+    image: '/images/mango_habanero_wings.webp',
     spiceLevel: 1,
     featured: true,
     badge: 'Popular Item',
@@ -654,7 +654,7 @@ export const MENU_ITEMS = [
     name: 'Hot Wings',
     description: 'Classic spicy buffalo wings tossed in tangy hot sauce.',
     price: '10.75',
-    image: '/images/chicken_wings.webp',
+    image: '/images/hot_wings.webp',
     spiceLevel: 2,
     featured: false
   },
