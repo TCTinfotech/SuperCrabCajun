@@ -431,23 +431,43 @@
 
 /* Bottom Red Copyright Strip */
 .footer-copyright-strip {
-  background-color: var(--color-primary);
-  padding-block: 1rem;
+  background-color: var(--color-primary, #df382b);
+  padding: 0.9rem 0;
   color: #ffffff;
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.strip-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
 }
 
 .strip-content p {
   margin: 0;
+  padding: 0;
   color: #ffffff;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  line-height: 1.5;
+  width: 100%;
 }
 
 .strip-content a {
   color: #ffffff;
   text-decoration: underline;
   transition: opacity var(--transition-fast);
-  margin-left: 0.25rem;
+  margin-left: 0.35rem;
 }
 
 .strip-content a:hover {
