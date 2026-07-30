@@ -30,7 +30,7 @@ export default function AboutPage() {
     <div className="about-page">
       <SEOHead 
         title="About Our Restaurant" 
-        description="Learn the story behind Super Crab TX. Discover our commitment to Cajun flavor traditions, fresh catch ingredients, and friendly Texas hospitality."
+        description="Learn the story behind Super Crab. Discover our commitment to Cajun flavor traditions, fresh catch ingredients, and friendly Texas hospitality."
         canonicalUrl="/about"
       />
 
@@ -56,7 +56,7 @@ export default function AboutPage() {
               It all began with a simple idea: that dining should be an adventure, a hands-on experience that brings people together. There is something unique about gathering around a table, putting on bibs, rolling up sleeves, and digging into a piping-hot steam bag of crawfish and crab.
             </p>
             <p>
-              <strong>{BRAND_NAME}</strong> was founded in Texas by a group of seafood lovers who wanted to fuse traditional Louisiana Cajun spices with bold, modern flavors. We experimented with hundreds of recipes in our test kitchens before finalizing our signature **Super Crab TX Special sauce**—the perfect blend of garlic butter, lemon pepper, and classic Cajun heat.
+              <strong>{BRAND_NAME}</strong> was founded in Texas by a group of seafood lovers who wanted to fuse traditional Louisiana Cajun spices with bold, modern flavors. We experimented with hundreds of recipes in our test kitchens before finalizing our signature **Super Crab Special sauce**—the perfect blend of garlic butter, lemon pepper, and classic Cajun heat.
             </p>
             <p>
               Today, at our location in Texas City, our mission remains unchanged: to serve the highest quality seafood boils with friendly southern hospitality in a fun, lively atmosphere.
@@ -67,7 +67,7 @@ export default function AboutPage() {
             <div className="story-image-card">
               <img 
                 src="/images/seafood_spread.webp" 
-                alt="Super Crab TX seafood boil feast"
+                alt="Super Crab seafood boil feast"
                 className="about-story-img"
               />
               <div className="story-image-overlay glass-card">
@@ -113,7 +113,7 @@ export default function AboutPage() {
 
           <div className="gallery-grid reveal">
             <div className="gallery-item item-wide">
-              <img src="/images/seafood_spread.webp" alt="Super Crab TX Spread" />
+              <img src="/images/seafood_spread.webp" alt="Super Crab Spread" />
             </div>
             <div className="gallery-item">
               <img src="/images/crawfish_pile.webp" alt="Cajun crawfish boil pile" />

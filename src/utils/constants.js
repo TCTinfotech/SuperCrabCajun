@@ -1,6 +1,6 @@
 /* Site Constants & Sample Data */
 
-export const BRAND_NAME = 'Super Crab TX';
+export const BRAND_NAME = 'Super Crab';
 export const BRAND_TAGLINE = 'Premium Cajun Seafood & Juicy Crab';
 
 export const DOORDASH_ORDER_URL = 'https://order.online/store/super-crab-palmer-hwy-2519187?utm_id=97757_v0_s00_e0_tv0&fbclid=IwY2xjawSiMLRleHRuA2FlbQIxMABicmlkETF3ZHNwWEcwZmhXeUE0S21hc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHvh1dshdA9SIHiYPlSsqGydpM2CXrBo74wV2RZdQknVODcuVEeSSDevaBNUf_aem__1rPImzAoWoAvodEpsUFyA';
@@ -46,9 +46,9 @@ export const POS_PLATFORMS = [
 export const LOCATIONS = [
   {
     id: 'palmer-hwy',
-    name: 'Super Crab TX',
+    name: 'Super Crab',
     address: '3506 Palmer Hwy, Texas City, TX 77590, USA',
-    phone: '',
+    phone: '(409) 655-5502',
     email: 'info@supercrabtx.com',
     hours: {
       weekday: '11:30 AM - 10:30 PM',
@@ -123,7 +123,7 @@ export const MENU_CATEGORIES = [
   { id: 'chicken-wings', name: 'Chicken wings', subtitle: 'Crispy Wings Tossed In Your Favorite Seasoning' },
   { id: 'sandwiches', name: 'Sandwiches', subtitle: 'Hearty Po Boys & Sandwiches (Served with Cajun Fries)', listImages: ['/images/shrimp_po_boy.webp', '/images/oyster_po_boy.webp', '/images/fish_po_boy.webp'] },
   { id: 'drinks-soda-non-carbonated', name: 'Drinks - Soda/Non-Carbonated', listImages: ['/images/pepsi.webp', '/images/lemonade.webp', '/images/apple_juice.webp'] },
-  { id: 'kids-menu', name: 'Kids Menu', subtitle: 'Delightful Meals For Kids Under 10 (Served with Fries)' },
+  { id: 'kids-menu', name: 'Kids Menu', subtitle: 'Delightful meals for Kids (Served with Fries)' },
   { id: 'lunch-specials', name: 'Lunch Specials', subtitle: 'Daily Lunch Deals (Mon - Fri 11:00 AM - 3:00 PM)' }
 ];
 
@@ -806,8 +806,8 @@ export const MENU_ITEMS = [
   {
     id: 'kids-shrimp',
     category: 'kids-menu',
-    name: 'Kids Fried Shrimp & Fries',
-    description: 'Crispy fried shrimp served with golden french fries.',
+    name: 'Fried Shrimp',
+    description: 'Crispy fried shrimp.',
     price: '8.95',
     image: '/images/fried_shrimp_basket.webp',
     spiceLevel: 0,
@@ -816,8 +816,8 @@ export const MENU_ITEMS = [
   {
     id: 'kids-tenders',
     category: 'kids-menu',
-    name: 'Kids Chicken Tenders & Fries',
-    description: 'Golden chicken tenders served with french fries.',
+    name: 'Chicken Tenders',
+    description: 'Golden chicken tenders.',
     price: '7.95',
     image: '/images/chicken_tender.webp',
     spiceLevel: 0,
@@ -826,8 +826,8 @@ export const MENU_ITEMS = [
   {
     id: 'kids-fish',
     category: 'kids-menu',
-    name: 'Kids Fried Fish & Fries',
-    description: 'Tender fried fish strip served with crisp french fries.',
+    name: 'Fried Fish',
+    description: 'Tender fried fish strip.',
     price: '8.95',
     image: '/images/fried_fish.webp',
     spiceLevel: 0,
@@ -875,7 +875,7 @@ export const TESTIMONIALS = [
     name: 'Sarah M.',
     location: 'Houston, TX',
     stars: 5,
-    comment: 'The Super Crab TX Special sauce is absolutely life-changing! We got the King Crab and Shrimp boil medium spice. Best crawfish and crab in Texas, hands down.'
+    comment: 'The Super Crab Special sauce is absolutely life-changing! We got the King Crab and Shrimp boil medium spice. Best crawfish and crab in Texas, hands down.'
   },
   {
     id: 2,

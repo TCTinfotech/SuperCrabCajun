@@ -18,7 +18,7 @@ export default function HomePage() {
     <>
       <SEOHead 
         title="Home" 
-        description="Welcome to Super Crab TX. Indulge in premium Louisiana-style Cajun seafood boils, crabs, lobster tail, shrimp, and fresh crawfish. Taste the magic today!"
+        description="Welcome to Super Crab. Indulge in premium Louisiana-style Cajun seafood boils, crabs, lobster tail, shrimp, and fresh crawfish. Taste the magic today!"
         canonicalUrl="/"
       />
       

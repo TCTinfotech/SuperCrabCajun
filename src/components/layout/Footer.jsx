@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { MapPin, Phone, Mail } from 'lucide-react';
 import { SOCIAL_LINKS, LOCATIONS, BRAND_NAME } from '../../utils/constants';
 import './Footer.css';
 
@@ -7,6 +8,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
   const daysMap = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
   const todayName = daysMap[new Date().getDay()];
+  const mainLocation = LOCATIONS[0];
 
   return (
     <footer className="footer">
@@ -20,7 +22,7 @@ export default function Footer() {
       <div className="container footer-content-wrapper">
         <div className="footer-columns-grid">
 
-          {/* Column 1: Super Crab TX Brand Logo Segment */}
+          {/* Column 1: Super Crab TX Brand Logo Segment & Address */}
           <div className="footer-col brand-crave-col">
             {/* Floating food icons decor */}
             <div className="footer-brand-decor">
@@ -31,8 +33,34 @@ export default function Footer() {
 
             <Link to="/" className="crave-boil-logo">
               <span className="crave-text">SUPER</span>
-              <span className="boil-text">CRAB TX</span>
+              <span className="boil-text">CRAB</span>
             </Link>
+
+            {/* Store Address & Location */}
+            {mainLocation && (
+              <div className="footer-address-box">
+                <a
+                  href={mainLocation.googleMapsLink || `https://www.google.com/maps?q=${encodeURIComponent(mainLocation.address)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="footer-address-link"
+                  title="View on Google Maps"
+                >
+                  <MapPin className="footer-address-icon" size={18} />
+                  <span>{mainLocation.address}</span>
+                </a>
+                {mainLocation.phone && (
+                  <a
+                    href={`tel:${mainLocation.phone.replace(/[^0-9+]/g, '')}`}
+                    className="footer-address-link"
+                    title="Call Store"
+                  >
+                    <Phone className="footer-address-icon" size={18} />
+                    <span>{mainLocation.phone}</span>
+                  </a>
+                )}
+              </div>
+            )}
 
             <div className="footer-socials-red">
               <a href={SOCIAL_LINKS.facebook} target="_blank" rel="noopener noreferrer" className="social-red-icon" aria-label="Facebook">
@@ -126,7 +154,7 @@ export default function Footer() {
       {/* Bottom Red Copyright Bar */}
       <div className="footer-copyright-strip">
         <div className="container strip-content text-center">
-          <p>&copy; {currentYear} Super Crab TX. All Rights Reserved. <Link to="/privacy-policy">Privacy Policy</Link>.</p>
+          <p>&copy; {currentYear} Super Crab. All Rights Reserved. <Link to="/privacy-policy">Privacy Policy</Link>.</p>
         </div>
       </div>
     </footer>

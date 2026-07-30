@@ -35,7 +35,7 @@ export default function ContactPage() {
     <div className="contact-page">
       <SEOHead 
         title="Contact Us" 
-        description="Get in touch with Super Crab TX. Send inquiries about catering services, private dinners, or general feedback. We are here to help!"
+        description="Get in touch with Super Crab. Send inquiries about catering services, private dinners, or general feedback. We are here to help!"
         canonicalUrl="/contact"
       />
 
@@ -58,7 +58,7 @@ export default function ContactPage() {
           <div className="contact-info-side reveal">
             <h2>DIRECT CONTACT</h2>
             <p className="info-desc">
-              Have a question about a specific order, lost item, or reservations? Reach out directly to your local Super Crab TX:
+              Have a question about a specific order, lost item, or reservations? Reach out directly to your local Super Crab:
             </p>
 
             <div className="branches-info-list">
@@ -67,7 +67,11 @@ export default function ContactPage() {
                   <h3 className="branch-name">{loc.name}</h3>
                   <div className="branch-info-rows">
                     <span className="info-row"><MapPin size={16} className="contact-icon" /> {loc.address}</span>
-                    {loc.phone && <span className="info-row"><Phone size={16} className="contact-icon" /> {loc.phone}</span>}
+                    {loc.phone && (
+                      <a href={`tel:${loc.phone.replace(/[^0-9+]/g, '')}`} className="info-row contact-link">
+                        <Phone size={16} className="contact-icon" /> {loc.phone}
+                      </a>
+                    )}
                     <span className="info-row"><Mail size={16} className="contact-icon" /> {loc.email}</span>
                     <div className="info-row">
                       <Clock size={16} className="contact-icon" />
@@ -186,7 +190,7 @@ export default function ContactPage() {
             allowFullScreen="" 
             loading="lazy" 
             referrerPolicy="no-referrer-when-downgrade"
-            title="Super Crab TX Primary Location Map"
+            title="Super Crab Primary Location Map"
             className="contact-map-iframe"
           />
         </div>

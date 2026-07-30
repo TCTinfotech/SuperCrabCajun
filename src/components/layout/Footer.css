@@ -145,6 +145,36 @@
   animation: floatAnim 5s ease-in-out infinite alternate;
 }
 
+/* Store Address Link */
+.footer-address-box {
+  margin-top: 0.85rem;
+  margin-bottom: 0.35rem;
+}
+
+.footer-address-link {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  color: #cbd5e1;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1.45;
+  text-decoration: none;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.footer-address-link:hover {
+  color: var(--color-primary, #df382b);
+  transform: translateX(2px);
+}
+
+.footer-address-icon {
+  color: var(--color-primary, #df382b);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
 /* Red social circles */
 .footer-socials-red {
   display: flex;

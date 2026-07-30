@@ -51,7 +51,7 @@ export default function LocationsPage() {
     <div className="locations-page">
       <SEOHead 
         title="Location & Hours" 
-        description="Visit SuperCrab TX in Texas City. Find address, operating hours, and direction details."
+        description="Visit SuperCrab in Texas City. Find address, operating hours, and direction details."
         canonicalUrl="/locations"
       />
 
@@ -97,7 +97,7 @@ export default function LocationsPage() {
                       <Phone size={20} className="detail-icon" />
                       <div>
                         <h3 className="detail-label">Phone</h3>
-                        <p className="detail-value">{loc.phone}</p>
+                        <a href={`tel:${loc.phone.replace(/[^0-9+]/g, '')}`} className="detail-value phone-link">{loc.phone}</a>
                       </div>
                     </div>
                   )}

@@ -42,7 +42,7 @@ export default function OrderPage() {
     <div className="order-page">
       <SEOHead 
         title="Order Online" 
-        description="Order Super Crab TX online. Select your nearest Texas branch (Houston, Austin, Dallas) and order fresh Cajun boils via Square, Postmates or Order.online."
+        description="Order Super Crab online. Select your nearest Texas branch (Houston, Austin, Dallas) and order fresh Cajun boils via Square, Postmates or Order.online."
         canonicalUrl="/order"
       />
 

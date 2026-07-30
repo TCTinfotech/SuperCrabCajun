@@ -26,7 +26,7 @@ export default function Newsletter() {
           <div className="newsletter-content">
             <h2 className="newsletter-heading">CATCH THE LATEST NEWS</h2>
             <div className="newsletter-heading-line" />
-            <p className="newsletter-subheading">SIGN UP FOR SUPER CRAB TX UPDATES AND EXCLUSIVE DEALS!</p>
+            <p className="newsletter-subheading">SIGN UP FOR SUPER CRAB UPDATES AND EXCLUSIVE DEALS!</p>
 
             <form className="newsletter-form" onSubmit={handleSubmit}>
               <div className="form-fields-wrapper">

@@ -42,7 +42,7 @@ export default function MenuPage() {
     <div className="menu-page">
       <SEOHead
         title="Our Menu"
-        description="Browse the Super Crab TX menu. Discover our signature Cajun seafood boils, starters, fried baskets, and spice customizations."
+        description="Browse the Super Crab menu. Discover our signature Cajun seafood boils, starters, fried baskets, and spice customizations."
         canonicalUrl="/menu"
       />
 
@@ -59,7 +59,7 @@ export default function MenuPage() {
           <h1 className="banner-title">GET DOWN & MESSY !</h1>
           <div className="banner-title-line" />
           <p className="banner-desc">
-            Louisiana soul, Texas heat. At Super Crab TX, every seafood boil is a celebration — snow crab, crawfish, shrimp, and lobster tail, smothered in our signature Cajun sauces and seasoned to perfection.
+            Louisiana soul, Texas heat. At Super Crab, every seafood boil is a celebration — snow crab, crawfish, shrimp, and lobster tail, smothered in our signature Cajun sauces and seasoned to perfection.
           </p>
           <p className="banner-desc second-desc">
             Roll up your sleeves, crack open a claw, and let the garlic butter flow. Whether you like it mild or volcano-hot, our kitchen brings the flavor and the fire. This isn't just dinner — this is the boil. 🔥
@@ -181,7 +181,7 @@ export default function MenuPage() {
         <div className="container cta-v2-inner">
           <h2 className="cta-v2-title">HUNGRY YET?</h2>
           <p className="cta-v2-subtitle">
-            Find your nearest Super Crab TX and start your seafood boil adventure today.
+            Find your nearest Super Crab and start your seafood boil adventure today.
           </p>
           <div className="cta-v2-buttons">
             <a href="https://order.online/store/super-crab-palmer-hwy-2519187?pickup=true" target="_blank" rel="noopener noreferrer" className="cta-v2-btn cta-v2-primary">
