@@ -86,6 +86,61 @@
   margin-top: 0.1rem;
 }
 
+.branch-hours-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  width: 100%;
+  max-width: 330px;
+}
+
+.branch-hours-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.88rem;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.hours-days {
+  font-weight: 600;
+  color: var(--color-text-primary);
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.hours-time {
+  color: var(--color-text-secondary);
+  text-align: right;
+  white-space: nowrap;
+}
+
+.today-badge {
+  font-size: 0.58rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  background: var(--color-primary, #df382b);
+  color: #ffffff;
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+  letter-spacing: 0.04em;
+  margin-left: 0.35rem;
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+  box-shadow: 0 2px 4px rgba(223, 56, 43, 0.35);
+  white-space: nowrap;
+}
+
+.branch-hours-item.is-today .hours-days,
+.branch-hours-item.is-today .hours-time {
+  color: var(--color-primary, #df382b);
+  font-weight: 700;
+}
+
 /* Form Column styling */
 .contact-form-card {
   padding: 2.5rem 2rem;

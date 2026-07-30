@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle2 } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, Send, CheckCircle2 } from 'lucide-react';
 import SEOHead from '../components/layout/SEOHead';
 import { BRAND_NAME, LOCATIONS } from '../utils/constants';
 import { useScrollReveal } from '../utils/scrollReveal';
@@ -13,6 +13,9 @@ export default function ContactPage() {
     message: ''
   });
   const [submitted, setSubmitted] = useState(false);
+
+  const daysMap = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  const todayName = daysMap[new Date().getDay()];
 
   useScrollReveal();
 
@@ -64,8 +67,25 @@ export default function ContactPage() {
                   <h3 className="branch-name">{loc.name}</h3>
                   <div className="branch-info-rows">
                     <span className="info-row"><MapPin size={16} className="contact-icon" /> {loc.address}</span>
-                    <span className="info-row"><Phone size={16} className="contact-icon" /> {loc.phone}</span>
+                    {loc.phone && <span className="info-row"><Phone size={16} className="contact-icon" /> {loc.phone}</span>}
                     <span className="info-row"><Mail size={16} className="contact-icon" /> {loc.email}</span>
+                    <div className="info-row">
+                      <Clock size={16} className="contact-icon" />
+                      <div className="branch-hours-list">
+                        {loc.hours.raw.map((hr, idx) => {
+                          const isToday = hr.days === todayName;
+                          return (
+                            <div key={idx} className={`branch-hours-item ${isToday ? 'is-today' : ''}`}>
+                              <span className="hours-days">
+                                {hr.days}
+                                {isToday && <span className="today-badge">TODAY</span>}
+                              </span>
+                              <span className="hours-time">{hr.time}</span>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
                   </div>
                 </div>
               ))}

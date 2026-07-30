@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { SOCIAL_LINKS } from '../../utils/constants';
+import { SOCIAL_LINKS, LOCATIONS, BRAND_NAME } from '../../utils/constants';
 import './Footer.css';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const daysMap = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  const todayName = daysMap[new Date().getDay()];
 
   return (
     <footer className="footer">
@@ -18,7 +20,7 @@ export default function Footer() {
       <div className="container footer-content-wrapper">
         <div className="footer-columns-grid">
 
-          {/* Column 1: Crave The Boil Brand Segment */}
+          {/* Column 1: Super Crab TX Brand Logo Segment */}
           <div className="footer-col brand-crave-col">
             {/* Floating food icons decor */}
             <div className="footer-brand-decor">
@@ -27,10 +29,10 @@ export default function Footer() {
               <span className="decor-shrimp-2">🦐</span>
             </div>
 
-            <div className="crave-boil-logo">
-              <span className="crave-text">CRAVE THE</span>
-              <span className="boil-text">BOIL</span>
-            </div>
+            <Link to="/" className="crave-boil-logo">
+              <span className="crave-text">SUPER</span>
+              <span className="boil-text">CRAB TX</span>
+            </Link>
 
             <div className="footer-socials-red">
               <a href={SOCIAL_LINKS.facebook} target="_blank" rel="noopener noreferrer" className="social-red-icon" aria-label="Facebook">
@@ -45,11 +47,32 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Column 2: Middle Links list */}
+          {/* Column 2: Navigation Links */}
           <div className="footer-col links-col">
+            <h4 className="footer-col-title">Quick Links</h4>
             <ul className="footer-links-list">
               <li><Link to="/menu">Menu</Link></li>
+              <li><Link to="/about">About Us</Link></li>
               <li><Link to="/contact">Contact Us</Link></li>
+            </ul>
+          </div>
+
+          {/* Column 3: Hours of Operation */}
+          <div className="footer-col hours-col">
+            <h4 className="footer-col-title">Hours of Operation</h4>
+            <ul className="footer-hours-list">
+              {LOCATIONS[0].hours.raw.map((hr, idx) => {
+                const isToday = hr.days === todayName;
+                return (
+                  <li key={idx} className={`footer-hours-item ${isToday ? 'is-today' : ''}`}>
+                    <span className="f-days">
+                      {hr.days}
+                      {isToday && <span className="today-badge">TODAY</span>}
+                    </span>
+                    <span className="f-time">{hr.time}</span>
+                  </li>
+                );
+              })}
             </ul>
           </div>
 

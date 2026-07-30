@@ -133,22 +133,37 @@
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
+  width: 100%;
+  max-width: 330px;
 }
 
 .schedule-line {
   display: flex;
   justify-content: space-between;
-  width: 250px;
+  align-items: center;
+  width: 100%;
   gap: 1rem;
+  white-space: nowrap;
 }
 
 .schedule-days {
-  font-weight: 500;
-  color: var(--color-text-secondary);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
 }
 
 .schedule-time {
-  color: var(--color-text-muted);
+  color: var(--color-text-secondary);
+  text-align: right;
+  white-space: nowrap;
+}
+
+.schedule-line.is-today .schedule-days,
+.schedule-line.is-today .schedule-time {
+  color: var(--color-primary, #df382b);
+  font-weight: 700;
 }
 
 /* Actions Section */

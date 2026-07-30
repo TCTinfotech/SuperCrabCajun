@@ -19,32 +19,39 @@ export default function LocationsPage() {
 
     let isOpen = false;
     let closingTime = '';
+    let openingTime = '11:30 AM';
 
-    if (day === 5 || day === 6) { // Fri - Sat
+    if (day === 5 || day === 6) { // Fri - Sat: 11:30 AM - 11:00 PM
       isOpen = currentTime >= 11.5 && currentTime < 23;
       closingTime = '11:00 PM';
-    } else if (day === 0) { // Sun
-      isOpen = currentTime >= 11.5 && currentTime < 22;
-      closingTime = '10:00 PM';
-    } else { // Mon - Thu
-      isOpen = currentTime >= 12 && currentTime < 22;
-      closingTime = '10:00 PM';
+      openingTime = (day === 6 && currentTime >= 23) ? '12:00 PM' : '11:30 AM';
+    } else if (day === 0) { // Sun: 12:00 PM - 9:00 PM
+      isOpen = currentTime >= 12 && currentTime < 21;
+      closingTime = '9:00 PM';
+      openingTime = currentTime < 12 ? '12:00 PM' : '11:30 AM';
+    } else { // Mon - Thu: 11:30 AM - 10:30 PM
+      isOpen = currentTime >= 11.5 && currentTime < 22.5;
+      closingTime = '10:30 PM';
+      openingTime = '11:30 AM';
     }
 
     return {
       isOpen,
-      text: isOpen ? `Open Now • Closes at ${closingTime}` : 'Closed • Opens at 12:00 PM',
+      text: isOpen ? `Open Now • Closes at ${closingTime}` : `Closed • Opens at ${openingTime}`,
       class: isOpen ? 'status-open' : 'status-closed'
     };
   };
 
   const status = getOpenStatus();
 
+  const daysMap = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  const todayName = daysMap[new Date().getDay()];
+
   return (
     <div className="locations-page">
       <SEOHead 
         title="Location & Hours" 
-        description="Visit SuperCrab TX in Texas City. Find address, contact phone number, hours, and direction details."
+        description="Visit SuperCrab TX in Texas City. Find address, operating hours, and direction details."
         canonicalUrl="/locations"
       />
 
@@ -54,7 +61,7 @@ export default function LocationsPage() {
           <span className="banner-subtitle">Texas Pride</span>
           <h1 className="banner-title text-gradient">OUR LOCATION</h1>
           <p className="banner-desc">
-            Find address directions, operating schedule, phone lines, and order links for our Texas City location.
+            Find address directions, operating schedule, and order links for our Texas City location.
           </p>
         </div>
       </section>
@@ -85,25 +92,33 @@ export default function LocationsPage() {
                     </div>
                   </div>
 
-                  <div className="detail-row">
-                    <Phone size={20} className="detail-icon" />
-                    <div>
-                      <h3 className="detail-label">Phone</h3>
-                      <p className="detail-value">{loc.phone}</p>
+                  {loc.phone && (
+                    <div className="detail-row">
+                      <Phone size={20} className="detail-icon" />
+                      <div>
+                        <h3 className="detail-label">Phone</h3>
+                        <p className="detail-value">{loc.phone}</p>
+                      </div>
                     </div>
-                  </div>
+                  )}
 
                   <div className="detail-row">
                     <Clock size={20} className="detail-icon" />
                     <div>
                       <h3 className="detail-label">Hours</h3>
                       <div className="detail-value hours-schedule">
-                        {loc.hours.raw.map((hr, index) => (
-                          <div key={index} className="schedule-line">
-                            <span className="schedule-days">{hr.days}</span>
-                            <span className="schedule-time">{hr.time}</span>
-                          </div>
-                        ))}
+                        {loc.hours.raw.map((hr, index) => {
+                          const isToday = hr.days === todayName;
+                          return (
+                            <div key={index} className={`schedule-line ${isToday ? 'is-today' : ''}`}>
+                              <span className="schedule-days">
+                                {hr.days}
+                                {isToday && <span className="today-badge">TODAY</span>}
+                              </span>
+                              <span className="schedule-time">{hr.time}</span>
+                            </div>
+                          );
+                        })}
                       </div>
                     </div>
                   </div>

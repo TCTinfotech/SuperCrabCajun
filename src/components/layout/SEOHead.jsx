@@ -25,29 +25,34 @@ export default function SEOHead({ title, description, canonicalUrl, schema }) {
     'name': BRAND_NAME,
     'image': ogImage,
     'url': siteUrl,
-    'telephone': '(409) 655-5502',
     'priceRange': '$$',
     'servesCuisine': 'Cajun Seafood, American',
     'address': {
       '@type': 'PostalAddress',
-      'streetAddress': '1220 N Shepherd Dr',
-      'addressLocality': 'Houston',
+      'streetAddress': '3506 Palmer Hwy',
+      'addressLocality': 'Texas City',
       'addressRegion': 'TX',
-      'postalCode': '77008',
+      'postalCode': '77590',
       'addressCountry': 'US'
     },
     'openingHoursSpecification': [
       {
         '@type': 'OpeningHoursSpecification',
-        'dayOfWeek': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Sunday'],
-        'opens': '12:00',
-        'closes': '22:00'
+        'dayOfWeek': ['Monday', 'Tuesday', 'Wednesday', 'Thursday'],
+        'opens': '11:30',
+        'closes': '22:30'
       },
       {
         '@type': 'OpeningHoursSpecification',
         'dayOfWeek': ['Friday', 'Saturday'],
         'opens': '11:30',
         'closes': '23:00'
+      },
+      {
+        '@type': 'OpeningHoursSpecification',
+        'dayOfWeek': ['Sunday'],
+        'opens': '12:00',
+        'closes': '21:00'
       }
     ]
   };

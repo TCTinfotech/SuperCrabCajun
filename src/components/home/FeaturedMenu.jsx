@@ -10,7 +10,9 @@ export default function FeaturedMenu() {
     { id: 'salad-soups', name: 'Salad & Soups', image: '/images/green_salad.webp' },
     { id: 'combos', name: 'Combos', image: '/images/combo_1.webp' },
     { id: 'sides', name: 'Sides & Add-ons', image: '/images/crawfish_close.webp' },
-    { id: 'drinks-soda', name: 'Drinks', image: '/images/lemonade.webp' }
+    { id: 'sandwiches', name: 'Sandwiches', image: '/images/shrimp_po_boy.webp' },
+    { id: 'kids-menu', name: 'Kids Menu', image: '/images/chicken_wings.webp' },
+    { id: 'drinks-soda-non-carbonated', name: 'Drinks', image: '/images/lemonade.webp' }
   ];
 
   return (

@@ -220,12 +220,6 @@ export default function PrivacyPolicyPage() {
                   <a href="mailto:info@supercrabtx.com">info@supercrabtx.com</a>
                 </span>
               </div>
-              <div className="contact-detail-item">
-                <span className="detail-label"><Phone size={18} /> Phone:</span>
-                <span className="detail-value">
-                  <a href="tel:4096555502">(409) 655-5502</a>
-                </span>
-              </div>
               <div className="contact-detail-item full-width">
                 <span className="detail-label"><MapPin size={18} /> Address:</span>
                 <span className="detail-value">3506 Palmer Hwy, Texas City, TX 77590, USA</span>

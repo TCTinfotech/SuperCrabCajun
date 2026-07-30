@@ -203,16 +203,91 @@
   align-items: flex-start;
 }
 
+.loc-info-row.hours-row {
+  margin-top: 0.25rem;
+}
+
 .loc-info-icon {
-  color: var(--color-accent);
-  margin-top: 0.15rem;
+  color: var(--color-primary);
+  margin-top: 0.2rem;
   flex-shrink: 0;
 }
 
 .loc-info-text {
-  font-size: 0.9rem;
-  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+  color: var(--color-text-primary);
   line-height: 1.5;
+}
+
+.loc-schedule-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  width: 100%;
+  max-width: 330px;
+  padding: 0.85rem 1rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+}
+
+.schedule-line-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.88rem;
+  line-height: 1.4;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
+  white-space: nowrap;
+}
+
+.schedule-line-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.schedule-days-label {
+  font-weight: 700;
+  color: var(--color-text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  white-space: nowrap;
+}
+
+.today-badge {
+  font-size: 0.58rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  background: var(--color-primary, #df382b);
+  color: #ffffff;
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+  letter-spacing: 0.04em;
+  margin-left: 0.35rem;
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+  box-shadow: 0 2px 4px rgba(223, 56, 43, 0.35);
+  white-space: nowrap;
+}
+
+.schedule-time-val {
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.schedule-line-item.is-today .schedule-days-label {
+  color: var(--color-primary);
+}
+
+.schedule-line-item.is-today .schedule-time-val {
+  color: var(--color-primary);
+  font-weight: 700;
 }
 
 .loc-card-actions {

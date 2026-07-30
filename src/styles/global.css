@@ -198,6 +198,18 @@
     padding-block: clamp(4rem, 2rem + 6vh, 8rem);
   }
 
+  .d-block {
+    display: block;
+  }
+
+  .d-flex {
+    display: flex;
+  }
+
+  .flex-column {
+    flex-direction: column;
+  }
+
   .sr-only {
     position: absolute;
     width: 1px;

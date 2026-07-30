@@ -48,13 +48,19 @@ export const LOCATIONS = [
     id: 'palmer-hwy',
     name: 'Super Crab TX',
     address: '3506 Palmer Hwy, Texas City, TX 77590, USA',
-    phone: '(409) 655-5502',
+    phone: '',
     email: 'info@supercrabtx.com',
     hours: {
-      weekday: '11:00 AM - 9:45 PM',
-      weekend: '11:00 AM - 9:45 PM',
+      weekday: '11:30 AM - 10:30 PM',
+      weekend: '11:30 AM - 11:00 PM',
       raw: [
-        { days: 'Mon - Sun', time: '11:00 AM - 9:45 PM' }
+        { days: 'Monday', time: '11:30 AM - 10:30 PM' },
+        { days: 'Tuesday', time: '11:30 AM - 10:30 PM' },
+        { days: 'Wednesday', time: '11:30 AM - 10:30 PM' },
+        { days: 'Thursday', time: '11:30 AM - 10:30 PM' },
+        { days: 'Friday', time: '11:30 AM - 11:00 PM' },
+        { days: 'Saturday', time: '11:30 AM - 11:00 PM' },
+        { days: 'Sunday', time: '12:00 PM - 9:00 PM' }
       ]
     },
     googleMapsEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3472.932822452818!2d-94.9431872!3d29.3995831!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x863f9da372fffffb%3A0xc665b17b6dc0af4c!2s3506%20Palmer%20Hwy%2C%20Texas%20City%2C%20TX%2077590%2C%20USA!5e0!3m2!1sen!2s!4v1718625500000!5m2!1sen!2s',
@@ -116,8 +122,7 @@ export const MENU_CATEGORIES = [
   { id: 'grilled', name: 'Grilled', subtitle: 'Sizzling Grilled Seafood & House Specialties' },
   { id: 'chicken-wings', name: 'Chicken wings', subtitle: 'Crispy Wings Tossed In Your Favorite Seasoning' },
   { id: 'sandwiches', name: 'Sandwiches', subtitle: 'Hearty Po Boys & Sandwiches (Served with Cajun Fries)', listImages: ['/images/shrimp_po_boy.webp', '/images/oyster_po_boy.webp', '/images/fish_po_boy.webp'] },
-  { id: 'drinks-soda', name: 'Drinks - Soda', listImages: ['/images/pepsi.webp', '/images/mist_twist.webp', '/images/orange_soda.webp'] },
-  { id: 'drinks-non-carbonated', name: 'Drinks - Non-Carbonated', listImages: ['/images/lemonade.webp', '/images/apple_juice.webp', '/images/ice_tea.webp'] },
+  { id: 'drinks-soda-non-carbonated', name: 'Drinks - Soda/Non-Carbonated', listImages: ['/images/pepsi.webp', '/images/lemonade.webp', '/images/apple_juice.webp'] },
   { id: 'kids-menu', name: 'Kids Menu', subtitle: 'Delightful Meals For Kids Under 10 (Served with Fries)' },
   { id: 'lunch-specials', name: 'Lunch Specials', subtitle: 'Daily Lunch Deals (Mon - Fri 11:00 AM - 3:00 PM)' }
 ];
@@ -695,10 +700,10 @@ export const MENU_ITEMS = [
     badgeType: 'popular'
   },
 
-  // Drinks - Soda
+  // Drinks - Soda/Non-Carbonated
   {
     id: 'pepsi',
-    category: 'drinks-soda',
+    category: 'drinks-soda-non-carbonated',
     name: 'Pepsi',
     description: 'The bold, refreshing, robust cola.',
     price: '3.90',
@@ -708,7 +713,7 @@ export const MENU_ITEMS = [
   },
   {
     id: 'diet-pepsi',
-    category: 'drinks-soda',
+    category: 'drinks-soda-non-carbonated',
     name: 'Diet Pepsi',
     description: 'Crisp tasting, refreshing pop of fizzy sweet cola with zero calories.',
     price: '3.90',
@@ -718,7 +723,7 @@ export const MENU_ITEMS = [
   },
   {
     id: 'mist-twist',
-    category: 'drinks-soda',
+    category: 'drinks-soda-non-carbonated',
     name: 'Mist Twist',
     description: 'Crisp lemon-lime soda offering a sweet, citrusy pop.',
     price: '3.90',
@@ -728,7 +733,7 @@ export const MENU_ITEMS = [
   },
   {
     id: 'orange-soda',
-    category: 'drinks-soda',
+    category: 'drinks-soda-non-carbonated',
     name: 'Orange Soda',
     description: 'Effervescent orange soda with a sweet, citrus-infused flavor.',
     price: '3.90',
@@ -738,7 +743,7 @@ export const MENU_ITEMS = [
   },
   {
     id: 'dr-pepper',
-    category: 'drinks-soda',
+    category: 'drinks-soda-non-carbonated',
     name: 'Dr. Pepper',
     description: 'Unique blend of 23 flavors in a carbonated soft drink.',
     price: '3.90',
@@ -746,11 +751,9 @@ export const MENU_ITEMS = [
     spiceLevel: 0,
     featured: false
   },
-
-  // Drinks - Non-Carbonated
   {
     id: 'fruit-punch',
-    category: 'drinks-non-carbonated',
+    category: 'drinks-soda-non-carbonated',
     name: 'Fruit Punch',
     description: 'Refreshing blend of sweet juicy fruit flavors served chilled.',
     price: '3.90',
@@ -760,7 +763,7 @@ export const MENU_ITEMS = [
   },
   {
     id: 'apple-juice',
-    category: 'drinks-non-carbonated',
+    category: 'drinks-soda-non-carbonated',
     name: 'Apple Juice',
     description: '100% pure apple juice packed with crisp and sweet fruit flavor.',
     price: '3.90',
@@ -770,7 +773,7 @@ export const MENU_ITEMS = [
   },
   {
     id: 'orange-juice',
-    category: 'drinks-non-carbonated',
+    category: 'drinks-soda-non-carbonated',
     name: 'Orange Juice',
     description: 'Freshly squeezed 100% natural orange juice served ice cold.',
     price: '3.90',
@@ -780,7 +783,7 @@ export const MENU_ITEMS = [
   },
   {
     id: 'lemonade',
-    category: 'drinks-non-carbonated',
+    category: 'drinks-soda-non-carbonated',
     name: 'Lemonade',
     description: 'Classic freshly squeezed lemonade with the perfect sweet-tart balance.',
     price: '3.90',
@@ -790,7 +793,7 @@ export const MENU_ITEMS = [
   },
   {
     id: 'ice-tea',
-    category: 'drinks-non-carbonated',
+    category: 'drinks-soda-non-carbonated',
     name: 'Ice Tea',
     description: 'Refreshing chilled tea, freshly brewed daily.',
     price: '3.90',

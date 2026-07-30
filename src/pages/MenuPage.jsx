@@ -18,8 +18,8 @@ export default function MenuPage() {
 
   useEffect(() => {
     if (catParam) {
-      if (catParam === 'drinks') {
-        setOpenSection('drinks-soda');
+      if (catParam === 'drinks' || catParam === 'drinks-soda' || catParam === 'drinks-non-carbonated') {
+        setOpenSection('drinks-soda-non-carbonated');
       } else {
         setOpenSection(catParam);
       }

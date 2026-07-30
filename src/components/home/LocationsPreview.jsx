@@ -6,6 +6,9 @@ import './LocationsPreview.css';
 
 export default function LocationsPreview() {
 
+  const daysMap = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  const todayName = daysMap[new Date().getDay()];
+
   return (
     <section className="locations-preview section-padding">
       <div className="container">
@@ -58,10 +61,21 @@ export default function LocationsPreview() {
                 </div>
               )}
 
-              <div className="loc-info-row">
+              <div className="loc-info-row hours-row">
                 <Clock size={18} className="loc-info-icon" />
-                <div className="loc-info-text">
-                  <span className="d-block text-white">Mon - Sun: {LOCATIONS[0].hours.weekday}</span>
+                <div className="loc-schedule-list">
+                  {LOCATIONS[0].hours.raw.map((hr, idx) => {
+                    const isToday = hr.days === todayName;
+                    return (
+                      <div key={idx} className={`schedule-line-item ${isToday ? 'is-today' : ''}`}>
+                        <span className="schedule-days-label">
+                          {hr.days}
+                          {isToday && <span className="today-badge">TODAY</span>}
+                        </span>
+                        <span className="schedule-time-val">{hr.time}</span>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
 
