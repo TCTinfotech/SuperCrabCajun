@@ -22,7 +22,7 @@ export default function AboutPage() {
     {
       icon: <Trophy size={24} />,
       title: 'Texas Pride',
-      desc: 'Locally owned and operated across Houston, Austin, and Dallas. Southern hospitality is our core.'
+      desc: 'Owned and operated right here in Houston — Southern hospitality runs through everything we do.'
     }
   ];
 

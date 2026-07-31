@@ -130,6 +130,16 @@ export const MENU_CATEGORIES = [
 export const MENU_ITEMS = [
   // Appetizers
   {
+    id: 'onion-rings',
+    category: 'appetizers',
+    name: 'Onion Ring',
+    description: 'Crispy golden fried onion rings served hot and crunchy.',
+    price: '5.50',
+    image: '/images/onion_rings.webp',
+    spiceLevel: 0,
+    featured: false
+  },
+  {
     id: 'french-fries',
     category: 'appetizers',
     name: 'French Fries',
@@ -834,38 +844,48 @@ export const MENU_ITEMS = [
     featured: false
   },
 
-  // Lunch Specials
+  // Lunch Specials (Available weekdays until 3pm)
   {
-    id: 'lunch-boil-special',
+    id: 'lunch-louisiana-chicken',
     category: 'lunch-specials',
-    name: 'Lunch Seafood Boil Special',
-    description: '1/2 lb Shrimp (head off), 1/2 lb Louisiana Sausage, 1 corn & 1 potato.',
-    price: '15.95',
-    image: '/images/shrimp_boil.webp',
+    name: 'Louisiana Chicken',
+    description: 'Savory Louisiana seasoned chicken served with steamed white rice and fresh side greens.',
+    price: '12.45',
+    image: '/images/lunch_louisiana_chicken.webp',
     spiceLevel: 0,
     featured: true,
-    badge: 'Best Value',
+    badge: 'Popular Lunch',
     badgeType: 'popular'
   },
   {
-    id: 'lunch-poboy-combo',
+    id: 'lunch-cajun-fish',
     category: 'lunch-specials',
-    name: 'Lunch Po Boy Combo',
-    description: 'Choice of Shrimp or Fish Po Boy, served with Cajun Fries & Fountain Drink.',
-    price: '13.95',
-    image: '/images/shrimp_po_boy.webp',
+    name: 'Cajun Fish',
+    description: 'Flavorful grilled Cajun fish fillet served with steamed white rice and fresh side greens.',
+    price: '13.45',
+    image: '/images/lunch_cajun_fish.webp',
     spiceLevel: 0,
     featured: true
   },
   {
-    id: 'lunch-basket-special',
+    id: 'lunch-grilled-beef',
     category: 'lunch-specials',
-    name: 'Lunch Fried Basket Special',
-    description: 'Choice of 3pc Fried Fish or 5pc Fried Shrimp with Cajun Fries & Soda.',
-    price: '12.95',
-    image: '/images/fried_shrimp_basket.webp',
+    name: 'Grilled Beef',
+    description: 'Tender grilled beef slices served with steamed white rice and fresh side greens.',
+    price: '13.45',
+    image: '/images/lunch_grilled_beef.webp',
     spiceLevel: 0,
-    featured: false
+    featured: true
+  },
+  {
+    id: 'lunch-house-grill-shrimp',
+    category: 'lunch-specials',
+    name: 'House Grill Shrimp',
+    description: 'Juicy seasoned grilled shrimp served with steamed white rice and fresh side greens.',
+    price: '14.45',
+    image: '/images/lunch_house_grill_shrimp.webp',
+    spiceLevel: 0,
+    featured: true
   }
 ];
 
