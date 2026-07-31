@@ -9,21 +9,21 @@ export default function HowItWorks() {
       num: '01',
       title: BOIL_STEPS.step1.title,
       desc: BOIL_STEPS.step1.description,
-      options: BOIL_STEPS.step1.options.map(opt => `${opt.icon} ${opt.name}`),
+      options: BOIL_STEPS.step1.options.map(opt => typeof opt === 'string' ? opt : opt.name),
       icon: <HelpCircle size={28} className="step-icon-svg" />
     },
     {
       num: '02',
       title: BOIL_STEPS.step2.title,
       desc: BOIL_STEPS.step2.description,
-      options: BOIL_STEPS.step2.options.map(opt => `${opt.icon} ${opt.name}`),
+      options: BOIL_STEPS.step2.options.map(opt => opt.name),
       icon: <Sparkles size={28} className="step-icon-svg" />
     },
     {
       num: '03',
       title: BOIL_STEPS.step3.title,
       desc: BOIL_STEPS.step3.description,
-      options: BOIL_STEPS.step3.options.map(opt => `${opt.icon} ${opt.name}`),
+      options: BOIL_STEPS.step3.options.map(opt => opt.spice > 0 ? `${opt.name} (${'🌶️'.repeat(opt.spice)})` : opt.name),
       icon: <Flame size={28} className="step-icon-svg" />
     }
   ];
