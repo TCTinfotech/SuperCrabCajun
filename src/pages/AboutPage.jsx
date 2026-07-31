@@ -1,7 +1,6 @@
 import React from 'react';
-import { HelpCircle, Star, Sparkles, Trophy } from 'lucide-react';
+import { Star, Sparkles, Trophy } from 'lucide-react';
 import SEOHead from '../components/layout/SEOHead';
-import { BRAND_NAME } from '../utils/constants';
 import { useScrollReveal } from '../utils/scrollReveal';
 import './AboutPage.css';
 
@@ -53,13 +52,10 @@ export default function AboutPage() {
             <span className="section-subtitle">Since 2021</span>
             <h2>HOW IT ALL STARTED</h2>
             <p>
-              It all began with a simple idea: that dining should be an adventure, a hands-on experience that brings people together. There is something unique about gathering around a table, putting on bibs, rolling up sleeves, and digging into a piping-hot steam bag of crawfish and crab.
+              Seaside-themed eatery dishing up crab boils, seafood combos, shrimp and fried dishes such as wings and oysters, plus beer, wine and cocktails.
             </p>
             <p>
-              <strong>{BRAND_NAME}</strong> was founded in Texas by a group of seafood lovers who wanted to fuse traditional Louisiana Cajun spices with bold, modern flavors. We experimented with hundreds of recipes in our test kitchens before finalizing our signature **Super Crab Special sauce**—the perfect blend of garlic butter, lemon pepper, and classic Cajun heat.
-            </p>
-            <p>
-              Today, at our location in Texas City, our mission remains unchanged: to serve the highest quality seafood boils with friendly southern hospitality in a fun, lively atmosphere.
+              At Super Crab, we serve bold, flavor-packed seafood boils made with fresh seafood and our signature sauces. From snow crab legs and shrimp to lobster, crawfish, and more, every meal is cooked to order and served in rich, buttery sauces that keep guests coming back. Whether you’re celebrating with family or satisfying a seafood craving, Super Crab is where great food, big flavors, and unforgettable memories come together.
             </p>
           </div>
 
