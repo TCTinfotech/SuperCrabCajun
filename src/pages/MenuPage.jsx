@@ -72,42 +72,51 @@ export default function MenuPage() {
         <div className="container">
           <div className="steps-cards-grid">
             {/* Step 1 */}
-            <div className="step-navy-card">
-              <h3 className="card-step-num">STEP 1</h3>
-              <h4 className="card-step-title">{BOIL_STEPS.step1.title.toUpperCase()}</h4>
-              <ul className="card-step-list">
-                {BOIL_STEPS.step1.options.map((opt) => (
-                  <li key={opt.name} className="step-list-item-with-icon">
-                    <span className="step-item-icon">{opt.icon}</span>
-                    <span className="step-item-text">{opt.name.toUpperCase()}</span>
-                  </li>
-                ))}
+            <div className="bistro-step-card">
+              <span className="bistro-step-tag">STEP 1</span>
+              <h3 className="bistro-step-title">{BOIL_STEPS.step1.title.toUpperCase()}</h3>
+              <div className="bistro-gold-divider" />
+              <ul className="bistro-step-list">
+                {BOIL_STEPS.step1.options.map((opt) => {
+                  const name = typeof opt === 'string' ? opt : opt.name;
+                  return (
+                    <li key={name} className="bistro-list-item">
+                      <span className="bistro-accent-dot">•</span>
+                      <span className="bistro-item-text">{name.toUpperCase()}</span>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
 
             {/* Step 2 */}
-            <div className="step-navy-card">
-              <h3 className="card-step-num">STEP 2</h3>
-              <h4 className="card-step-title">{BOIL_STEPS.step2.title.toUpperCase()}</h4>
-              <ul className="card-step-list">
+            <div className="bistro-step-card">
+              <span className="bistro-step-tag">STEP 2</span>
+              <h3 className="bistro-step-title">{BOIL_STEPS.step2.title.toUpperCase()}</h3>
+              <div className="bistro-gold-divider" />
+              <ul className="bistro-step-list">
                 {BOIL_STEPS.step2.options.map((opt) => (
-                  <li key={opt.name} className="step-list-item-with-icon">
-                    <span className="step-item-icon">{opt.icon}</span>
-                    <span className="step-item-text">{opt.name.toUpperCase()}</span>
+                  <li key={opt.name} className="bistro-list-item">
+                    <span className="bistro-accent-dot">•</span>
+                    <span className="bistro-item-text">{opt.name.toUpperCase()}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
             {/* Step 3 */}
-            <div className="step-navy-card">
-              <h3 className="card-step-num">STEP 3</h3>
-              <h4 className="card-step-title">{BOIL_STEPS.step3.title.toUpperCase()}</h4>
-              <ul className="card-step-list">
+            <div className="bistro-step-card">
+              <span className="bistro-step-tag">STEP 3</span>
+              <h3 className="bistro-step-title">{BOIL_STEPS.step3.title.toUpperCase()}</h3>
+              <div className="bistro-gold-divider" />
+              <ul className="bistro-step-list">
                 {BOIL_STEPS.step3.options.map((opt) => (
-                  <li key={opt.name} className="step-list-item-with-icon">
-                    <span className="step-item-icon">{opt.icon}</span>
-                    <span className="step-item-text">{opt.name.toUpperCase()}</span>
+                  <li key={opt.name} className="bistro-list-item">
+                    <span className="bistro-accent-dot">•</span>
+                    <span className="bistro-item-text">{opt.name.toUpperCase()}</span>
+                    {opt.spice > 0 && (
+                      <span className="bistro-spice-indicator">{'🌶️'.repeat(opt.spice)}</span>
+                    )}
                   </li>
                 ))}
               </ul>
