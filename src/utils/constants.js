@@ -140,6 +140,16 @@ export const MENU_ITEMS = [
     featured: false
   },
   {
+    id: 'spicy-edamame',
+    category: 'appetizers',
+    name: 'Spicy Edamame',
+    description: 'Steamed green soybeans tossed in bold spicy garlic Cajun seasoning.',
+    price: '8.15',
+    image: '/images/green_salad.webp',
+    spiceLevel: 1,
+    featured: false
+  },
+  {
     id: 'french-fries',
     category: 'appetizers',
     name: 'French Fries',
@@ -213,16 +223,6 @@ export const MENU_ITEMS = [
     price: '16.15',
     image: '/images/raw_oysters.webp',
     spiceLevel: 0,
-    featured: false
-  },
-  {
-    id: 'spicy-edamame',
-    category: 'appetizers',
-    name: 'Spicy Edamame',
-    description: 'Steamed green soybeans tossed in bold spicy garlic Cajun seasoning.',
-    price: '8.15',
-    image: '/images/green_salad.webp',
-    spiceLevel: 1,
     featured: false
   },
 
