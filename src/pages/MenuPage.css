@@ -145,6 +145,18 @@
   letter-spacing: 0.03em;
 }
 
+.step-list-item-with-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.step-item-icon {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
 /* Category Accordion Section */
 .menu-accordions-section {
   background-color: var(--color-bg-secondary);

@@ -77,7 +77,10 @@ export default function MenuPage() {
               <h4 className="card-step-title">{BOIL_STEPS.step1.title.toUpperCase()}</h4>
               <ul className="card-step-list">
                 {BOIL_STEPS.step1.options.map((opt) => (
-                  <li key={opt}>{opt.toUpperCase()}</li>
+                  <li key={opt.name} className="step-list-item-with-icon">
+                    <span className="step-item-icon">{opt.icon}</span>
+                    <span>{opt.name.toUpperCase()}</span>
+                  </li>
                 ))}
               </ul>
             </div>
@@ -88,7 +91,10 @@ export default function MenuPage() {
               <h4 className="card-step-title">{BOIL_STEPS.step2.title.toUpperCase()}</h4>
               <ul className="card-step-list">
                 {BOIL_STEPS.step2.options.map((opt) => (
-                  <li key={opt.name}>{opt.name.toUpperCase()}</li>
+                  <li key={opt.name} className="step-list-item-with-icon">
+                    <span className="step-item-icon">{opt.icon}</span>
+                    <span>{opt.name.toUpperCase()}</span>
+                  </li>
                 ))}
               </ul>
             </div>
@@ -99,7 +105,10 @@ export default function MenuPage() {
               <h4 className="card-step-title">{BOIL_STEPS.step3.title.toUpperCase()}</h4>
               <ul className="card-step-list">
                 {BOIL_STEPS.step3.options.map((opt) => (
-                  <li key={opt.name}>{opt.name.toUpperCase()}</li>
+                  <li key={opt.name} className="step-list-item-with-icon">
+                    <span className="step-item-icon">{opt.icon}</span>
+                    <span>{opt.name.toUpperCase()}</span>
+                  </li>
                 ))}
               </ul>
             </div>
