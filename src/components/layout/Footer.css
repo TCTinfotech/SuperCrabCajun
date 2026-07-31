@@ -463,15 +463,12 @@
 /* Bottom Red Copyright Strip */
 .footer-copyright-strip {
   background-color: var(--color-primary, #df382b);
-  padding: 0.85rem 1rem;
+  padding: 0.9rem 1rem;
   color: #ffffff;
   width: 100%;
 }
 
 .strip-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   text-align: center;
   width: 100%;
 }
@@ -481,27 +478,24 @@
   padding: 0;
   color: #ffffff;
   text-align: center;
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   font-weight: 500;
-  line-height: 1.5;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 0.4rem;
+  line-height: 1.6;
   width: 100%;
 }
 
 .footer-copyright-sep {
-  color: rgba(255, 255, 255, 0.7);
-  display: inline-block;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0 0.45rem;
+  display: inline;
 }
 
 .footer-privacy-link {
   color: #ffffff;
   text-decoration: underline;
+  text-underline-offset: 3px;
   transition: opacity var(--transition-fast);
-  display: inline-block;
+  display: inline;
 }
 
 .footer-privacy-link:hover {

@@ -155,7 +155,7 @@ export default function Footer() {
       <div className="footer-copyright-strip">
         <div className="container strip-content">
           <p className="copyright-text">
-            <span>&copy; {currentYear} Super Crab. All Rights Reserved.</span>
+            &copy; {currentYear} Super Crab. All Rights Reserved.
             <span className="footer-copyright-sep">•</span>
             <Link to="/privacy-policy" className="footer-privacy-link">Privacy Policy</Link>
           </p>
