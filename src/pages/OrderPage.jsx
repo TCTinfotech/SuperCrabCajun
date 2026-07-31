@@ -51,7 +51,7 @@ export default function OrderPage() {
         <div className="container banner-text reveal">
           <span className="banner-subtitle">Order Now</span>
           <h1 className="banner-title text-gradient">ONLINE ORDERING</h1>
-          <p className="banner-desc">
+          <p className="banner-desc banner-desc--light">
             Skip the line! Select your nearest branch location and order through our trusted POS platforms for pickup or local delivery.
           </p>
         </div>

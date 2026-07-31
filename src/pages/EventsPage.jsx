@@ -64,7 +64,7 @@ export default function EventsPage() {
         <div className="container banner-text reveal">
           <span className="banner-subtitle">Catering Services</span>
           <h1 className="banner-title text-gradient">EVENTS & CATERING</h1>
-          <p className="banner-desc">
+          <p className="banner-desc banner-desc--light">
             From backyard crawfish boils to corporate lunches and private restaurant rentals, make your next party unforgettable.
           </p>
         </div>

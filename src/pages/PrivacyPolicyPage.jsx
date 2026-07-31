@@ -20,7 +20,7 @@ export default function PrivacyPolicyPage() {
         <div className="container banner-text reveal">
           <span className="banner-subtitle">Legal & Transparency</span>
           <h1 className="banner-title text-gradient">PRIVACY POLICY</h1>
-          <p className="banner-desc">
+          <p className="banner-desc banner-desc--light">
             At Super Crab Cajun, we respect your privacy and are committed to protecting the personal information you share with us.
           </p>
           <div className="policy-dates-badge">

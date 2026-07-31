@@ -60,7 +60,7 @@ export default function LocationsPage() {
         <div className="container banner-text reveal">
           <span className="banner-subtitle">Texas Pride</span>
           <h1 className="banner-title text-gradient">OUR LOCATION</h1>
-          <p className="banner-desc">
+          <p className="banner-desc banner-desc--light">
             Find address directions, operating schedule, and order links for our Texas City location.
           </p>
         </div>

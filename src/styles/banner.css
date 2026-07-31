@@ -1,0 +1,42 @@
+/* Shared page-hero banner text styles */
+
+.banner-subtitle {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-primary);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.banner-title {
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 2rem + 4vw, 5rem);
+  font-weight: 900;
+  color: var(--color-text-primary);
+  margin: 0;
+  letter-spacing: 0.03em;
+}
+
+.banner-desc {
+  max-width: 850px;
+  margin: 0 auto 1.5rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.banner-desc--dark {
+  color: var(--color-text-secondary);
+}
+
+.banner-desc--light {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.banner-desc.second-desc {
+  max-width: 950px;
+  font-style: italic;
+  font-size: 1.05rem;
+  opacity: 0.95;
+}

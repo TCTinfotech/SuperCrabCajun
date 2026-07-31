@@ -58,10 +58,10 @@ export default function MenuPage() {
         <div className="container banner-text animate-slide-up">
           <h1 className="banner-title">GET DOWN & MESSY !</h1>
           <div className="banner-title-line" />
-          <p className="banner-desc">
+          <p className="banner-desc banner-desc--dark">
             Louisiana soul, Texas heat. At Super Crab, every seafood boil is a celebration — snow crab, crawfish, shrimp, and lobster tail, smothered in our signature Cajun sauces and seasoned to perfection.
           </p>
-          <p className="banner-desc second-desc">
+          <p className="banner-desc banner-desc--dark second-desc">
             Roll up your sleeves, crack open a claw, and let the garlic butter flow. Whether you like it mild or volcano-hot, our kitchen brings the flavor and the fire. This isn't just dinner — this is the boil. 🔥
           </p>
         </div>

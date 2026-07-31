@@ -39,7 +39,7 @@ export default function AboutPage() {
         <div className="container banner-text reveal">
           <span className="banner-subtitle">The Crab house</span>
           <h1 className="banner-title text-gradient">OUR STORY</h1>
-          <p className="banner-desc">
+          <p className="banner-desc banner-desc--light">
             We are dedicated to bringing the authentic, messy, and joyful experience of backyard boils straight to Texas tables.
           </p>
         </div>

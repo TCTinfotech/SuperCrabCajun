@@ -44,7 +44,7 @@ export default function ContactPage() {
         <div className="container banner-text reveal">
           <span className="banner-subtitle">Get In Touch</span>
           <h1 className="banner-title text-gradient">CONTACT US</h1>
-          <p className="banner-desc">
+          <p className="banner-desc banner-desc--light">
             We value your feedback and questions. Reach out to individual branches or send us a message below.
           </p>
         </div>
