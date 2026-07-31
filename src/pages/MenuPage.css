@@ -109,19 +109,6 @@
   transform: translateY(-5px);
 }
 
-.card-top-icon {
-  font-size: 2.2rem;
-  margin-bottom: 0.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
 .card-step-num {
   font-family: var(--font-heading);
   font-size: 1.8rem;
@@ -150,24 +137,47 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: #ffffff;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
+  gap: 0.55rem;
+  width: 100%;
 }
 
 .step-list-item-with-icon {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
+  justify-content: flex-start;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.5rem 0.85rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.step-list-item-with-icon:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.22);
+  transform: translateX(4px);
 }
 
 .step-item-icon {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   line-height: 1;
+  min-width: 28px;
+  width: 28px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.step-item-text {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  text-align: left;
 }
 
 /* Category Accordion Section */

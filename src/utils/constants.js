@@ -75,40 +75,40 @@ export const BOIL_STEPS = {
     title: 'Pick Your Seafood',
     description: 'Sold by the pound. Placed in a steam bag with corn and potato.',
     options: [
-      'Lobster',
-      'Dungeness Crab',
-      'King Crab Legs',
-      'Snow Crab Legs',
-      'Crawfish (Seasonal)',
-      'Crawfish (Frozen)',
-      'Shrimp (Head on)',
-      'Shrimp (Head off)',
-      'Mussels',
-      'Clams',
-      'Lobster Tail'
+      { name: 'Lobster', icon: '🦞' },
+      { name: 'Dungeness Crab', icon: '🦀' },
+      { name: 'King Crab Legs', icon: '🦀' },
+      { name: 'Snow Crab Legs', icon: '🦀' },
+      { name: 'Crawfish (Seasonal)', icon: '🦞' },
+      { name: 'Crawfish (Frozen)', icon: '🦞' },
+      { name: 'Shrimp (Head on)', icon: '🦐' },
+      { name: 'Shrimp (Head off)', icon: '🦐' },
+      { name: 'Mussels', icon: '🦪' },
+      { name: 'Clams', icon: '🦪' },
+      { name: 'Lobster Tail', icon: '🦞' }
     ]
   },
   step2: {
     title: 'Choose a Seasoning',
     description: 'Coated in our signature flavor recipes made fresh daily.',
     options: [
-      { name: 'Louisiana Flavor', desc: 'Authentic Creole & Louisiana seasonings' },
-      { name: 'Original Cajun', desc: 'Bold, herbal, and traditional Cajun recipe' },
-      { name: 'Lemon Pepper', desc: 'Zesty lemon zest with cracked black pepper' },
-      { name: 'Garlic Butter', desc: 'Creamy butter with mountains of minced garlic' },
-      { name: 'House Special Sauce', desc: 'Our signature blend of all favorite flavors!' }
+      { name: 'Louisiana Flavor', icon: '🌿', desc: 'Authentic Creole & Louisiana seasonings' },
+      { name: 'Original Cajun', icon: '🌶️', desc: 'Bold, herbal, and traditional Cajun recipe' },
+      { name: 'Lemon Pepper', icon: '🍋', desc: 'Zesty lemon zest with cracked black pepper' },
+      { name: 'Garlic Butter', icon: '🧄', desc: 'Creamy butter with mountains of minced garlic' },
+      { name: 'House Special Sauce', icon: '⭐', desc: 'Our signature blend of all favorite flavors!' }
     ]
   },
   step3: {
     title: 'Select Your Spice Level',
     description: 'From non-spicy to fiery extra hot.',
     options: [
-      { name: 'Not Spicy', spice: 0, desc: 'Zero heat, pure delicious flavor' },
-      { name: 'Little Bit', spice: 1, desc: 'A gentle touch of warmth' },
-      { name: 'Mild', spice: 2, desc: 'Mild flavor-focused kick' },
-      { name: 'Medium', spice: 3, desc: 'Balanced medium heat' },
-      { name: 'Dynamite X', spice: 4, desc: 'Fiery hot heat!' },
-      { name: 'On Fire XX', spice: 5, desc: 'Caution: Extreme heat! 🔥🔥' }
+      { name: 'Not Spicy', icon: '🟢', spice: 0, desc: 'Zero heat, pure delicious flavor' },
+      { name: 'Little Bit', icon: '🌱', spice: 1, desc: 'A gentle touch of warmth' },
+      { name: 'Mild', icon: '🌶️', spice: 2, desc: 'Mild flavor-focused kick' },
+      { name: 'Medium', icon: '🌶️🌶️', spice: 3, desc: 'Balanced medium heat' },
+      { name: 'Dynamite X', icon: '🔥', spice: 4, desc: 'Fiery hot heat!' },
+      { name: 'On Fire XX', icon: '🔥🔥', spice: 5, desc: 'Caution: Extreme heat! 🔥🔥' }
     ]
   }
 };
