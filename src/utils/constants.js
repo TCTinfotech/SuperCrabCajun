@@ -372,18 +372,6 @@ export const MENU_ITEMS = [
 
   // Sides & Add-Ons
   {
-    id: 'shrimp-head-off',
-    category: 'sides',
-    name: 'Shrimp (Head Off)',
-    description: 'Easy-to-eat peeled shrimp soaked in rich garlic butter broth.',
-    price: '20.35',
-    image: '/images/shrimp_boil.webp',
-    spiceLevel: 0,
-    featured: true,
-    badge: '#1 Most Liked',
-    badgeType: 'most-liked-1'
-  },
-  {
     id: 'potatoes',
     category: 'sides',
     name: 'Potatoes',
@@ -392,8 +380,8 @@ export const MENU_ITEMS = [
     image: '/images/boiled_potatoes.webp',
     spiceLevel: 0,
     featured: false,
-    badge: '#2 Most Liked',
-    badgeType: 'most-liked-2'
+    badge: '#1 Most Liked',
+    badgeType: 'most-liked-1'
   },
   {
     id: 'corn-on-the-cob',
@@ -404,118 +392,8 @@ export const MENU_ITEMS = [
     image: '/images/corn_on_cob.webp',
     spiceLevel: 0,
     featured: false,
-    badge: '#3 Most Liked',
-    badgeType: 'most-liked-3'
-  },
-  {
-    id: 'snow-crab',
-    category: 'sides',
-    name: 'Snow Crab (by lb)',
-    description: 'Sweet, tender snow crab legs boiled in your choice of sauce.',
-    price: '38.35',
-    image: '/images/snow_crab.webp',
-    spiceLevel: 0,
-    featured: true,
-    badge: 'Popular Item',
-    badgeType: 'popular'
-  },
-  {
-    id: 'king-crab',
-    category: 'sides',
-    name: 'King Crab legs (by lb)',
-    description: 'Massive king crab legs served with lime wedges and garlic butter.',
-    price: '83.95',
-    image: '/images/king_crab.webp',
-    spiceLevel: 0,
-    featured: true,
-    badge: 'Chef Special',
-    badgeType: 'popular'
-  },
-  {
-    id: 'dungeness-crab',
-    category: 'sides',
-    name: 'Dungeness Crab (by lb)',
-    description: 'Meaty Dungeness crab clusters steamed and smothered in Cajun spices.',
-    price: '39.55',
-    image: '/images/crab_legs.webp',
-    spiceLevel: 0,
-    featured: false
-  },
-  {
-    id: 'shrimp-head-on',
-    category: 'sides',
-    name: 'Shrimp (Head On)',
-    description: 'Flavorful whole head-on shrimp boiled in authentic Cajun spices.',
-    price: '20.35',
-    image: '/images/shrimp_boil.webp',
-    spiceLevel: 0,
-    featured: false,
-    badge: 'Popular Item',
-    badgeType: 'popular'
-  },
-  {
-    id: 'crawfish',
-    category: 'sides',
-    name: 'Crawfish (by lb)',
-    description: 'Fresh crawfish boiled daily in spicy Creole seasonings.',
-    price: '15.55',
-    image: '/images/crawfish.webp',
-    spiceLevel: 0,
-    featured: true,
-    badge: 'Popular Item',
-    badgeType: 'popular'
-  },
-  {
-    id: 'frozen-crawfish',
-    category: 'sides',
-    name: 'Frozen Crawfish (by lb)',
-    description: 'Tender frozen crawfish boiled in custom garlic cajun sauce.',
-    price: '13.15',
-    image: '/images/crawfish.webp',
-    spiceLevel: 0,
-    featured: false
-  },
-  {
-    id: 'mussels',
-    category: 'sides',
-    name: 'Mussels (by lb)',
-    description: 'Juicy ocean mussels steamed in flavorful garlic butter broth.',
-    price: '16.75',
-    image: '/images/mussels.webp',
-    spiceLevel: 0,
-    featured: false,
-    badge: 'Popular Item',
-    badgeType: 'popular'
-  },
-  {
-    id: 'clams',
-    category: 'sides',
-    name: 'Clams (by lb)',
-    description: 'Fresh clams steamed and tossed in spicy House Special sauce.',
-    price: '15.50',
-    image: '/images/crawfish_close.webp',
-    spiceLevel: 0,
-    featured: false
-  },
-  {
-    id: 'lobster-tail',
-    category: 'sides',
-    name: 'Lobster Tail',
-    description: 'Succulent lobster tail steamed and coated in warm garlic butter.',
-    price: '22.75',
-    image: '/images/gourmet_lobster_tray.webp',
-    spiceLevel: 0,
-    featured: false
-  },
-  {
-    id: 'whole-lobster',
-    category: 'sides',
-    name: 'Whole Lobster',
-    description: 'Whole lobster steamed to perfection, served with drawn butter.',
-    price: '55.15',
-    image: '/images/gourmet_lobster_tray.webp',
-    spiceLevel: 0,
-    featured: false
+    badge: '#2 Most Liked',
+    badgeType: 'most-liked-2'
   },
   {
     id: 'hard-boiled-egg',
