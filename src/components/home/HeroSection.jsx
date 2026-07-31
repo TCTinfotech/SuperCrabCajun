@@ -157,12 +157,12 @@ export default function HeroSection() {
             <div key={`visual-${activeIndex}`} className="plates-container">
               <div className="plate-top-wrapper">
                 <div className="plate-top plate-top-animate">
-                  <img src={currentSlide.plateTopImg} alt={`Seafood Platter Top ${activeIndex}`} fetchpriority="high" />
+                  <img src={currentSlide.plateTopImg} alt={`Seafood Platter Top ${activeIndex}`} fetchPriority="high" />
                 </div>
               </div>
               <div className="plate-bottom-wrapper">
                 <div className="plate-bottom plate-bottom-animate">
-                  <img src={currentSlide.plateBottomImg} alt={`Seafood Platter Bottom ${activeIndex}`} fetchpriority="high" />
+                  <img src={currentSlide.plateBottomImg} alt={`Seafood Platter Bottom ${activeIndex}`} fetchPriority="high" />
                 </div>
               </div>
             </div>
