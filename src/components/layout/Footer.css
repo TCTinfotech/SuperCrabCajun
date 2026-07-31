@@ -240,10 +240,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 1rem;
-  font-size: 0.85rem;
+  gap: 0.5rem;
+  font-size: clamp(0.78rem, 2.5vw, 0.85rem);
   color: #a0aec0;
-  white-space: nowrap;
+  width: 100%;
 }
 
 .footer-hours-item .f-days {
@@ -251,13 +251,14 @@
   color: #ffffff;
   display: flex;
   align-items: center;
-  white-space: nowrap;
+  gap: 0.35rem;
+  flex-shrink: 0;
 }
 
 .footer-hours-item .f-time {
   color: #cbd5e1;
   text-align: right;
-  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .footer-hours-item.is-today .f-days,
@@ -462,13 +463,8 @@
 /* Bottom Red Copyright Strip */
 .footer-copyright-strip {
   background-color: var(--color-primary, #df382b);
-  padding: 0.9rem 0;
+  padding: 0.85rem 1rem;
   color: #ffffff;
-  font-size: 0.88rem;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 100%;
 }
 
@@ -480,26 +476,34 @@
   width: 100%;
 }
 
-.strip-content p {
+.copyright-text {
   margin: 0;
   padding: 0;
   color: #ffffff;
   text-align: center;
+  font-size: 0.85rem;
+  font-weight: 500;
+  line-height: 1.5;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-  line-height: 1.5;
+  gap: 0.4rem;
   width: 100%;
 }
 
-.strip-content a {
+.footer-copyright-sep {
+  color: rgba(255, 255, 255, 0.7);
+  display: inline-block;
+}
+
+.footer-privacy-link {
   color: #ffffff;
   text-decoration: underline;
   transition: opacity var(--transition-fast);
-  margin-left: 0.35rem;
+  display: inline-block;
 }
 
-.strip-content a:hover {
+.footer-privacy-link:hover {
   opacity: 0.85;
 }

@@ -153,8 +153,12 @@ export default function Footer() {
 
       {/* Bottom Red Copyright Bar */}
       <div className="footer-copyright-strip">
-        <div className="container strip-content text-center">
-          <p>&copy; {currentYear} Super Crab. All Rights Reserved. <Link to="/privacy-policy">Privacy Policy</Link>.</p>
+        <div className="container strip-content">
+          <p className="copyright-text">
+            <span>&copy; {currentYear} Super Crab. All Rights Reserved.</span>
+            <span className="footer-copyright-sep">•</span>
+            <Link to="/privacy-policy" className="footer-privacy-link">Privacy Policy</Link>
+          </p>
         </div>
       </div>
     </footer>
