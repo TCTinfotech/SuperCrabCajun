@@ -130,6 +130,16 @@ export const MENU_CATEGORIES = [
 export const MENU_ITEMS = [
   // Appetizers
   {
+    id: 'spicy-edamame',
+    category: 'appetizers',
+    name: 'Spicy Edamame',
+    description: 'Steamed green soybeans tossed in bold spicy garlic Cajun seasoning.',
+    price: '8.15',
+    image: '/images/green_salad.webp',
+    spiceLevel: 1,
+    featured: false
+  },
+  {
     id: 'onion-rings',
     category: 'appetizers',
     name: 'Onion Ring',
@@ -284,16 +294,6 @@ export const MENU_ITEMS = [
     featured: false
   },
   {
-    id: 'edamame',
-    category: 'salad-soups',
-    name: 'Edamame',
-    description: 'Steamed green soybeans lightly tossed with coarse sea salt.',
-    price: '8.15',
-    image: '/images/green_salad.webp',
-    spiceLevel: 0,
-    featured: false
-  },
-  {
     id: 'gumbo',
     category: 'salad-soups',
     name: 'Gumbo',
@@ -304,16 +304,6 @@ export const MENU_ITEMS = [
     featured: true,
     badge: 'Popular Item',
     badgeType: 'popular'
-  },
-  {
-    id: 'clam-chowder',
-    category: 'salad-soups',
-    name: 'New England Clam Chowder',
-    description: 'Creamy soup packed with tender clams, diced potatoes & savory herbs.',
-    price: '7.95',
-    image: '/images/gumbo.webp',
-    spiceLevel: 0,
-    featured: false
   },
 
   // Combos
