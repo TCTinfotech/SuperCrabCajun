@@ -145,7 +145,7 @@ export const MENU_ITEMS = [
     name: 'Spicy Edamame',
     description: 'Steamed green soybeans tossed in bold spicy garlic Cajun seasoning.',
     price: '8.15',
-    image: '/images/green_salad.webp',
+    image: '/images/spicy_edamame.webp',
     spiceLevel: 1,
     featured: false
   },
@@ -187,7 +187,7 @@ export const MENU_ITEMS = [
     name: 'Sweet Potato Fries',
     description: 'Crispy sweet potato fries offering a naturally sweet and savory bite.',
     price: '6.55',
-    image: '/images/french_fries.webp',
+    image: '/images/sweet_potato_fries.avif',
     spiceLevel: 0,
     featured: false
   },
