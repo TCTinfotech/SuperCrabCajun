@@ -189,7 +189,7 @@ export default function MenuPage() {
         <div className="container cta-v2-inner">
           <h2 className="cta-v2-title">HUNGRY YET?</h2>
           <p className="cta-v2-subtitle">
-            Find your nearest Super Crab and start your seafood boil adventure today.
+            Start your seafood boil adventure today!
           </p>
           <div className="cta-v2-buttons">
             <a href="https://order.online/store/super-crab-palmer-hwy-2519187?pickup=true" target="_blank" rel="noopener noreferrer" className="cta-v2-btn cta-v2-primary">

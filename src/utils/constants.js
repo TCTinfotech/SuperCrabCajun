@@ -347,7 +347,9 @@ export const MENU_ITEMS = [
     price: '107.95',
     image: '/images/combo_4_v2.webp',
     spiceLevel: 0,
-    featured: false
+    featured: false,
+    badge: 'Most Ordered',
+    badgeType: 'popular'
   },
   {
     id: 'combo-5',
