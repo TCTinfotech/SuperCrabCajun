@@ -49,8 +49,8 @@ export default function AboutPage() {
         <div className="container story-grid">
           
           <div className="story-text-side reveal">
-            <span className="section-subtitle">Since 2021</span>
-            <h2>HOW IT ALL STARTED</h2>
+            <span className="section-subtitle"> </span>
+            <h2>Inspired by the Sea, Crafted for Every Occasion</h2>
             <p>
               Seaside-themed eatery dishing up crab boils, seafood combos, shrimp and fried dishes such as wings and oysters, plus beer, wine and cocktails.
             </p>
