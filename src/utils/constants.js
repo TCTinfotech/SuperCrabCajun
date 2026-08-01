@@ -64,7 +64,7 @@ export const LOCATIONS = [
       ]
     },
     googleMapsEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3472.932822452818!2d-94.9431872!3d29.3995831!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x863f9da372fffffb%3A0xc665b17b6dc0af4c!2s3506%20Palmer%20Hwy%2C%20Texas%20City%2C%20TX%2077590%2C%20USA!5e0!3m2!1sen!2s!4v1718625500000!5m2!1sen!2s',
-    googleMapsLink: 'https://maps.app.goo.gl/3506PalmerHwy',
+    googleMapsLink: 'https://maps.app.goo.gl/mFrV8Q6bB58HfkfZ6',
     posLinks: {},
     image: '/images/restaurant_heb.jpg'
   }

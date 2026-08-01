@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import { ChevronDown, ChevronUp, MapPin } from 'lucide-react';
 import SEOHead from '../components/layout/SEOHead';
-import { MENU_CATEGORIES, MENU_ITEMS, BOIL_STEPS } from '../utils/constants';
+import { MENU_CATEGORIES, MENU_ITEMS, BOIL_STEPS, LOCATIONS } from '../utils/constants';
 import './MenuPage.css';
 
 export default function MenuPage() {
@@ -195,10 +195,15 @@ export default function MenuPage() {
             <a href="https://order.online/store/super-crab-palmer-hwy-2519187?pickup=true" target="_blank" rel="noopener noreferrer" className="cta-v2-btn cta-v2-primary">
               <span>Order Now</span>
             </a>
-            <Link to="/contact" className="cta-v2-btn cta-v2-outline">
+            <a
+              href={LOCATIONS[0].googleMapsLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cta-v2-btn cta-v2-outline"
+            >
               <MapPin size={18} />
               <span>Visit Us</span>
-            </Link>
+            </a>
           </div>
         </div>
       </section>
