@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Clock, Send, CheckCircle2 } from 'lucide-react';
 import SEOHead from '../components/layout/SEOHead';
-import { BRAND_NAME, LOCATIONS } from '../utils/constants';
+import { LOCATIONS } from '../utils/constants';
 import { useScrollReveal } from '../utils/scrollReveal';
 import './ContactPage.css';
+
+const CONTACT_FORM_NAME = 'contact';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -13,17 +15,37 @@ export default function ContactPage() {
     message: ''
   });
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
 
   const daysMap = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
   const todayName = daysMap[new Date().getDay()];
 
   useScrollReveal();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Simulate submission
-    setSubmitted(true);
-    setFormData({ name: '', email: '', subject: '', message: '' });
+    setSubmitting(true);
+    setSubmitError('');
+
+    try {
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(e.target)).toString()
+      });
+
+      if (!response.ok) {
+        throw new Error('Form submission failed');
+      }
+
+      setSubmitted(true);
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    } catch {
+      setSubmitError('Something went wrong. Please try again or email us directly.');
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const handleInputChange = (e) => {
@@ -72,7 +94,11 @@ export default function ContactPage() {
                         <Phone size={16} className="contact-icon" /> {loc.phone}
                       </a>
                     )}
-                    <span className="info-row"><Mail size={16} className="contact-icon" /> {loc.email}</span>
+                    {loc.email && (
+                      <a href={`mailto:${loc.email}`} className="info-row contact-link">
+                        <Mail size={16} className="contact-icon" /> {loc.email}
+                      </a>
+                    )}
                     <div className="info-row">
                       <Clock size={16} className="contact-icon" />
                       <div className="branch-hours-list">
@@ -103,7 +129,21 @@ export default function ContactPage() {
               <p className="form-sub">For general corporate feedback, press, or menu inquiries.</p>
 
               {!submitted ? (
-                <form className="contact-form" onSubmit={handleSubmit}>
+                <form
+                  className="contact-form"
+                  name={CONTACT_FORM_NAME}
+                  method="POST"
+                  data-netlify="true"
+                  data-netlify-honeypot="bot-field"
+                  onSubmit={handleSubmit}
+                >
+                  <input type="hidden" name="form-name" value={CONTACT_FORM_NAME} />
+                  <p className="hidden" hidden>
+                    <label>
+                      Don’t fill this out if you’re human: <input name="bot-field" tabIndex={-1} autoComplete="off" />
+                    </label>
+                  </p>
+
                   <div className="form-group">
                     <label htmlFor="name">Your Name</label>
                     <input 
@@ -156,9 +196,13 @@ export default function ContactPage() {
                     />
                   </div>
 
-                  <button type="submit" className="btn-primary btn-submit btn-glow">
+                  {submitError && (
+                    <p className="form-error" role="alert">{submitError}</p>
+                  )}
+
+                  <button type="submit" className="btn-primary btn-submit btn-glow" disabled={submitting}>
                     <Send size={18} />
-                    <span>Send Message</span>
+                    <span>{submitting ? 'Sending…' : 'Send Message'}</span>
                   </button>
                 </form>
               ) : (

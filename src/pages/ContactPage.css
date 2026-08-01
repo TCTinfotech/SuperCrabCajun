@@ -169,6 +169,18 @@
   gap: 1.25rem;
 }
 
+.form-error {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #e85d5d;
+  line-height: 1.4;
+}
+
+.contact-form .btn-submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
 /* Map Section styling */
 .contact-map-section {
   width: 100%;

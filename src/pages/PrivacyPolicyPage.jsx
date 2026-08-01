@@ -217,7 +217,7 @@ export default function PrivacyPolicyPage() {
               <div className="contact-detail-item">
                 <span className="detail-label"><Mail size={18} /> Email:</span>
                 <span className="detail-value">
-                  <a href="mailto:info@supercrabtx.com">info@supercrabtx.com</a>
+                  <a href="mailto:info@supercrabcajun.com">info@supercrabcajun.com</a>
                 </span>
               </div>
               <div className="contact-detail-item full-width">
