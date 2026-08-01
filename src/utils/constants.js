@@ -115,7 +115,7 @@ export const BOIL_STEPS = {
 
 export const MENU_CATEGORIES = [
   { id: 'appetizers', name: 'Appetizers', subtitle: 'Delicious Beginnings To Share', listImages: ['/images/oysters_platter.webp', '/images/chicken_wings.webp', '/images/gourmet_lobster_tray.webp'] },
-  { id: 'fried-baskets', name: 'Fried Basket', subtitle: 'Southern Fried Perfection Served With Cajun Fries', listImages: ['/images/fried_shrimp_basket.webp', '/images/combo_1.webp', '/images/combo_3_new.webp'] },
+  { id: 'fried-baskets', name: 'Fried Baskets', subtitle: 'Southern Fried Perfection Served With Cajun Fries', listImages: ['/images/fried_shrimp_basket.webp', '/images/combo_1.webp', '/images/combo_3_new.webp'] },
   { id: 'salad-soups', name: 'Salad & Soups', subtitle: 'Fresh Greens & Warm Creole Soups', listImages: ['/images/green_salad.webp', '/images/gumbo.webp'] },
   { id: 'combos', name: 'Combos', subtitle: 'No Substitutions. All Combos - Market Price', listImages: ['/images/combo_1.webp', '/images/combo_2.webp', '/images/combo_3_new.webp', '/images/combo_list_1.webp', '/images/combo_list_2.webp', '/images/combo_list_3.webp'] },
   { id: 'sides', name: 'Sides & add-ons', subtitle: 'Perfect Pairings & Side Extras For Your Feast', listImages: ['/images/crawfish_pile.webp', '/images/shrimp_boil.webp', '/images/combo_4.webp'] },
@@ -226,7 +226,7 @@ export const MENU_ITEMS = [
     featured: false
   },
 
-  // Fried Basket
+  // Fried Baskets
   {
     id: 'fried-fish',
     category: 'fried-baskets',
