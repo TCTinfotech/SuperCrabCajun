@@ -1,19 +1,17 @@
 import React from 'react';
-import { DOORDASH_ORDER_URL } from '../../utils/constants';
+import { useCart } from '../../contexts/CartContext';
+import { useMenu } from '../../contexts/MenuContext';
 import './FeaturedMenu.css';
 
 export default function FeaturedMenu() {
-  const categories = [
-    { id: 'seafood-boil', name: 'Seafood Boils', image: '/images/seafood_boil_close.webp' },
-    { id: 'appetizers', name: 'Appetizers', image: '/images/oysters_platter.webp' },
-    { id: 'fried-baskets', name: 'Fried Basket', image: '/images/fried_shrimp_basket.webp' },
-    { id: 'salad-soups', name: 'Salad & Soups', image: '/images/green_salad.webp' },
-    { id: 'combos', name: 'Combos', image: '/images/combo_1.webp' },
-    { id: 'sides', name: 'Sides & Add-ons', image: '/images/crawfish_close.webp' },
-    { id: 'sandwiches', name: 'Sandwiches', image: '/images/shrimp_po_boy.webp' },
-    { id: 'kids-menu', name: 'Kids Menu', image: '/images/chicken_wings.webp' },
-    { id: 'drinks-soda-non-carbonated', name: 'Drinks', image: '/images/lemonade.webp' }
-  ];
+  const { openOrderModal } = useCart();
+  const { categories: menuCategories } = useMenu();
+
+  const categories = menuCategories.map((c) => ({
+    id: c.id,
+    name: c.name,
+    image: c.listImages && c.listImages.length > 0 ? c.listImages[0] : '/images/seafood_boil_close.webp'
+  }));
 
   return (
     <section className="featured-menu section-padding">
@@ -38,14 +36,13 @@ export default function FeaturedMenu() {
               <div className="card-body">
                 <h3 className="card-title text-center">{cat.name}</h3>
                 <div className="card-footer-row justify-center">
-                  <a 
-                    href={DOORDASH_ORDER_URL} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
+                  <button 
+                    type="button"
                     className="btn-card-order-outline"
+                    onClick={() => openOrderModal('pickup')}
                   >
                     <span>Order Now</span>
-                  </a>
+                  </button>
                 </div>
               </div>
             </article>

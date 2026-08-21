@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import { ChevronDown, ChevronUp, MapPin } from 'lucide-react';
+import { ChevronDown, ChevronUp, MapPin, ShoppingCart, Plus } from 'lucide-react';
 import SEOHead from '../components/layout/SEOHead';
-import { MENU_CATEGORIES, MENU_ITEMS, BOIL_STEPS } from '../utils/constants';
+import { BOIL_STEPS, BOIL_CATEGORIES } from '../utils/constants';
+import { useCart } from '../contexts/CartContext';
+import { useMenu } from '../contexts/MenuContext';
+import BoilCustomizer from '../components/cart/BoilCustomizer';
 import './MenuPage.css';
 
 export default function MenuPage() {
@@ -10,10 +13,26 @@ export default function MenuPage() {
   const catParam = searchParams.get('cat');
   const itemParam = searchParams.get('item');
 
+  const { addToCart, openOrderModal } = useCart();
+  const { categories: MENU_CATEGORIES, menuItems: MENU_ITEMS } = useMenu();
+
   const [openSection, setOpenSection] = useState(catParam || MENU_CATEGORIES[0]?.id || null);
+  const [customizingItem, setCustomizingItem] = useState(null);
 
   const toggleSection = (sectionId) => {
     setOpenSection(openSection === sectionId ? null : sectionId);
+  };
+
+  const handleAddItemClick = (item) => {
+    if (BOIL_CATEGORIES.includes(item.category)) {
+      setCustomizingItem(item);
+    } else {
+      addToCart(item);
+    }
+  };
+
+  const handleCustomizerConfirm = (item, options) => {
+    addToCart(item, options);
   };
 
   useEffect(() => {
@@ -121,9 +140,7 @@ export default function MenuPage() {
           <div className="accordions-container">
             {MENU_CATEGORIES.map((category) => {
               const isOpen = openSection === category.id;
-              const itemsInCategory = MENU_ITEMS.filter(item => item.category === category.id);
-              
-              if (itemsInCategory.length === 0) return null;
+              const itemsInCategory = MENU_ITEMS.filter(item => item.category === category.id && item.isAvailable !== false);
 
               return (
                 <div key={category.id} className="accordion-item">
@@ -133,7 +150,7 @@ export default function MenuPage() {
                     className={`accordion-header-btn ${isOpen ? 'open' : ''}`}
                     aria-expanded={isOpen}
                   >
-                    <span>{category.name}</span>
+                    <span>{category.name} ({itemsInCategory.length})</span>
                     {isOpen ? <ChevronUp size={24} /> : <ChevronDown size={24} />}
                   </button>
 
@@ -144,33 +161,53 @@ export default function MenuPage() {
                         <p className="panel-subtitle">{category.subtitle}</p>
                       )}
                       
-                      <div className="menu-items-grid">
-                        {itemsInCategory.map(item => (
-                          <div 
-                            key={item.id} 
-                            id={item.id}
-                            className={`menu-item-card ${itemParam === item.id ? 'highlighted-menu-item' : ''}`}
-                          >
-                            <div className="menu-item-info">
-                              <div className="menu-item-header-block">
-                                <h4 className="menu-item-name">{item.name}</h4>
-                                {item.badge && (
-                                  <span className={`menu-item-badge ${item.badgeType || 'popular'}`}>
-                                    {item.badgeType?.startsWith('most-liked') ? '👍 ' : '🔥 '}
-                                    {item.badge}
-                                  </span>
-                                )}
+                      {itemsInCategory.length === 0 ? (
+                        <div style={{ textAlign: 'center', padding: '2rem 1rem', color: '#94a3b8', background: 'rgba(255, 255, 255, 0.03)', borderRadius: '12px' }}>
+                          <p style={{ margin: 0, fontSize: '0.95rem', fontWeight: 600 }}>
+                            No items listed in this category yet. Add items in Admin Portal!
+                          </p>
+                        </div>
+                      ) : (
+                        <div className="menu-items-grid">
+                          {itemsInCategory.map(item => (
+                            <div 
+                              key={item.id} 
+                              id={item.id}
+                              className={`menu-item-card ${itemParam === item.id ? 'highlighted-menu-item' : ''}`}
+                            >
+                              <div className="menu-item-info">
+                                <div className="menu-item-header-block">
+                                  <h4 className="menu-item-name">{item.name}</h4>
+                                  {item.badge && (
+                                    <span className={`menu-item-badge ${item.badgeType || 'popular'}`}>
+                                      {item.badgeType?.startsWith('most-liked') ? '👍 ' : '🔥 '}
+                                      {item.badge}
+                                    </span>
+                                  )}
+                                </div>
+                                {item.description && <p className="menu-item-desc">{item.description}</p>}
+                                
+                                <div className="menu-item-action-row">
+                                  <span className="menu-item-price-tag">${parseFloat(item.price).toFixed(2)}</span>
+                                  <button
+                                    type="button"
+                                    className="btn-add-to-cart"
+                                    onClick={() => handleAddItemClick(item)}
+                                  >
+                                    <ShoppingCart size={15} />
+                                    <span>{BOIL_CATEGORIES.includes(item.category) ? 'Customize' : 'Add to Cart'}</span>
+                                  </button>
+                                </div>
                               </div>
-                              {item.description && <p className="menu-item-desc">{item.description}</p>}
+                              {item.image && (
+                                <div className="menu-item-img-container">
+                                  <img src={item.image} alt={item.name} loading="lazy" decoding="async" width="100" height="100" />
+                                </div>
+                              )}
                             </div>
-                            {item.image && (
-                              <div className="menu-item-img-container">
-                                <img src={item.image} alt={item.name} loading="lazy" decoding="async" width="100" height="100" />
-                              </div>
-                            )}
-                          </div>
-                        ))}
-                      </div>
+                          ))}
+                        </div>
+                      )}
                     </div>
                   )}
                 </div>
@@ -179,6 +216,15 @@ export default function MenuPage() {
           </div>
         </div>
       </section>
+
+      {/* Boil Customizer Modal */}
+      <BoilCustomizer
+        item={customizingItem}
+        isOpen={Boolean(customizingItem)}
+        onClose={() => setCustomizingItem(null)}
+        onConfirm={handleCustomizerConfirm}
+      />
+
 
       {/* Bottom CTA — Full-width dark style */}
       <section className="menu-cta-v2">
@@ -192,9 +238,13 @@ export default function MenuPage() {
             Find your nearest Super Crab and start your seafood boil adventure today.
           </p>
           <div className="cta-v2-buttons">
-            <a href="https://order.online/store/super-crab-palmer-hwy-2519187?pickup=true" target="_blank" rel="noopener noreferrer" className="cta-v2-btn cta-v2-primary">
+            <button
+              type="button"
+              className="cta-v2-btn cta-v2-primary"
+              onClick={() => openOrderModal('pickup')}
+            >
               <span>Order Now</span>
-            </a>
+            </button>
             <Link to="/contact" className="cta-v2-btn cta-v2-outline">
               <MapPin size={18} />
               <span>Visit Us</span>

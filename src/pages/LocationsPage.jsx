@@ -3,11 +3,13 @@ import { Link } from 'react-router-dom';
 import { MapPin, Phone, Clock, ArrowUpRight, Compass, ShoppingBag } from 'lucide-react';
 import SEOHead from '../components/layout/SEOHead';
 import { LOCATIONS, BRAND_NAME } from '../utils/constants';
+import { useCart } from '../contexts/CartContext';
 import { useScrollReveal } from '../utils/scrollReveal';
 import './LocationsPage.css';
 
 export default function LocationsPage() {
   useScrollReveal();
+  const { openOrderModal } = useCart();
 
   // Helper to determine if a location is currently open
   const getOpenStatus = () => {
@@ -126,10 +128,14 @@ export default function LocationsPage() {
 
                 {/* CTAs */}
                 <div className="location-actions">
-                  <a href={loc.posLinks.order_online || "https://order.online/store/super-crab-palmer-hwy-2519187?utm_id=97757_v0_s00_e0_tv0&fbclid=IwY2xjawSiMLRleHRuA2FlbQIxMABicmlkETF3ZHNwWEcwZmhXeUE0S21hc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHvh1dshdA9SIHiYPlSsqGydpM2CXrBo74wV2RZdQknVODcuVEeSSDevaBNUf_aem__1rPImzAoWoAvodEpsUFyA"} target="_blank" rel="noopener noreferrer" className="btn-primary btn-glow">
+                  <button 
+                    type="button"
+                    className="btn-primary btn-glow"
+                    onClick={() => openOrderModal('pickup')}
+                  >
                     <ShoppingBag size={18} />
                     <span>Order Online</span>
-                  </a>
+                  </button>
                   
                   <a 
                     href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(loc.address)}`} 

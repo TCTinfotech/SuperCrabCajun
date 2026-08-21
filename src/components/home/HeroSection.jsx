@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
-import { DOORDASH_ORDER_URL } from '../../utils/constants';
+import { useCart } from '../../contexts/CartContext';
 import './HeroSection.css';
 
 const SLIDES = [
@@ -10,7 +9,6 @@ const SLIDES = [
     titleWord3: "BOIL!",
     titleEmoji: "🍋",
     buttonText: "ORDER NOW",
-    buttonLink: DOORDASH_ORDER_URL,
     plateTopImg: "/images/seafood_spread.webp",
     plateBottomImg: "/images/seafood_boil_close.webp",
     floatingBadges: [
@@ -25,7 +23,6 @@ const SLIDES = [
     titleWord3: "CRAWFISH!",
     titleEmoji: "🔥",
     buttonText: "ORDER NOW",
-    buttonLink: DOORDASH_ORDER_URL,
     plateTopImg: "/images/crawfish_close.webp",
     plateBottomImg: "/images/crawfish_pile.webp",
     floatingBadges: [
@@ -40,7 +37,6 @@ const SLIDES = [
     titleWord3: "FEAST!",
     titleEmoji: "🦞",
     buttonText: "ORDER NOW",
-    buttonLink: DOORDASH_ORDER_URL,
     plateTopImg: "/images/gourmet_lobster_tray.webp",
     plateBottomImg: "/images/crab_legs.webp",
     floatingBadges: [
@@ -55,7 +51,6 @@ const SLIDES = [
     titleWord3: "HALF SHELL!",
     titleEmoji: "✨",
     buttonText: "ORDER NOW",
-    buttonLink: DOORDASH_ORDER_URL,
     plateTopImg: "/images/oysters_platter.webp",
     plateBottomImg: "/images/blue_crabs.webp",
     floatingBadges: [
@@ -69,6 +64,7 @@ const SLIDES = [
 export default function HeroSection() {
   const [activeIndex, setActiveIndex] = useState(0);
   const autoPlayRef = useRef(null);
+  const { openOrderModal } = useCart();
 
   const startAutoPlay = () => {
     stopAutoPlay();
@@ -125,15 +121,13 @@ export default function HeroSection() {
             </h1>
 
             <div className="hero-buttons">
-              {currentSlide.buttonLink.startsWith('http') ? (
-                <a href={currentSlide.buttonLink} target="_blank" rel="noopener noreferrer" className="btn-primary btn-lg btn-glow hero-cta-btn">
-                  <span>{currentSlide.buttonText}</span>
-                </a>
-              ) : (
-                <Link to={currentSlide.buttonLink} className="btn-primary btn-lg btn-glow hero-cta-btn">
-                  <span>{currentSlide.buttonText}</span>
-                </Link>
-              )}
+              <button 
+                type="button" 
+                className="btn-primary btn-lg btn-glow hero-cta-btn"
+                onClick={() => openOrderModal('pickup')}
+              >
+                <span>{currentSlide.buttonText}</span>
+              </button>
             </div>
 
             {/* Slider Dots */}

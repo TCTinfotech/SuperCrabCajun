@@ -2,11 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Menu, X, ShoppingBag } from 'lucide-react';
 import { BRAND_NAME } from '../../utils/constants';
+import { useCart } from '../../contexts/CartContext';
+import CartIcon from '../cart/CartIcon';
 import './Navbar.css';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const { openOrderModal } = useCart();
 
   // Handle transparent to dark glass transition on scroll
   useEffect(() => {
@@ -24,6 +27,12 @@ export default function Navbar() {
 
   const toggleMenu = () => setIsOpen(!isOpen);
   const closeMenu = () => setIsOpen(false);
+
+  const handleOrderClick = (e) => {
+    e.preventDefault();
+    closeMenu();
+    openOrderModal('pickup');
+  };
 
   const navLinks = [
     { path: '/', label: 'Home' },
@@ -56,10 +65,16 @@ export default function Navbar() {
 
         {/* Action Button */}
         <div className="navbar-actions">
-          <a href="https://order.online/store/super-crab-palmer-hwy-2519187?utm_id=97757_v0_s00_e0_tv0&fbclid=IwY2xjawSiMLRleHRuA2FlbQIxMABicmlkETF3ZHNwWEcwZmhXeUE0S21hc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHvh1dshdA9SIHiYPlSsqGydpM2CXrBo74wV2RZdQknVODcuVEeSSDevaBNUf_aem__1rPImzAoWoAvodEpsUFyA" target="_blank" rel="noopener noreferrer" className="btn-primary navbar-order-btn btn-glow">
+          <CartIcon />
+
+          <button
+            type="button"
+            className="btn-primary navbar-order-btn btn-glow"
+            onClick={handleOrderClick}
+          >
             <ShoppingBag size={18} />
             <span>Order Now</span>
-          </a>
+          </button>
           
           {/* Mobile Menu Toggle */}
           <button
@@ -87,16 +102,14 @@ export default function Navbar() {
               {link.label}
             </NavLink>
           ))}
-          <a
-            href="https://order.online/store/super-crab-palmer-hwy-2519187?utm_id=97757_v0_s00_e0_tv0&fbclid=IwY2xjawSiMLRleHRuA2FlbQIxMABicmlkETF3ZHNwWEcwZmhXeUE0S21hc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHvh1dshdA9SIHiYPlSsqGydpM2CXrBo74wV2RZdQknVODcuVEeSSDevaBNUf_aem__1rPImzAoWoAvodEpsUFyA"
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            type="button"
             className="btn-primary navbar-mobile-order-btn"
-            onClick={closeMenu}
+            onClick={handleOrderClick}
           >
             <ShoppingBag size={20} />
             <span>Order Online</span>
-          </a>
+          </button>
         </nav>
       </div>
     </header>

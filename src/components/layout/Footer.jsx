@@ -158,6 +158,8 @@ export default function Footer() {
             <span className="copy-rights-line">&copy; {currentYear} Super Crab. All Rights Reserved.</span>
             <span className="footer-copyright-sep">•</span>
             <Link to="/privacy-policy" className="footer-privacy-link">Privacy Policy</Link>
+            <span className="footer-copyright-sep">•</span>
+            <Link to="/admin/login" className="footer-privacy-link">Admin Portal</Link>
           </p>
         </div>
       </div>

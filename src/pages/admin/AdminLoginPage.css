@@ -1,0 +1,214 @@
+.admin-login-page {
+  min-height: calc(100vh - var(--header-height));
+  background: linear-gradient(135deg, #0b0f19 0%, #151c2e 50%, #0f172a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 1.5rem;
+  color: #ffffff;
+}
+
+.admin-login-container {
+  width: 100%;
+  max-width: 480px;
+  background: #111827;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 2.5rem 2.25rem;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65), 0 0 30px rgba(230, 57, 70, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.admin-login-header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.admin-brand-logo {
+  width: 68px;
+  height: 68px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: #ffffff;
+  padding: 4px;
+  border: 3px solid #e63946;
+  box-shadow: 0 4px 15px rgba(230, 57, 70, 0.4);
+}
+
+.admin-login-title {
+  font-family: var(--font-heading, sans-serif);
+  font-size: 1.75rem;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+.admin-login-subtitle {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Demo Credentials Box */
+.demo-credentials-box {
+  background: #1e293b;
+  border: 1px solid #475569;
+  border-radius: 12px;
+  padding: 0.95rem 1.15rem;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.credentials-icon {
+  color: #ff4d5a;
+  flex-shrink: 0;
+}
+
+.demo-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #ff4d5a;
+  letter-spacing: 0.05em;
+  margin-bottom: 3px;
+}
+
+.demo-fields {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  color: #e2e8f0;
+}
+
+.demo-fields strong {
+  color: #ffffff;
+  font-weight: 800;
+}
+
+/* Form Styles */
+.admin-login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+}
+
+.admin-error-banner {
+  background: #fee2e2;
+  border: 1px solid #ef4444;
+  color: #991b1b;
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.2);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-label {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  letter-spacing: 0.04em;
+}
+
+/* Solid White Input Field with Dark Navy Text for High Contrast */
+.admin-input {
+  width: 100%;
+  background: #ffffff !important;
+  border: 2px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 0.9rem 1rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0f172a !important;
+  outline: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.admin-input::placeholder {
+  color: #94a3b8;
+  font-weight: 400;
+}
+
+.admin-input:focus {
+  border-color: #e63946;
+  box-shadow: 0 0 0 4px rgba(230, 57, 70, 0.25);
+}
+
+.password-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-input-wrapper .admin-input {
+  padding-right: 2.75rem;
+}
+
+.btn-toggle-eye {
+  position: absolute;
+  right: 12px;
+  background: transparent;
+  border: none;
+  color: #475569;
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.15s ease;
+}
+
+.btn-toggle-eye:hover {
+  color: #0f172a;
+}
+
+.btn-admin-submit {
+  padding: 1rem;
+  border-radius: 10px;
+  font-size: 1.05rem;
+  font-weight: 800;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background: linear-gradient(135deg, #e63946 0%, #c1121f 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(230, 57, 70, 0.4);
+}
+
+.btn-admin-submit:hover {
+  background: linear-gradient(135deg, #ff4d5a 0%, #d62839 100%);
+  box-shadow: 0 6px 20px rgba(230, 57, 70, 0.6);
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-5px); }
+  40%, 80% { transform: translateX(5px); }
+}
+
+.animate-shake {
+  animation: shake 0.4s ease-in-out;
+}

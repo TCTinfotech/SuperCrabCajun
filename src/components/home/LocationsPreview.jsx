@@ -2,10 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { MapPin, Clock, Phone, ArrowRight } from 'lucide-react';
 import { LOCATIONS } from '../../utils/constants';
+import { useCart } from '../../contexts/CartContext';
 import './LocationsPreview.css';
 
 export default function LocationsPreview() {
-
+  const { openOrderModal } = useCart();
   const daysMap = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
   const todayName = daysMap[new Date().getDay()];
 
@@ -81,9 +82,13 @@ export default function LocationsPreview() {
 
               {/* Card CTA */}
               <div className="loc-card-actions">
-                <a href={LOCATIONS[0].posLinks.order_online || "https://order.online/store/super-crab-palmer-hwy-2519187"} target="_blank" rel="noopener noreferrer" className="btn-primary btn-sm btn-glow w-full">
+                <button 
+                  type="button" 
+                  className="btn-primary btn-sm btn-glow w-full"
+                  onClick={() => openOrderModal('pickup')}
+                >
                   <span>Order Now</span>
-                </a>
+                </button>
               </div>
             </div>
           </article>

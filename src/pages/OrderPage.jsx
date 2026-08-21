@@ -1,141 +1,94 @@
-import React, { useState, useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
-import { ShoppingBag, ChevronRight, ExternalLink, MapPin } from 'lucide-react';
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { ShoppingBag, ExternalLink, MapPin } from 'lucide-react';
 import SEOHead from '../components/layout/SEOHead';
-import { LOCATIONS, POS_PLATFORMS, BRAND_NAME } from '../utils/constants';
-import { useScrollReveal } from '../utils/scrollReveal';
+import { LOCATIONS, DOORDASH_ORDER_URL } from '../utils/constants';
+import { useCart } from '../contexts/CartContext';
 import './OrderPage.css';
 
 export default function OrderPage() {
-  const [searchParams, setSearchParams] = useSearchParams();
-  const locationParam = searchParams.get('location');
+  const { openOrderModal } = useCart();
+  const navigate = useNavigate();
 
-  // Set default location to Houston if not specified or invalid
-  const initialLocation = LOCATIONS.find(l => l.id === locationParam) ? locationParam : LOCATIONS[0].id;
-  const [selectedLocId, setSelectedLocId] = useState(initialLocation);
-
-  useScrollReveal();
-
-  // Redirect to DoorDash
-  useEffect(() => {
-    window.location.replace("https://order.online/store/super-crab-palmer-hwy-2519187?utm_id=97757_v0_s00_e0_tv0&fbclid=IwY2xjawSiMLRleHRuA2FlbQIxMABicmlkETF3ZHNwWEcwZmhXeUE0S21hc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHvh1dshdA9SIHiYPlSsqGydpM2CXrBo74wV2RZdQknVODcuVEeSSDevaBNUf_aem__1rPImzAoWoAvodEpsUFyA");
-  }, []);
-
-  const handleLocationChange = (locId) => {
-    setSelectedLocId(locId);
-    setSearchParams({ location: locId });
+  const handlePickup = () => {
+    navigate('/menu');
   };
 
-  const selectedLocation = LOCATIONS.find((l) => l.id === selectedLocId);
-
-  // Return specific links for the selected location or defaults
-  const getPOSLink = (platformId) => {
-    if (selectedLocation && selectedLocation.posLinks[platformId]) {
-      return selectedLocation.posLinks[platformId];
-    }
-    // Fallback to first available POS link
-    const platform = POS_PLATFORMS.find(p => p.id === platformId);
-    return platform ? platform.url : '#';
+  const handleDelivery = () => {
+    window.open(DOORDASH_ORDER_URL, '_blank', 'noopener,noreferrer');
   };
 
   return (
     <div className="order-page">
       <SEOHead 
         title="Order Online" 
-        description="Order Super Crab online. Select your nearest Texas branch (Houston, Austin, Dallas) and order fresh Cajun boils via Square, Postmates or Order.online."
+        description="Order Super Crab online for Pickup or Delivery via DoorDash."
         canonicalUrl="/order"
       />
 
       {/* Hero Header */}
       <section className="order-hero-banner" style={{ backgroundImage: `linear-gradient(rgba(10, 14, 23, 0.45), rgba(10, 14, 23, 0.8)), url('/images/seafood_spread.webp')` }}>
         <div className="container banner-text reveal">
-          <span className="banner-subtitle">Order Now</span>
+          <span className="banner-subtitle">Order Options</span>
           <h1 className="banner-title text-gradient">ONLINE ORDERING</h1>
           <p className="banner-desc">
-            Skip the line! Select your nearest branch location and order through our trusted POS platforms for pickup or local delivery.
+            Choose how you would like to order: Pick up in-store with zero wait time, or get fresh delivery via DoorDash.
           </p>
         </div>
       </section>
 
-      {/* Location Selector Area */}
+      {/* 2-Flow Order Options Section */}
       <section className="order-content-section section-padding">
         <div className="container select-and-order-container">
           
-          {/* Step 1: Select Location */}
-          <div className="selection-step-card glass-card reveal">
-            <div className="step-badge-num">1</div>
-            <h2>SELECT YOUR LOCATION</h2>
-            <p className="step-intro">Choose a branch to see available ordering platforms and menus for that area.</p>
-
-            <div className="location-buttons-grid">
-              {LOCATIONS.map((loc) => (
-                <button
-                  key={loc.id}
-                  type="button"
-                  className={`loc-select-btn ${selectedLocId === loc.id ? 'active' : ''}`}
-                  onClick={() => handleLocationChange(loc.id)}
-                >
-                  <MapPin size={18} className="loc-marker" />
-                  <div className="loc-btn-texts">
-                    <span className="loc-btn-name">{loc.name}</span>
-                    <span className="loc-btn-addr">{loc.address}</span>
-                  </div>
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Step 2: Choose Platform */}
-          <div className="platform-step-section reveal reveal-delay-1">
-            <div className="step-header">
-              <div className="step-badge-num">2</div>
-              <div>
-                <h2>CHOOSE YOUR ORDERING PLATFORM</h2>
-                {selectedLocation && (
-                  <p className="selected-loc-confirm">
-                    Showing online order platforms for <strong>{selectedLocation.name}</strong>.
-                  </p>
-                )}
+          <div className="platforms-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', width: '100%' }}>
+            
+            {/* Option 1: Pickup */}
+            <article className="platform-card glass-card" style={{ padding: '2rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+              <div className="platform-logo-wrapper" style={{ fontSize: '3rem' }}>
+                🛍️
               </div>
-            </div>
+              <h2 className="platform-name" style={{ fontSize: '1.5rem', fontWeight: '800' }}>PICKUP ORDER</h2>
+              <p className="platform-desc">
+                Order directly on our site & pick up hot at our Texas City store.
+              </p>
+              <p style={{ fontSize: '0.85rem', color: '#94a3b8' }}>
+                📍 {LOCATIONS[0].address}
+              </p>
+              <button 
+                type="button" 
+                className="btn-primary w-full btn-glow" 
+                onClick={handlePickup}
+                style={{ marginTop: 'auto', padding: '0.85rem' }}
+              >
+                <ShoppingBag size={18} />
+                <span>Order Pickup Now</span>
+              </button>
+            </article>
 
-            <div className="platforms-grid">
-              {POS_PLATFORMS.map((platform) => {
-                const targetUrl = getPOSLink(platform.id);
+            {/* Option 2: Delivery */}
+            <article className="platform-card glass-card" style={{ padding: '2rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+              <div className="platform-logo-wrapper" style={{ fontSize: '3rem' }}>
+                🚴
+              </div>
+              <h2 className="platform-name" style={{ fontSize: '1.5rem', fontWeight: '800' }}>DELIVERY ORDER</h2>
+              <p className="platform-desc">
+                Order delivery straight to your door via DoorDash.
+              </p>
+              <p style={{ fontSize: '0.85rem', color: '#94a3b8' }}>
+                🚀 Delivered fresh & hot by DoorDash
+              </p>
+              <button 
+                type="button" 
+                className="btn-primary w-full btn-glow" 
+                onClick={handleDelivery}
+                style={{ marginTop: 'auto', padding: '0.85rem', background: 'linear-gradient(135deg, #ff3008 0%, #d92200 100%)' }}
+              >
+                <ExternalLink size={18} />
+                <span>Order Delivery on DoorDash</span>
+              </button>
+            </article>
 
-                return (
-                  <article key={platform.id} className="platform-card glass-card">
-                    <div className="platform-logo-wrapper">
-                      {/* Check if logo has placeholder issues */}
-                      {platform.logo.includes('posbank.com') ? (
-                        <div className="placeholder-logo-box">POSbank</div>
-                      ) : (
-                        <img 
-                          src={platform.logo} 
-                          alt={`${platform.name} Logo`} 
-                          className="platform-logo-img"
-                        />
-                      )}
-                    </div>
-
-                    <div className="platform-card-body">
-                      <h3 className="platform-name">{platform.name}</h3>
-                      <p className="platform-desc">{platform.description}</p>
-                      
-                      <a 
-                        href={targetUrl} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="btn-primary w-full btn-platform-link btn-glow"
-                      >
-                        <span>Order on {platform.name}</span>
-                        <ExternalLink size={16} />
-                      </a>
-                    </div>
-                  </article>
-                );
-              })}
-            </div>
           </div>
 
         </div>
