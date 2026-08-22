@@ -81,6 +81,10 @@ function doGet(e) {
     } else if (action === 'get-orders') {
       var orders = getSheetDataAsJson(CONFIG.SHEETS ? CONFIG.SHEETS.ORDERS : 'Orders');
       return createJsonResponse({ success: true, orders: orders });
+    } else if (action === 'update-order-status') {
+      var orderId = (e && e.parameter && e.parameter.orderId) ? e.parameter.orderId : '';
+      var status = (e && e.parameter && e.parameter.status) ? e.parameter.status : '';
+      return handleUpdateOrderStatus(orderId, status);
     } else if (action === 'seed-data' || action === 'migrate') {
       if (typeof migrateAllDataToSheets === 'function') {
         var result = migrateAllDataToSheets();
@@ -363,6 +367,7 @@ function handleUpdateOrderStatus(orderId, newStatus) {
     if (String(data[i][0]).trim() === String(orderId).trim()) {
       var rowNum = i + 1;
       sheet.getRange(rowNum, 13).setValue(newStatus); // Column 13 is Payment Status
+      SpreadsheetApp.flush();
       return createJsonResponse({ success: true, message: 'Order status updated to: ' + newStatus });
     }
   }

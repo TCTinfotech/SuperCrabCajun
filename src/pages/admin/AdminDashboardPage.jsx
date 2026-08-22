@@ -145,12 +145,36 @@ export default function AdminDashboardPage() {
   };
 
   // Load and sync orders from Google Sheet (NEWEST FIRST)
+  const STATUS_OVERRIDES_KEY = 'supercrab_order_status_overrides';
+
   const loadOrders = async (isBackgroundPoll = false) => {
     if (!isBackgroundPoll) setIsLoadingOrders(true);
     try {
       const rawOrders = await fetchOrdersFromSheet();
-      // Reverse array so latest order from bottom of sheet is placed at index 0 (Top of table)
-      const latestOrders = Array.isArray(rawOrders) ? [...rawOrders].reverse() : [];
+
+      // Read local overrides to prevent polling overwrite
+      let overrides = {};
+      try {
+        const saved = localStorage.getItem(STATUS_OVERRIDES_KEY);
+        if (saved) overrides = JSON.parse(saved);
+      } catch (e) {}
+
+      // Apply overrides and reverse array so newest is at top
+      const latestOrders = Array.isArray(rawOrders)
+        ? rawOrders
+            .map((ord) => {
+              const curId = ord['Order ID'] || ord.orderId;
+              if (curId && overrides[curId]) {
+                return {
+                  ...ord,
+                  'Payment Status': overrides[curId],
+                  status: overrides[curId]
+                };
+              }
+              return ord;
+            })
+            .reverse()
+        : [];
       
       // Detect if new orders arrived during background polling
       if (hasInitialLoadedOrders && latestOrders.length > 0 && orders.length > 0) {
@@ -196,6 +220,14 @@ export default function AdminDashboardPage() {
   // Handle Changing Order Status
   const handleUpdateOrderStatus = async (orderId, newStatus) => {
     setIsUpdatingOrderStatus(true);
+
+    // Save override to localStorage to guarantee status is never lost during polling
+    try {
+      const overrides = JSON.parse(localStorage.getItem(STATUS_OVERRIDES_KEY) || '{}');
+      overrides[orderId] = newStatus;
+      localStorage.setItem(STATUS_OVERRIDES_KEY, JSON.stringify(overrides));
+    } catch (e) {}
+
     try {
       // Optimistic update
       setOrders((prev) =>

@@ -292,11 +292,24 @@ export function MenuProvider({ children }) {
   };
 
   const updateOrderStatusInSheet = async (orderId, newStatus) => {
-    return await postToAppsScript({
-      action: 'update-order-status',
-      orderId,
-      status: newStatus
-    });
+    if (!GOOGLE_APPS_SCRIPT_URL || GOOGLE_APPS_SCRIPT_URL.includes('YOUR_SCRIPT_ID')) {
+      return { success: false, error: 'Google Apps Script URL is not configured.' };
+    }
+
+    try {
+      // 1. Send via GET parameters (Google Apps Script webapp standard with 0 CORS redirect issues)
+      const getUrl = `${GOOGLE_APPS_SCRIPT_URL}?action=update-order-status&orderId=${encodeURIComponent(orderId)}&status=${encodeURIComponent(newStatus)}&_t=${Date.now()}`;
+      const res = await fetch(getUrl);
+      const data = await res.json();
+      return data;
+    } catch (e) {
+      console.warn('GET status update failed, attempting POST fallback:', e);
+      return await postToAppsScript({
+        action: 'update-order-status',
+        orderId,
+        status: newStatus
+      });
+    }
   };
 
   const resetToDefaultMenu = () => {
