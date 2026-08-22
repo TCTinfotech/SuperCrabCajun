@@ -783,6 +783,8 @@ export const TESTIMONIALS = [
 
 // Ordering & Cart Constants
 export const BOIL_CATEGORIES = ['combos'];
-export const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxlOT3huKI8QlevWHVq7Nv54bh1YbNQ2VlzNRGUjAz1mPTZbbn4B7KJ6eiP4g3BVAwNqg/exec';
+export const GOOGLE_APPS_SCRIPT_URL =
+  import.meta.env?.VITE_GOOGLE_APPS_SCRIPT_URL ||
+  'https://script.google.com/macros/s/AKfycbxlOT3huKI8QlevWHVq7Nv54bh1YbNQ2VlzNRGUjAz1mPTZbbn4B7KJ6eiP4g3BVAwNqg/exec';
 export const TAX_RATE = 0.0825; // Texas sales tax (8.25%)
 

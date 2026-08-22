@@ -32,6 +32,7 @@ import {
 } from 'lucide-react';
 import { useAuth } from '../../contexts/AuthContext';
 import { useMenu } from '../../contexts/MenuContext';
+import { escapeHtml } from '../../utils/crypto';
 import SEOHead from '../../components/layout/SEOHead';
 import './AdminDashboardPage.css';
 
@@ -253,20 +254,27 @@ export default function AdminDashboardPage() {
     }
   };
 
-  // Kitchen Thermal Receipt Printer
+  // Kitchen Thermal Receipt Printer (XSS Sanitized)
   const handlePrintReceipt = (order) => {
-    const id = order['Order ID'] || order.orderId || 'SC-ORDER';
-    const date = order['Date & Time'] || order.formattedDate || new Date().toLocaleString();
-    const name = order['Customer Name'] || order.customerName || 'Customer';
-    const phone = order['Phone Number'] || order.phone || 'N/A';
-    const items = order['Items Ordered'] || order.itemsSummary || '';
-    const pickup = order['Pickup Time'] || order.pickupTime || 'ASAP';
-    const notes = order['Special Notes'] || order.specialNotes || '';
-    const subtotal = order['Subtotal'] || '$0.00';
-    const tax = order['Tax'] || '$0.00';
-    const tip = order['Tip'] || '$0.00';
-    const total = order['Total Amount'] || order.totalAmount || '$0.00';
-    const status = order['Payment Status'] || order.status || 'Pending';
+    const id = escapeHtml(order['Order ID'] || order.orderId || 'SC-ORDER');
+    const date = escapeHtml(order['Date & Time'] || order.formattedDate || new Date().toLocaleString());
+    const name = escapeHtml(order['Customer Name'] || order.customerName || 'Customer');
+    const phone = escapeHtml(order['Phone Number'] || order.phone || 'N/A');
+    const rawItems = String(order['Items Ordered'] || order.itemsSummary || '');
+    const pickup = escapeHtml(order['Pickup Time'] || order.pickupTime || 'ASAP');
+    const notes = escapeHtml(order['Special Notes'] || order.specialNotes || '');
+    const subtotal = escapeHtml(order['Subtotal'] || '$0.00');
+    const tax = escapeHtml(order['Tax'] || '$0.00');
+    const tip = escapeHtml(order['Tip'] || '$0.00');
+    const total = escapeHtml(order['Total Amount'] || order.totalAmount || '$0.00');
+    const status = escapeHtml(order['Payment Status'] || order.status || 'Pending');
+
+    const formattedItems = rawItems
+      ? rawItems
+          .split('|')
+          .map((i) => `• ${escapeHtml(i.trim())}`)
+          .join('<br>')
+      : '• Custom Order Item';
 
     const printHtml = `
       <!DOCTYPE html>
@@ -312,7 +320,7 @@ export default function AdminDashboardPage() {
 
         <div class="divider"></div>
         <div class="bold">ITEMS ORDERED:</div>
-        <div class="items-list">${items.split('|').map(i => '• ' + i.trim()).join('<br>')}</div>
+        <div class="items-list">${formattedItems}</div>
 
         <div class="divider"></div>
         <div class="row"><span>Subtotal:</span><span>${subtotal}</span></div>

@@ -22,6 +22,7 @@ import CartPage from './pages/CartPage';
 // Admin Page Imports
 import AdminLoginPage from './pages/admin/AdminLoginPage';
 import AdminDashboardPage from './pages/admin/AdminDashboardPage';
+import ProtectedRoute from './components/auth/ProtectedRoute';
 
 export default function App() {
   return (
@@ -45,7 +46,14 @@ export default function App() {
                   <Route path="checkout" element={<CheckoutPage />} />
                   <Route path="thank-you" element={<ThankYouPage />} />
                   <Route path="admin/login" element={<AdminLoginPage />} />
-                  <Route path="admin" element={<AdminDashboardPage />} />
+                  <Route
+                    path="admin"
+                    element={
+                      <ProtectedRoute>
+                        <AdminDashboardPage />
+                      </ProtectedRoute>
+                    }
+                  />
                   {/* Fallback routing */}
                   <Route path="*" element={<HomePage />} />
                 </Route>
