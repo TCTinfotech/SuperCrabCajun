@@ -1524,7 +1524,7 @@ export default function AdminDashboardPage() {
       {/* CONFIRM ORDER STATUS CHANGE MODAL */}
       {/* ==================================================== */}
       {confirmStatusModal && (
-        <div className="admin-modal-overlay" style={{ zIndex: 1100 }} onClick={() => setConfirmStatusModal(null)}>
+        <div className="admin-modal-overlay" style={{ zIndex: 100030 }} onClick={() => setConfirmStatusModal(null)}>
           <div className="admin-modal-card sm confirm-status-modal animate-scale-up" onClick={(e) => e.stopPropagation()}>
             <div className="admin-modal-header" style={{ borderBottom: '1px solid #e2e8f0', background: '#ffffff', color: '#0f172a' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
