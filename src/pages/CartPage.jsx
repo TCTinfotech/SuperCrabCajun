@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { MapPin, Clock, Plus, Minus, Trash2, Tag, Edit2 } from 'lucide-react';
 import SEOHead from '../components/layout/SEOHead';
 import { useCart } from '../contexts/CartContext';
 import { LOCATIONS } from '../utils/constants';
+import { getPickupScheduleInfo } from '../utils/pickupTime';
 import './CartPage.css';
 
 export default function CartPage() {
+  const pickupInfo = useMemo(() => getPickupScheduleInfo(), []);
   const {
     cartItems,
     cartCount,
@@ -169,7 +171,9 @@ export default function CartPage() {
 
                 <div className="pickup-info-line">
                   <Clock size={16} className="sidebar-icon" />
-                  <span>Today at 11:30 AM - 10:30 PM</span>
+                  <span>
+                    <strong>Pickup:</strong> {pickupInfo.isOpenNow ? `⚡ Ready in ~15-25 mins (${pickupInfo.asapValue})` : pickupInfo.asapLabel}
+                  </span>
                 </div>
 
                 {/* Curbside Toggle */}

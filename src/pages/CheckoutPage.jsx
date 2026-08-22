@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { MapPin, Clock, CreditCard, ChevronDown, ChevronUp, Tag, ShieldCheck, ArrowLeft, AlertCircle } from 'lucide-react';
+import { MapPin, Clock, CreditCard, ChevronDown, ChevronUp, Tag, ShieldCheck, ArrowLeft, AlertCircle, Calendar, Check } from 'lucide-react';
 import SEOHead from '../components/layout/SEOHead';
 import { useCart } from '../contexts/CartContext';
 import { useMenu } from '../contexts/MenuContext';
 import { GOOGLE_APPS_SCRIPT_URL, LOCATIONS } from '../utils/constants';
+import { getPickupScheduleInfo } from '../utils/pickupTime';
 import './CheckoutPage.css';
 
 export default function CheckoutPage() {
@@ -28,6 +29,15 @@ export default function CheckoutPage() {
 
   const navigate = useNavigate();
   const storeLocation = LOCATIONS[0];
+
+  // Dynamic Pickup Time Schedule
+  const pickupInfo = useMemo(() => getPickupScheduleInfo(), []);
+  const [pickupType, setPickupType] = useState('asap'); // 'asap' | 'scheduled'
+  const [scheduledTime, setScheduledTime] = useState(() => pickupInfo.slots[0]?.value || 'Today at 12:00 PM');
+  const [isEditingPickupTime, setIsEditingPickupTime] = useState(false);
+
+  const resolvedPickupTime = pickupType === 'asap' ? pickupInfo.asapValue : scheduledTime;
+  const displayPickupTime = pickupType === 'asap' ? pickupInfo.asapLabel : scheduledTime;
 
   const [formData, setFormData] = useState({
     countryCode: '+1',
@@ -90,7 +100,7 @@ export default function CheckoutPage() {
           phone: `${formData.countryCode} ${formData.phone}`,
           email: formData.email
         },
-        pickupTime: 'Today at 11:30 AM',
+        pickupTime: resolvedPickupTime,
         specialNotes: `Curbside: ${isCurbside ? 'Yes' : 'No'}${formData.specialNotes ? ' | Note: ' + formData.specialNotes : ''}`,
         items: cartItems.map((item) => ({
           cartItemId: item.cartItemId,
@@ -379,7 +389,17 @@ export default function CheckoutPage() {
             
             {/* Pickup at */}
             <div className="sidebar-box">
-              <h3 className="box-title">Pickup at</h3>
+              <div className="pickup-box-header">
+                <h3 className="box-title">Pickup at</h3>
+                <button
+                  type="button"
+                  className="btn-edit-pickup-time"
+                  onClick={() => setIsEditingPickupTime(!isEditingPickupTime)}
+                >
+                  {isEditingPickupTime ? 'Done' : 'Change Time'}
+                </button>
+              </div>
+
               <div className="pickup-info-content">
                 <div className="pickup-line">
                   <MapPin size={16} className="icon-dark" />
@@ -389,10 +409,77 @@ export default function CheckoutPage() {
                   </div>
                 </div>
 
-                <div className="pickup-line">
+                {/* Selected Pickup Time Display */}
+                <div className="pickup-line pickup-time-active-row">
                   <Clock size={16} className="icon-dark" />
-                  <span>Today at 11:30 AM</span>
+                  <div className="pickup-time-active-box">
+                    <span className="pickup-time-main-badge">
+                      {pickupType === 'asap' ? (
+                        <>
+                          <span className="asap-flash">⚡</span> {displayPickupTime}
+                        </>
+                      ) : (
+                        <>
+                          <Calendar size={14} /> {displayPickupTime}
+                        </>
+                      )}
+                    </span>
+                    {pickupInfo.isOpenNow && (
+                      <span className="store-status-pill open">● Kitchen Open ({pickupInfo.storeHoursText})</span>
+                    )}
+                  </div>
                 </div>
+
+                {/* Expandable Pickup Time Editor */}
+                {isEditingPickupTime && (
+                  <div className="pickup-time-editor-card animate-slide-down">
+                    <div className="pickup-mode-toggle-pills">
+                      <button
+                        type="button"
+                        className={`pickup-pill-btn ${pickupType === 'asap' ? 'active' : ''}`}
+                        onClick={() => setPickupType('asap')}
+                      >
+                        ⚡ ASAP (~15-25m)
+                      </button>
+                      <button
+                        type="button"
+                        className={`pickup-pill-btn ${pickupType === 'scheduled' ? 'active' : ''}`}
+                        onClick={() => setPickupType('scheduled')}
+                      >
+                        📅 Schedule Later
+                      </button>
+                    </div>
+
+                    {pickupType === 'scheduled' ? (
+                      <div className="pickup-schedule-dropdown-group">
+                        <label className="schedule-label">Select Pickup Time Today:</label>
+                        {pickupInfo.slots.length > 0 ? (
+                          <select
+                            className="pickup-select-control"
+                            value={scheduledTime}
+                            onChange={(e) => setScheduledTime(e.target.value)}
+                          >
+                            {pickupInfo.slots.map((slot) => (
+                              <option key={slot.value} value={slot.value}>
+                                {slot.label}
+                              </option>
+                            ))}
+                          </select>
+                        ) : (
+                          <p className="no-slots-alert">
+                            No remaining time slots for today. Orders will be prepared at next store opening.
+                          </p>
+                        )}
+                      </div>
+                    ) : (
+                      <div className="asap-estimated-banner">
+                        <span className="asap-banner-text">
+                          🕒 Your order will be placed into the kitchen queue immediately and ready for hot pickup in approximately <strong>15–25 minutes</strong>.
+                        </span>
+                      </div>
+                    )}
+                  </div>
+                )}
 
                 <div className="curbside-line">
                   <label className="toggle-switch">
