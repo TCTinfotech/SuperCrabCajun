@@ -6,12 +6,34 @@ const MenuContext = createContext();
 const CATEGORIES_STORAGE_KEY = 'supercrab_custom_categories_v2';
 const ITEMS_STORAGE_KEY = 'supercrab_custom_menu_items_v2';
 
+const normalizeCategoriesList = (catList) => {
+  if (!Array.isArray(catList)) return MENU_CATEGORIES;
+  return catList.map((cat) => {
+    let images = [];
+    if (Array.isArray(cat.listImages)) {
+      images = cat.listImages.filter(Boolean);
+    } else if (typeof cat.listImages === 'string' && cat.listImages.trim()) {
+      images = cat.listImages.split(',').map((s) => s.trim()).filter(Boolean);
+    } else if (cat.image) {
+      images = [cat.image];
+    }
+    return {
+      id: String(cat.id || ''),
+      name: String(cat.name || ''),
+      subtitle: String(cat.subtitle || ''),
+      orderIndex: Number(cat.orderIndex || 0),
+      listImages: images,
+      status: cat.status || 'Active'
+    };
+  });
+};
+
 export function MenuProvider({ children }) {
   // 1. Initial State from localStorage or static fallback
   const [categories, setCategories] = useState(() => {
     try {
       const saved = localStorage.getItem(CATEGORIES_STORAGE_KEY);
-      return saved ? JSON.parse(saved) : MENU_CATEGORIES;
+      return saved ? normalizeCategoriesList(JSON.parse(saved)) : MENU_CATEGORIES;
     } catch (e) {
       console.error('Failed to load categories from localStorage:', e);
       return MENU_CATEGORIES;
@@ -49,8 +71,9 @@ export function MenuProvider({ children }) {
 
       if (data && data.success) {
         if (Array.isArray(data.categories) && data.categories.length > 0) {
-          setCategories(data.categories);
-          localStorage.setItem(CATEGORIES_STORAGE_KEY, JSON.stringify(data.categories));
+          const normalizedCats = normalizeCategoriesList(data.categories);
+          setCategories(normalizedCats);
+          localStorage.setItem(CATEGORIES_STORAGE_KEY, JSON.stringify(normalizedCats));
         }
 
         if (Array.isArray(data.products) && data.products.length > 0) {

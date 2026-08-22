@@ -7,10 +7,24 @@ export default function FeaturedMenu() {
   const { openOrderModal } = useCart();
   const { categories: menuCategories } = useMenu();
 
+  const getCategoryImage = (c) => {
+    if (Array.isArray(c.listImages) && c.listImages.length > 0 && typeof c.listImages[0] === 'string' && c.listImages[0].trim()) {
+      return c.listImages[0].trim();
+    }
+    if (typeof c.listImages === 'string' && c.listImages.trim()) {
+      const parts = c.listImages.split(',').map((s) => s.trim()).filter(Boolean);
+      if (parts.length > 0) return parts[0];
+    }
+    if (c.image && typeof c.image === 'string' && c.image.trim()) {
+      return c.image.trim();
+    }
+    return '/images/seafood_boil_close.webp';
+  };
+
   const categories = menuCategories.map((c) => ({
     id: c.id,
     name: c.name,
-    image: c.listImages && c.listImages.length > 0 ? c.listImages[0] : '/images/seafood_boil_close.webp'
+    image: getCategoryImage(c)
   }));
 
   return (
@@ -30,6 +44,10 @@ export default function FeaturedMenu() {
                   className="card-circle-image"
                   loading="lazy"
                   decoding="async"
+                  onError={(e) => {
+                    e.currentTarget.onerror = null;
+                    e.currentTarget.src = '/images/seafood_boil_close.webp';
+                  }}
                 />
               </div>
 
