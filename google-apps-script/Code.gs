@@ -357,18 +357,40 @@ function handleUpdateOrderStatus(orderId, newStatus) {
     return createJsonResponse({ success: false, error: 'orderId and status are required.' });
   }
 
-  var ss = SpreadsheetApp.openById(CONFIG.SPREADSHEET_ID);
+  var ss;
+  try {
+    ss = SpreadsheetApp.getActiveSpreadsheet() || SpreadsheetApp.openById(CONFIG.SPREADSHEET_ID);
+  } catch (e) {
+    ss = SpreadsheetApp.openById(CONFIG.SPREADSHEET_ID);
+  }
+
   var orderSheetName = (CONFIG.SHEETS && CONFIG.SHEETS.ORDERS) ? CONFIG.SHEETS.ORDERS : (CONFIG.SHEET_NAME || 'Orders');
   var sheet = ss.getSheetByName(orderSheetName);
-  if (!sheet) return createJsonResponse({ success: false, error: 'Orders sheet not found.' });
+  if (!sheet) return createJsonResponse({ success: false, error: 'Orders sheet not found: ' + orderSheetName });
 
   var data = sheet.getDataRange().getValues();
+  var targetId = String(orderId).trim().toLowerCase();
+
+  // Find column index for 'Payment Status' dynamically by header name
+  var headers = data[0] || [];
+  var statusColIndex = 13; // default Column M
+  for (var c = 0; c < headers.length; c++) {
+    if (String(headers[c]).trim().toLowerCase() === 'payment status') {
+      statusColIndex = c + 1; // 1-indexed for sheet.getRange
+      break;
+    }
+  }
+
   for (var i = 1; i < data.length; i++) {
-    if (String(data[i][0]).trim() === String(orderId).trim()) {
+    var rowId = String(data[i][0]).trim().toLowerCase();
+    if (rowId === targetId) {
       var rowNum = i + 1;
-      sheet.getRange(rowNum, 13).setValue(newStatus); // Column 13 is Payment Status
+      sheet.getRange(rowNum, statusColIndex).setValue(newStatus);
       SpreadsheetApp.flush();
-      return createJsonResponse({ success: true, message: 'Order status updated to: ' + newStatus });
+      return createJsonResponse({
+        success: true,
+        message: 'Order #' + orderId + ' status updated to ' + newStatus + ' (row ' + rowNum + ', col ' + statusColIndex + ')'
+      });
     }
   }
 
