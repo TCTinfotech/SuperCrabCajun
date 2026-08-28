@@ -77,7 +77,7 @@ export default function Footer() {
 
           {/* Column 2: Navigation Links */}
           <div className="footer-col links-col">
-            <h4 className="footer-col-title">Quick Links</h4>
+            <h2 className="footer-col-title">Quick Links</h2>
             <ul className="footer-links-list">
               <li><Link to="/menu">Menu</Link></li>
               <li><Link to="/about">About Us</Link></li>
@@ -87,7 +87,7 @@ export default function Footer() {
 
           {/* Column 3: Hours of Operation */}
           <div className="footer-col hours-col">
-            <h4 className="footer-col-title">Hours of Operation</h4>
+            <h2 className="footer-col-title">Hours of Operation</h2>
             <ul className="footer-hours-list">
               {LOCATIONS[0].hours.raw.map((hr, idx) => {
                 const isToday = hr.days === todayName;

@@ -74,7 +74,7 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Drawer Overlay */}
-      <div className={`navbar-mobile-drawer ${isOpen ? 'open' : ''}`} aria-hidden={!isOpen}>
+      <div className={`navbar-mobile-drawer ${isOpen ? 'open' : ''}`} inert={!isOpen}>
         <nav className="navbar-mobile-nav">
           {navLinks.map((link, index) => (
             <NavLink

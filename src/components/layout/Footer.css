@@ -263,7 +263,7 @@
 
 .footer-hours-item.is-today .f-days,
 .footer-hours-item.is-today .f-time {
-  color: var(--color-primary, #df382b);
+  color: var(--color-primary-bright, #f2543f);
   font-weight: 700;
 }
 
@@ -462,7 +462,7 @@
 
 /* Bottom Red Copyright Strip */
 .footer-copyright-strip {
-  background-color: var(--color-primary, #df382b);
+  background-color: var(--color-primary-dark, #c62f23);
   padding: 0.9rem 1rem;
   color: #ffffff;
   width: 100%;

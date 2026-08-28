@@ -19,6 +19,10 @@
     --color-primary-rgb: 223, 56, 43;
     --color-primary-hover: #b8241b;
     --color-primary-light: rgba(223, 56, 43, 0.1);
+    --color-primary-dark: #c62f23;
+    /* Red bg dark enough for small white text (WCAG AA 4.5:1) */
+    --color-primary-bright: #f2543f;
+    /* Red text light enough on navy bg (WCAG AA 4.5:1) */
 
     --color-accent: #f1c40f;
     /* Gold highlight stars */
